@@ -1,6 +1,20 @@
 # car-rental-ui
 
-## @
+## Adding a new component
+1. Rechtsclick auf ``app`` folder > new > Angular Schematic > component
+2. Add to router paths in ``app.module.ts`` to the routes array
+ ```
+   {
+    path: 'cars',
+    component: CarsComponent
+  },
+   ```
+3. add to navigation bar (if necessary or for quick testing): ``app.component.html`` as link
+ ```
+<a mat-button [routerLink]="'/cars'">Cars</a>
+   ```
+
+## @ Des wurde autogeneriert
 
 ### Building
 

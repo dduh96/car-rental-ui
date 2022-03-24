@@ -6,18 +6,24 @@ import { CarsComponent } from './cars/cars.component';
 import {RouterModule} from "@angular/router";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatButtonModule} from "@angular/material/button";
+import { LocationsComponent } from './locations/locations.component';
 
 const routes = [
   {
     path: 'cars',
     component: CarsComponent
   },
+  {
+    path: 'locations',
+    component: LocationsComponent
+  }
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
-    CarsComponent
+    CarsComponent,
+    LocationsComponent
   ],
   imports: [
     BrowserModule,
