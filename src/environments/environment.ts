@@ -6,6 +6,16 @@ export const environment = {
   production: false
 };
 
+import { InjectionToken } from '@angular/core';
+
+export const BASE_PATH = new InjectionToken<string>('basePath');
+export const COLLECTION_FORMATS = {
+  'csv': ',',
+  'tsv': '   ',
+  'ssv': ' ',
+  'pipes': '|'
+}
+
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
