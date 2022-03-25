@@ -1,0 +1,39 @@
+table, th, td{
+  width: 60%;
+  background-color: white;
+  border-radius: 1em;
+  padding:1%;
+  margin: 1%;
+}
+
+table img{
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.table-row-img{
+  width:25%;
+  padding: 2%;
+}
+
+.table-row-cartitle{
+  font-size: 1.5em;
+  width:50%;
+}
+
+.table-row-cardetails{
+  width:50%;
+}
+
+.table-row-cardetails img{
+  width: 20px;
+}
+
+.table-row-booking{
+  text-align: right;
+  font-size: 2em;
+}
+
+button{
+  width:100%;
+}

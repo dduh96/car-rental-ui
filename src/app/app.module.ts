@@ -10,6 +10,7 @@ import { LocationsComponent } from './customer-portal/locations/locations.compon
 import { CarsItemComponent } from './customer-portal/cars/cars-item/cars-item.component';
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import {MatGridListModule} from "@angular/material/grid-list";
 
 const routes = [
   {
@@ -29,14 +30,15 @@ const routes = [
     LocationsComponent,
     CarsItemComponent
   ],
-    imports: [
-        BrowserModule,
-        RouterModule.forRoot(routes),
-        MatToolbarModule,
-        MatButtonModule,
-        FormsModule,
-        HttpClientModule
-    ],
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot(routes),
+    MatToolbarModule,
+    MatButtonModule,
+    FormsModule,
+    HttpClientModule,
+    MatGridListModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
