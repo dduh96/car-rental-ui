@@ -2,11 +2,14 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { CarsComponent } from './cars/cars.component';
+import { CarsComponent } from './customer-portal/cars/cars.component';
 import {RouterModule} from "@angular/router";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatButtonModule} from "@angular/material/button";
-import { LocationsComponent } from './locations/locations.component';
+import { LocationsComponent } from './customer-portal/locations/locations.component';
+import { CarsItemComponent } from './customer-portal/cars/cars-item/cars-item.component';
+import {FormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
 
 const routes = [
   {
@@ -23,14 +26,17 @@ const routes = [
   declarations: [
     AppComponent,
     CarsComponent,
-    LocationsComponent
+    LocationsComponent,
+    CarsItemComponent
   ],
-  imports: [
-    BrowserModule,
-    RouterModule.forRoot(routes),
-    MatToolbarModule,
-    MatButtonModule
-  ],
+    imports: [
+        BrowserModule,
+        RouterModule.forRoot(routes),
+        MatToolbarModule,
+        MatButtonModule,
+        FormsModule,
+        HttpClientModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
