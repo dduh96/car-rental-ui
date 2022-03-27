@@ -18,7 +18,7 @@ export class LocationsComponent implements OnInit, AfterViewInit {
   private carList: Array<Car> | undefined;
 
   constructor(private mapsApiLoader: MapsAPILoader, private carService: CarService, private ngZone: NgZone) {
-    carService.getAllCars().subscribe(res => this.carList = res);
+    carService.getCars().subscribe(res => this.carList = res);
   }
 
   ngOnInit(): void {

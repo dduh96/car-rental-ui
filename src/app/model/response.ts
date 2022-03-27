@@ -1,6 +1,6 @@
 /**
- * CAR rental service
- * This is a Car rental Webservice to rent cars. For further information, please visit our [Wiki] (https://se-2022.atlassian.net/wiki/)
+ * Car Rental Webservice
+ * This is backend web service for the Car Rental application. For further information, please visit our [Wiki](https://se-2022.atlassian.net/wiki/)
  *
  * The version of the OpenAPI document: 1
  * 
@@ -20,9 +20,5 @@ export interface Response {
      * The description message for this success code
      */
     message: string;
-    /**
-     * A map of errors within the request. Keyed by the parameter name and the values are the error details
-     */
-    errors?: Array<Error>;
 }
 

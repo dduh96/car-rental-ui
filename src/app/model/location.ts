@@ -11,16 +11,16 @@
  */
 
 
-export interface User { 
+export interface Location { 
     id?: string;
-    first_name?: string;
-    last_name?: string;
-    address?: string;
+    name?: string;
+    street?: string;
+    street_number?: string;
     postal_code?: number;
     country?: string;
     e_mail?: string;
     phone?: string;
-    customer_group?: string;
-    status?: string;
+    latitude?: string;
+    longitude?: string;
 }
 
