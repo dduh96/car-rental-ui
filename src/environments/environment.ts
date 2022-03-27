@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  GAPI_KEY: "AIzaSyCI6Lh4SP_YcEmC444sEbpHI3Gnsdi4NIg"
 };
 
 import { InjectionToken } from '@angular/core';
