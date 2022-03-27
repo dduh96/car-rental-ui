@@ -30,7 +30,7 @@ jobs:
         run: npm ci
 
       - name: Build project
-        run: ./node_modules/.bin/ng build --prod --aot
+        run: ./node_modules/.bin/ng build --aot
       
       - name: build artifact
         uses: actions/upload-artifact@v3.0.0
