@@ -11,6 +11,10 @@ import { CarsItemComponent } from './customer-portal/cars/cars-item/cars-item.co
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {MatGridListModule} from "@angular/material/grid-list";
+import {MatSelectModule} from "@angular/material/select";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatInputModule} from "@angular/material/input";
 import {MDBRootModule} from "angular-bootstrap-md";
 import {ApiModule} from "./api/api.module";
 import {AgmCoreModule} from "@agm/core";
@@ -40,21 +44,24 @@ const routes = [
     CarsItemComponent,
     CustomerServiceComponent
   ],
-  imports: [
-    BrowserModule,
-    RouterModule.forRoot(routes),
+    imports: [
+        BrowserModule,
+        RouterModule.forRoot(routes),
+        MatToolbarModule,
+        MatButtonModule,
+        FormsModule,
+        HttpClientModule,
+        MatGridListModule,
+        MatSelectModule,
+        MatDatepickerModule,
+        BrowserAnimationsModule,
+        MatInputModule
+    ],
     AgmCoreModule.forRoot({
       apiKey: environment.GAPI_KEY,
       libraries: ['places']
     }),
-    ApiModule,
-    MatToolbarModule,
-    MatButtonModule,
-    FormsModule,
-    HttpClientModule,
-    MatGridListModule,
     MDBRootModule
-  ],
   providers: [],
   bootstrap: [AppComponent]
 })

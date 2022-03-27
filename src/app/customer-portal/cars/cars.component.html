@@ -1,5 +1,68 @@
 <div class="alignment">
   <h1 class="header">Wir haben DEIN Auto!!!!!!</h1>
+  <table>
+    <tr>
+      <td>
+        <mat-form-field appearance="fill">
+          <mat-label>Location</mat-label>
+          <mat-select [(ngModel)]="selectedLocation" name="location">
+            <mat-option *ngFor="let loc of locations" [value]="loc.value">
+              {{loc.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+      <td>von
+        <!--<input matInput [matDatepicker]="picker"/>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>-->
+        <!--todo: error wegen Imports?
+        todo: timepicker selbst machen-->
+
+        <mat-form-field appearance="fill">
+          <mat-label>Date</mat-label>
+          <mat-select [(ngModel)]="selectedLocation" name="location">
+            <mat-option *ngFor="let loc of locations" [value]="loc.value">
+              {{loc.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Time</mat-label>
+          <mat-select [(ngModel)]="selectedLocation" name="location">
+            <mat-option *ngFor="let loc of locations" [value]="loc.value">
+              {{loc.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+      <td>bis
+        <!--<input matInput [matDatepicker]="picker"/>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>-->
+        <mat-form-field appearance="fill">
+          <mat-label>Date</mat-label>
+          <mat-select [(ngModel)]="selectedLocation" name="location">
+            <mat-option *ngFor="let loc of locations" [value]="loc.value">
+              {{loc.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Time</mat-label>
+          <mat-select [(ngModel)]="selectedLocation" name="location">
+            <mat-option *ngFor="let loc of locations" [value]="loc.value">
+              {{loc.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+
+
+  <p>You selected: {{selectedLocation}}</p>
+
 
   <div>
     <div *ngFor="let item of nrItems">
