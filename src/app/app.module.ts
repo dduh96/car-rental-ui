@@ -2,13 +2,48 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { CarsComponent } from './customer-portal/cars/cars.component';
+import {RouterModule} from "@angular/router";
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatButtonModule} from "@angular/material/button";
+import { LocationsComponent } from './customer-portal/locations/locations.component';
+import { CarsItemComponent } from './customer-portal/cars/cars-item/cars-item.component';
+import {FormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
+import {MatGridListModule} from "@angular/material/grid-list";
+import { CustomerServiceComponent } from './customer-portal/customer-service/customer-service.component';
+
+const routes = [
+  {
+    path: 'cars',
+    component: CarsComponent
+  },
+  {
+    path: 'locations',
+    component: LocationsComponent
+  },
+  {
+    path: 'services',
+    component: CustomerServiceComponent
+  }
+]
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CarsComponent,
+    LocationsComponent,
+    CarsItemComponent,
+    CustomerServiceComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(routes),
+    MatToolbarModule,
+    MatButtonModule,
+    FormsModule,
+    HttpClientModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
