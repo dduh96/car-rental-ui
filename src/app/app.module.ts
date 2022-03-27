@@ -19,9 +19,9 @@ import {MDBRootModule} from "angular-bootstrap-md";
 import {ApiModule} from "./api/api.module";
 import {AgmCoreModule} from "@agm/core";
 import {environment} from "../environments/environment";
-import { CustomerServiceComponent } from './customer-portal/customer-service/customer-service.component';
+import {CustomerServiceComponent} from './customer-portal/customer-service/customer-service.component';
 import {MatNativeDateModule} from "@angular/material/core";
-import { BookCarComponent } from './customer-portal/cars/book-car/book-car.component';
+import {BookCarComponent} from './customer-portal/cars/book-car/book-car.component';
 
 
 const routes = [
@@ -49,28 +49,28 @@ const routes = [
     CarsComponent,
     LocationsComponent,
     CarsItemComponent,
-    BookCarComponent
+    BookCarComponent,
     CustomerServiceComponent
   ],
-    imports: [
-        BrowserModule,
-        RouterModule.forRoot(routes),
-        MatToolbarModule,
-        MatButtonModule,
-        FormsModule,
-        HttpClientModule,
-        MatGridListModule,
-        MatSelectModule,
-        MatDatepickerModule,
-        BrowserAnimationsModule,
-        MatInputModule
-    ],
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot(routes),
+    MatToolbarModule,
+    MatButtonModule,
+    FormsModule,
+    HttpClientModule,
+    MatGridListModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    BrowserAnimationsModule,
+    MatInputModule,
     AgmCoreModule.forRoot({
       apiKey: environment.GAPI_KEY,
       libraries: ['places']
     }),
-    MDBRootModule
+    MDBRootModule,
     MatNativeDateModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
