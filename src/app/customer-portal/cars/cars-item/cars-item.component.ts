@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-cars-item',
@@ -6,15 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cars-item.component.css']
 })
 export class CarsItemComponent implements OnInit {
-  public test = "some string";
 
-  constructor() { }
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) {
+  }
 
   ngOnInit(): void {
   }
 
-  public bookCar(){
-    this.test = this.test + " add";
+  public bookCar(id: number) {
+    this.router.navigate(["../booking", id], {
+      relativeTo: this.activatedRoute
+    });
   }
 
 }
