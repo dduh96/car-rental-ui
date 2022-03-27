@@ -21,6 +21,7 @@ import {AgmCoreModule} from "@agm/core";
 import {environment} from "../environments/environment";
 import { CustomerServiceComponent } from './customer-portal/customer-service/customer-service.component';
 import {MatNativeDateModule} from "@angular/material/core";
+import { BookCarComponent } from './customer-portal/cars/book-car/book-car.component';
 
 
 const routes = [
@@ -31,6 +32,10 @@ const routes = [
   {
     path: 'locations',
     component: LocationsComponent
+  },
+  {
+    path: 'booking/:id',
+    component: BookCarComponent
   },
   {
     path: 'services',
@@ -44,6 +49,7 @@ const routes = [
     CarsComponent,
     LocationsComponent,
     CarsItemComponent,
+    BookCarComponent
     CustomerServiceComponent
   ],
     imports: [
