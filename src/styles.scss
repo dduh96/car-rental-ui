@@ -3,6 +3,7 @@
 
 // For more information: https://material.angular.io/guide/theming
 @import "~@angular/material/theming";
+@import "~bootstrap/dist/css/bootstrap.css";
 // Plus imports for other components in your app.
 
 
@@ -44,4 +45,14 @@ body {
   height: 100%;
   margin: 0;
   font-family: 'Source Sans Pro', "Helvetica Neue", sans-serif;
+}
+
+.page-title{
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.footer{
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }

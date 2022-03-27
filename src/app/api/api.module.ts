@@ -1,10 +1,15 @@
 import { NgModule, ModuleWithProviders, SkipSelf, Optional } from '@angular/core';
 import { Configuration } from '../configuration';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
+import { AuthService } from './auth.service';
+import { CarService } from './car.service';
+import { LocationService } from './location.service';
+import { OrderService } from './order.service';
+import { UserService } from './user.service';
 
 @NgModule({
-  imports:      [HttpClientModule],
+  imports:      [],
   declarations: [],
   exports:      [],
   providers: []

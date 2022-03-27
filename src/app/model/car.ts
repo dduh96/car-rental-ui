@@ -1,6 +1,6 @@
 /**
- * CAR rental service
- * This is a Car rental Webservice to rent cars. For further information, please visit our [Wiki] (https://se-2022.atlassian.net/wiki/)
+ * Car Rental Webservice
+ * This is backend web service for the Car Rental application. For further information, please visit our [Wiki](https://se-2022.atlassian.net/wiki/)
  *
  * The version of the OpenAPI document: 1
  * 
@@ -26,6 +26,7 @@ export interface Car {
     gear_type?: string;
     adblue?: boolean;
     seats?: number;
-    price_in_euro_cent?: number;
+    price_in_doller_cent?: number;
+    location_id?: string;
 }
 
