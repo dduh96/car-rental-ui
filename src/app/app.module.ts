@@ -11,6 +11,7 @@ import { CarsItemComponent } from './customer-portal/cars/cars-item/cars-item.co
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {MatGridListModule} from "@angular/material/grid-list";
+import {MDBRootModule} from "angular-bootstrap-md";
 import { CustomerServiceComponent } from './customer-portal/customer-service/customer-service.component';
 
 const routes = [
@@ -43,7 +44,8 @@ const routes = [
     MatButtonModule,
     FormsModule,
     HttpClientModule,
-    MatGridListModule
+    MatGridListModule,
+    MDBRootModule
   ],
   providers: [],
   bootstrap: [AppComponent]
