@@ -1,4 +1,7 @@
-import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, NgZone, OnInit, ViewChild} from '@angular/core';
+import {MapsAPILoader} from "@agm/core";
+import {CarService} from "../../api/car.service";
+import {Car} from "../../model/car";
 
 
 @Component({
@@ -11,12 +14,23 @@ export class LocationsComponent implements OnInit, AfterViewInit {
   public gMap: google.maps.Map | undefined;
 
   public address = "Favoritenstraße 226, 1100 Wien";
+  private geoCoder = new google.maps.Geocoder;
+  private carList: Array<Car> | undefined;
 
-  constructor() { }
+  constructor(private mapsApiLoader: MapsAPILoader, private carService: CarService, private ngZone: NgZone) {
+    carService.getAllCars().subscribe(res => this.carList = res);
+  }
 
   ngOnInit(): void {
-
+    this.mapsApiLoader.load().then(() => {
+      this
+    })
   }
+
+  /**
+   * Cars Service -> get all cars
+   * Google Service -> get pins
+   */
 
   ngAfterViewInit() {
     const mapProperties = {
@@ -26,5 +40,15 @@ export class LocationsComponent implements OnInit, AfterViewInit {
     };
     // @ts-ignore
     this.gMap = new google.maps.Map(this.mapElement.nativeElement, mapProperties);
+  }
+
+  public getAdress(latitude: number, longitude: number) {
+    this.geoCoder.geocode({'location': {lat: latitude, lng: longitude}}, (results, status) => {
+      if (status == "OK") {
+        console.log("OK")
+      } else {
+        console.log(status)
+      }
+    });
   }
 }
