@@ -18,9 +18,18 @@ table{
   width: 100%;
   background-color: white;
   border-radius: 1em;
-  text-align: center;
-}
-table tr td{
-  padding-left: 3%;
 }
 
+td {
+  text-align: center;
+  vertical-align: center;
+  horiz-align: center;
+}
+
+table button{
+  width: 90%;
+}
+
+mat-form-field{
+  margin-right: 1%;
+}

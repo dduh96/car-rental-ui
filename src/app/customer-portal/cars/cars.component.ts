@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {CarService} from "../../api/car.service";
 import {Car} from "../../model/car";
+import {formatDate} from '@angular/common';
 
 
 @Component({
@@ -14,16 +15,61 @@ export class CarsComponent implements OnInit {
   public locations = [
     {value: 'v', viewValue: 'Vienna'},
     {value: 's', viewValue: 'Salzburg'}];
+  public timeList = [
+    {value: '6', viewValue:'06:00'},
+    {value: '7', viewValue:'07:00'},
+    {value: '8', viewValue:'08:00'},
+    {value: '9', viewValue:'09:00'},
+    {value: '10', viewValue:'10:00'},
+    {value: '11', viewValue:'11:00'},
+    {value: '12', viewValue:'12:00'},
+    {value: '13', viewValue:'13:00'},
+    {value: '14', viewValue:'14:00'},
+    {value: '15', viewValue:'15:00'},
+    {value: '16', viewValue:'16:00'},
+    {value: '17', viewValue:'17:00'},
+    {value: '18', viewValue:'18:00'},
+    {value: '19', viewValue:'19:00'},
+    {value: '20', viewValue:'20:00'},
+    {value: '21', viewValue:'21:00'},
+    {value: '22', viewValue:'22:00'},
+  ]
 
-  public selectedLocation = "";
+  public dateToday =formatDate(Date.now(), 'yyyy-MM-dd', 'en');
+  public dateTodayPlusSeven=this.addSeven();
+  public selectedLocation = this.locations[0].value;
+  public selectedTimeFrom =  this.timeList[5].value;
+  public selectedDateFrom = this.dateToday;
+  public selectedTimeTo = this.timeList[5].value;
+  public selectedDateTo = this.dateTodayPlusSeven;
+
+
   public cars: Car[] | undefined;
 
   constructor(private carService: CarService) {
   }
 
   ngOnInit(): void {
+
   }
 
+  public addSeven(): string{
+    let datePlusSeven = new Date();
+    datePlusSeven.setDate( datePlusSeven.getDate() + 7 );
+    return formatDate(datePlusSeven,'yyyy-MM-dd','en');
+  }
+
+  public onDateChangeFrom(date: string){
+    this.selectedDateFrom = formatDate(date, 'yyyy-MM-dd', 'en');
+  }
+
+  public onDateChangeTo(date: string){
+    this.selectedDateTo = formatDate(date, 'yyyy-MM-dd', 'en');
+  }
+
+  public searchCars(){
+
+  }
   /* public getCars(){
      this.carService.getAllCars().subscribe(resCars => {
        this.cars = resCars;

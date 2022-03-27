@@ -1,25 +1,27 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppComponent } from './app.component';
-import { CarsComponent } from './customer-portal/cars/cars.component';
+import {AppComponent} from './app.component';
+import {CarsComponent} from './customer-portal/cars/cars.component';
 import {RouterModule} from "@angular/router";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatButtonModule} from "@angular/material/button";
-import { LocationsComponent } from './customer-portal/locations/locations.component';
-import { CarsItemComponent } from './customer-portal/cars/cars-item/cars-item.component';
+import {LocationsComponent} from './customer-portal/locations/locations.component';
+import {CarsItemComponent} from './customer-portal/cars/cars-item/cars-item.component';
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {MatGridListModule} from "@angular/material/grid-list";
 import {MatSelectModule} from "@angular/material/select";
 import {MatDatepickerModule} from "@angular/material/datepicker";
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatInputModule} from "@angular/material/input";
 import {MDBRootModule} from "angular-bootstrap-md";
 import {ApiModule} from "./api/api.module";
 import {AgmCoreModule} from "@agm/core";
 import {environment} from "../environments/environment";
 import { CustomerServiceComponent } from './customer-portal/customer-service/customer-service.component';
+import {MatNativeDateModule} from "@angular/material/core";
+
 
 const routes = [
   {
@@ -62,7 +64,9 @@ const routes = [
       libraries: ['places']
     }),
     MDBRootModule
+    MatNativeDateModule
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
