@@ -7,7 +7,7 @@ import {ActivatedRoute} from "@angular/router";
   styleUrls: ['./book-car.component.css']
 })
 export class BookCarComponent implements OnInit {
-  public id: number | undefined;
+  public id: string | undefined;
 
   constructor(private activatedRoute: ActivatedRoute) {
   }

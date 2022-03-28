@@ -17,10 +17,10 @@
           <mat-label>Choose a date</mat-label>
           <input (dateInput)="onDateChangeFrom($event.value)" [value]="dateToday" matInput [matDatepicker]="pickerFrom">
           <mat-datepicker-toggle matSuffix [for]="pickerFrom"></mat-datepicker-toggle>
-          <mat-datepicker #pickerFrom ></mat-datepicker>
+          <mat-datepicker #pickerFrom></mat-datepicker>
         </mat-form-field>
 
-        <mat-form-field  [style.width.px]=150 appearance="fill">
+        <mat-form-field [style.width.px]=150 appearance="fill">
           <mat-label>Choose a time</mat-label>
           <mat-select [(ngModel)]="selectedTimeFrom" name="location">
             <mat-option *ngFor="let time of timeList" [value]="time.value">
@@ -30,24 +30,25 @@
         </mat-form-field>
       </td>
       <td>to
-        <mat-form-field  [style.width.px]=150 appearance="fill">
+        <mat-form-field [style.width.px]=150 appearance="fill">
           <mat-label>Choose a date</mat-label>
-          <input  (dateInput)="onDateChangeTo($event.value)" [value]="dateTodayPlusSeven" matInput [matDatepicker]="pickerTo">
+          <input (dateInput)="onDateChangeTo($event.value)" [value]="dateTodayPlusSeven" matInput
+                 [matDatepicker]="pickerTo">
           <mat-datepicker-toggle matSuffix [for]="pickerTo"></mat-datepicker-toggle>
           <mat-datepicker #pickerTo></mat-datepicker>
         </mat-form-field>
 
-        <mat-form-field [style.width.px]=150  appearance="fill">
+        <mat-form-field [style.width.px]=150 appearance="fill">
           <mat-label>Choose a time</mat-label>
           <mat-select [(ngModel)]="selectedTimeTo" name="location">
-            <mat-option *ngFor="let time of timeList" [value]="time.value" >
+            <mat-option *ngFor="let time of timeList" [value]="time.value">
               {{time.viewValue}}
             </mat-option>
           </mat-select>
         </mat-form-field>
       </td>
       <td style="width: 20%;">
-        <button mat-raised-button color="primary" (click)="searchCars()">book</button>
+        <button mat-raised-button color="primary" (click)="searchCars()">search</button>
       </td>
     </tr>
   </table>
@@ -59,7 +60,9 @@
 
   <div>
     <div *ngFor="let item of nrItems">
-      <app-cars-item class="center"></app-cars-item>
+      <div *ngIf="car.location_id==selectedLocation">
+        <app-cars-item class="center"></app-cars-item>
+      </div>
     </div>
   </div>
 </div>
