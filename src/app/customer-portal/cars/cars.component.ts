@@ -13,8 +13,8 @@ export class CarsComponent implements OnInit {
 
   public nrItems = [1, 2, 3, 4];
   public locations = [
-    {value: 'v', viewValue: 'Vienna'},
-    {value: 's', viewValue: 'Salzburg'}];
+    {value: 'Vienna', viewValue: 'Vienna'},
+    {value: 'Salzburg', viewValue: 'Salzburg'}];
   public timeList = [
     {value: '6', viewValue:'06:00'},
     {value: '7', viewValue:'07:00'},
@@ -46,7 +46,7 @@ export class CarsComponent implements OnInit {
 
 
   public car: Car = {
-    id: "1234",
+    id: "123456",
     chassis_number: "28djq012831",
     manufacturer: "VW",
     construction_year: "2012",
@@ -61,7 +61,7 @@ export class CarsComponent implements OnInit {
     adblue: true,
     seats: 5,
     price_in_doller_cent: 169.06,
-    location_id: "v"
+    location_id: "Vienna"
   };
 
 

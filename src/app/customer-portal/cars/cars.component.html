@@ -22,7 +22,7 @@
 
         <mat-form-field [style.width.px]=150 appearance="fill">
           <mat-label>Choose a time</mat-label>
-          <mat-select [(ngModel)]="selectedTimeFrom" name="location">
+          <mat-select [(ngModel)]="selectedTimeFrom" name="timeFrom">
             <mat-option *ngFor="let time of timeList" [value]="time.value">
               {{time.viewValue}}
             </mat-option>
@@ -40,7 +40,7 @@
 
         <mat-form-field [style.width.px]=150 appearance="fill">
           <mat-label>Choose a time</mat-label>
-          <mat-select [(ngModel)]="selectedTimeTo" name="location">
+          <mat-select [(ngModel)]="selectedTimeTo" name="timeTo">
             <mat-option *ngFor="let time of timeList" [value]="time.value">
               {{time.viewValue}}
             </mat-option>

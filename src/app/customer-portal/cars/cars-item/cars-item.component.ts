@@ -13,7 +13,7 @@ export class CarsItemComponent implements OnInit {
   }
 
   public car: Car = {
-    id: "1234",
+    id: "123456",
     chassis_number: "28djq012831",
     manufacturer: "VW",
     construction_year: "2012",
@@ -28,14 +28,15 @@ export class CarsItemComponent implements OnInit {
     adblue: true,
     seats: 5,
     price_in_doller_cent: 169.06,
-    location_id: "v"
+    location_id: "Vienna"
   };
 
   ngOnInit(): void {
   }
 
-  public bookCar(id: string) {
-    this.router.navigate(["../booking", id], {
+  //userInput: UserInput statt einzelne Vars
+  public bookCar(id: string, selectedLocation: string, selectedTimeFrom: string, selectedDateFrom: string, selectedTimeTo: string, selectedDateTo: string) {
+    this.router.navigate(["../booking", id, selectedLocation,selectedTimeFrom,selectedDateFrom,selectedTimeTo,selectedDateTo], {
       relativeTo: this.activatedRoute
     });
   }
