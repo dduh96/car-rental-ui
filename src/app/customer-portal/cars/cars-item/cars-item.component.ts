@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {Car} from "../../../model/car";
+import {inputSearch} from "../inputSearch";
 
 @Component({
   selector: 'app-cars-item',
@@ -12,6 +13,8 @@ export class CarsItemComponent implements OnInit {
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {
   }
 
+  @Input('inputSearch') inputSearch!: inputSearch;
+  public visibilityBookCar = false;
   public car: Car = {
     id: "123456",
     chassis_number: "28djq012831",
@@ -35,10 +38,11 @@ export class CarsItemComponent implements OnInit {
   }
 
   //userInput: UserInput statt einzelne Vars
-  public bookCar(id: string, selectedLocation: string, selectedTimeFrom: string, selectedDateFrom: string, selectedTimeTo: string, selectedDateTo: string) {
-    this.router.navigate(["../booking", id, selectedLocation,selectedTimeFrom,selectedDateFrom,selectedTimeTo,selectedDateTo], {
+  public bookCar(id: string, inputSearch: inputSearch) {
+   /* this.router.navigate(["../booking", id, inputSearch], {
       relativeTo: this.activatedRoute
-    });
+    });*/
+    this.visibilityBookCar = true;
   }
 
 }

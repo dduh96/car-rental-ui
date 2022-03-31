@@ -34,7 +34,7 @@ const routes = [
     component: LocationsComponent
   },
   {
-    path: 'booking/:id/:selectedLocation/:selectedTimeFrom/:selectedDateFrom/:selectedTimeTo/:selectedDateTo',
+    path: 'booking/:id/:inputSearch',
     component: BookCarComponent
   },
   {

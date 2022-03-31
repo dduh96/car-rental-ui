@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {CarService} from "../../api/car.service";
 import {Car} from "../../model/car";
 import {formatDate} from '@angular/common';
+import {inputSearch} from "./inputSearch";
 
 
 @Component({
@@ -10,7 +11,24 @@ import {formatDate} from '@angular/common';
   styleUrls: ['./cars.component.css']
 })
 export class CarsComponent implements OnInit {
-
+  public car: Car = {
+    id: "123456",
+    chassis_number: "28djq012831",
+    manufacturer: "VW",
+    construction_year: "2012",
+    color: "black",
+    model: "Golf",
+    model_series: "6",
+    engine_fuel: "Diesel",
+    engine_fuel_consumption: 12,
+    engine_performance: 6,
+    engine_type: "oida keine ahnung",
+    gear_type: "shift",
+    adblue: true,
+    seats: 5,
+    price_in_doller_cent: 169.06,
+    location_id: "Vienna"
+  };
   public nrItems = [1, 2, 3, 4];
   public locations = [
     {value: 'Vienna', viewValue: 'Vienna'},
@@ -37,32 +55,20 @@ export class CarsComponent implements OnInit {
 
   public dateToday =formatDate(Date.now(), 'yyyy-MM-dd', 'en');
   public dateTodayPlusSeven=this.addSeven();
-  public selectedLocation = this.locations[0].value;
+
+  public inputSearch: inputSearch = {
+    selectedLocation: this.locations[0].value,
+    selectedTimeFrom:  this.timeList[5].value,
+    selectedDateFrom: this.dateToday,
+    selectedTimeTo: this.timeList[5].value,
+    selectedDateTo: this.dateTodayPlusSeven,
+  }
+
+  /*public selectedLocation = this.locations[0].value;
   public selectedTimeFrom =  this.timeList[5].value;
   public selectedDateFrom = this.dateToday;
   public selectedTimeTo = this.timeList[5].value;
-  public selectedDateTo = this.dateTodayPlusSeven;
-
-
-
-  public car: Car = {
-    id: "123456",
-    chassis_number: "28djq012831",
-    manufacturer: "VW",
-    construction_year: "2012",
-    color: "black",
-    model: "Golf",
-    model_series: "6",
-    engine_fuel: "Diesel",
-    engine_fuel_consumption: 12,
-    engine_performance: 6,
-    engine_type: "oida keine ahnung",
-    gear_type: "shift",
-    adblue: true,
-    seats: 5,
-    price_in_doller_cent: 169.06,
-    location_id: "Vienna"
-  };
+  public selectedDateTo = this.dateTodayPlusSeven*/;
 
 
   constructor(private carService: CarService) {
@@ -79,20 +85,24 @@ export class CarsComponent implements OnInit {
   }
 
   public onDateChangeFrom(date: string){
-    this.selectedDateFrom = formatDate(date, 'yyyy-MM-dd', 'en');
+    this.inputSearch.selectedDateFrom = formatDate(date, 'yyyy-MM-dd', 'en');
   }
 
   public onDateChangeTo(date: string){
-    this.selectedDateTo = formatDate(date, 'yyyy-MM-dd', 'en');
+    this.inputSearch.selectedDateTo = formatDate(date, 'yyyy-MM-dd', 'en');
   }
 
   public searchCars(){
 
   }
+
+
+
   /* public getCars(){
      this.carService.getAllCars().subscribe(resCars => {
        this.cars = resCars;
      })
    }*/
+
 
 }

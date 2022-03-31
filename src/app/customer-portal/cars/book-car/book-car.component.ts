@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {Car} from "../../../model/car";
+import {inputSearch} from "../inputSearch";
 
 @Component({
   selector: 'app-book-car',
@@ -9,13 +10,21 @@ import {Car} from "../../../model/car";
 })
 export class BookCarComponent implements OnInit {
   public id: string | undefined;
-  public selectedLocation: string | undefined;
+  /*public inputSearch: inputSearch = {
+    selectedLocation: "empty",
+    selectedTimeFrom:  "empty",
+    selectedDateFrom: "1900-01-01",
+    selectedTimeTo: "empty",
+    selectedDateTo: "1900-01-01",
+  }*/
+
+  @Input('inputSearch') inputSearch!: inputSearch ;
+
+  /*public selectedLocation: string | undefined;
   public selectedTimeFrom : string | undefined;
   public selectedDateFrom: string | undefined;
   public selectedTimeTo: string | undefined;
-  public selectedDateTo: string | undefined;
-
-
+  public selectedDateTo: string | undefined;*/
 
   public car: Car = {
     id: "1234",
@@ -41,16 +50,18 @@ export class BookCarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.id = this.activatedRoute.snapshot.params["id"];
+    //this.id = this.activatedRoute.snapshot.params["id"];
+    //this.inputSearch = this.activatedRoute.snapshot.params["inputSearch"];
     //this.selectedLocation="tststst"
-    this.selectedLocation = this.activatedRoute.snapshot.params["selectedLocation"];
+    /*this.selectedLocation = this.activatedRoute.snapshot.params["selectedLocation"];
     this.selectedTimeFrom= this.activatedRoute.snapshot.params["selectedTimeFrom"];
     this.selectedDateFrom= this.activatedRoute.snapshot.params["selectedDateFrom"];
     this.selectedTimeTo= this.activatedRoute.snapshot.params["selectedTimeTo"];
-    this.selectedDateTo= this.activatedRoute.snapshot.params["selectedDateTo"];
+    this.selectedDateTo= this.activatedRoute.snapshot.params["selectedDateTo"];*/
   }
 
   public bookCar(){
 
   }
+
 }
