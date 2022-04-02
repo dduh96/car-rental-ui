@@ -38,10 +38,13 @@ export class CarsItemComponent implements OnInit {
   }
 
   //userInput: UserInput statt einzelne Vars
-  public bookCar(id: string, inputSearch: inputSearch) {
-   /* this.router.navigate(["../booking", id, inputSearch], {
-      relativeTo: this.activatedRoute
-    });*/
+  public bookCar(id: string) {
+    /* this.router.navigate(["../booking", id, inputSearch], {
+       relativeTo: this.activatedRoute
+     });*/
+    // this.inputSearch.id = id; todo: wieso geht das hier nicht so?
+    //todo remove car.id in function call (HTML)
+    this.inputSearch.id = this.car.id;
     this.visibilityBookCar = true;
   }
 

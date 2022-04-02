@@ -61,14 +61,8 @@ export class CarsComponent implements OnInit {
     selectedTimeFrom:  this.timeList[5].value,
     selectedDateFrom: this.dateToday,
     selectedTimeTo: this.timeList[5].value,
-    selectedDateTo: this.dateTodayPlusSeven,
-  }
-
-  /*public selectedLocation = this.locations[0].value;
-  public selectedTimeFrom =  this.timeList[5].value;
-  public selectedDateFrom = this.dateToday;
-  public selectedTimeTo = this.timeList[5].value;
-  public selectedDateTo = this.dateTodayPlusSeven*/;
+    selectedDateTo: this.dateTodayPlusSeven
+  };
 
 
   constructor(private carService: CarService) {

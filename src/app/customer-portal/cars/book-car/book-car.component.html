@@ -1,4 +1,4 @@
-<div class="alignment">
+<!--<div class="alignment">
   <h1 class=".header">book-car works!</h1>
   <table>
     <tr>
@@ -34,12 +34,13 @@
         <button mat-raised-button color="primary" (click)="bookCar()">search</button>
       </td>
     </tr>
-  </table>
+  </table>-->
 
+<div *ngIf="visibility==true">
   <p>You selected: <br>
     location {{inputSearch.selectedLocation}} <br>
     From {{inputSearch.selectedDateFrom}} - {{inputSearch.selectedTimeFrom}}  <br>
     To {{inputSearch.selectedDateTo}} - {{inputSearch.selectedTimeTo}}</p>
-
-  <p>id: {{id}}</p>
+  <p>id: {{inputSearch.id}}</p>
+  <button mat-raised-button color="primary" (click)="cancel()" >Cancel</button>
 </div>

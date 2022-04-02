@@ -14,9 +14,9 @@
     <td class="table-row-booking">$ {{car.price_in_doller_cent}}</td>
   </tr>
   <tr>
-    <td class="table-row-booking"><button mat-raised-button color="primary" (click)="bookCar('8',inputSearch)">book</button></td>
+    <td class="table-row-booking"><button mat-raised-button color="primary" (click)="bookCar('car.id')">book</button></td>
   </tr>
-  <tr><app-book-car [inputSearch]="inputSearch" *ngIf="visibilityBookCar"></app-book-car></tr>
+  <tr><app-book-car [inputSearch]="inputSearch" [visibilityBookCar]="visibilityBookCar" (visibilityBookCarChange)="visibilityBookCar=$event" *ngIf="visibilityBookCar"></app-book-car></tr>
 </table>
 
 
