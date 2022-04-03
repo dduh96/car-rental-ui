@@ -1,14 +1,16 @@
-
 .alignment{
+  padding-top: 3%;
+  padding-right: 1%;
   width: 100%;
-  padding: 5%;
-
 }
-
 .header{
-  font-size: 1.4em;
+  font-size: 1.2em;
+  font-weight: bold;
 }
 
+button{
+  width: 32%;
+}
 table{
   vertical-align: center;
   horiz-align: center;
@@ -17,10 +19,6 @@ table{
 
 td {
   padding-right: 1%;
-}
-
-table button{
-  width: 90%;
 }
 
 form{

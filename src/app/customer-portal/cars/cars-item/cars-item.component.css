@@ -19,6 +19,7 @@ table img{
 .table-row-cartitle{
   font-size: 1.5em;
   width:50%;
+  padding-top: 3%;
 }
 
 .table-row-cardDetails{
@@ -32,6 +33,7 @@ table img{
 .table-row-booking{
   text-align: right;
   font-size: 2em;
+  padding-right: 1%;
 }
 
 button{
