@@ -23,6 +23,7 @@ import {CustomerServiceComponent} from './customer-portal/customer-service/custo
 import {MatNativeDateModule} from "@angular/material/core";
 import {BookCarComponent} from './customer-portal/cars/book-car/book-car.component';
 import { BookingConfirmationComponent } from './customer-portal/cars/booking-confirmation/booking-confirmation.component';
+import {MatRadioModule} from "@angular/material/radio";
 
 
 const routes = [
@@ -76,7 +77,8 @@ const routes = [
     }),
     MDBRootModule,
     MatNativeDateModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]

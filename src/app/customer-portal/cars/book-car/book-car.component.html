@@ -36,6 +36,18 @@
       </mat-error>
     </mat-form-field>
     <br>
+    <mat-form-field [style.width.px]=150 class="full-width, forminput" appearance="fill">
+      <mat-label>Payment</mat-label>
+      <mat-select [(ngModel)]="selectedPayment" name="payment" [formControl]="emailFormControl" [errorStateMatcher]="matcher"  required>
+        <mat-option *ngFor="let payment of paymentList" [value]="payment.viewValue" >
+          {{payment.viewValue}}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="emailFormControl.hasError('required')">
+        Payment option is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
     <mat-form-field class="full-width, forminput" appearance="fill">
       <mat-label>Card number</mat-label>
       <input type="number" matInput placeholder="4820 1283 4087 8657" name="cardnr" [formControl]="emailFormControl" [errorStateMatcher]="matcher"  required/>
@@ -44,6 +56,7 @@
       </mat-error>
     </mat-form-field>
 
+    <br>
     <mat-form-field class="full-width, forminput" [style.width.px]=100  appearance="fill">
       <mat-label>CVV</mat-label>
       <input type="number" matInput placeholder="123" name="cvv" [formControl]="emailFormControl" [errorStateMatcher]="matcher"  required/>
@@ -61,6 +74,7 @@
         Date is <strong>required</strong>
       </mat-error>
     </mat-form-field>
+
     <br>
     <mat-form-field class="example-full-width, forminput" appearance="fill">
       <mat-label>Email</mat-label>

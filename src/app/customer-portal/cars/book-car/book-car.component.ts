@@ -40,6 +40,14 @@ export class BookCarComponent implements OnInit {
     location_id: "Vienna"
   };
 
+  public paymentList = [
+    {viewValue: 'Diners Club'},
+    {viewValue: 'Visa'},
+    {viewValue: 'Mastercard'},
+    {viewValue: 'American Express'}
+  ]
+
+  public selectedPayment = "";
 
   constructor(private router: Router,
               private activatedRoute: ActivatedRoute) {
