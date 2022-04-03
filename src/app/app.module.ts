@@ -8,7 +8,7 @@ import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatButtonModule} from "@angular/material/button";
 import {LocationsComponent} from './customer-portal/locations/locations.component';
 import {CarsItemComponent} from './customer-portal/cars/cars-item/cars-item.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {MatGridListModule} from "@angular/material/grid-list";
 import {MatSelectModule} from "@angular/material/select";
@@ -22,6 +22,7 @@ import {environment} from "../environments/environment";
 import {CustomerServiceComponent} from './customer-portal/customer-service/customer-service.component';
 import {MatNativeDateModule} from "@angular/material/core";
 import {BookCarComponent} from './customer-portal/cars/book-car/book-car.component';
+import { BookingConfirmationComponent } from './customer-portal/cars/booking-confirmation/booking-confirmation.component';
 
 
 const routes = [
@@ -38,6 +39,10 @@ const routes = [
     component: BookCarComponent
   },
   {
+    path: 'confirmation',
+    component: BookingConfirmationComponent
+  },
+  {
     path: 'services',
     component: CustomerServiceComponent
   }
@@ -50,7 +55,8 @@ const routes = [
     LocationsComponent,
     CarsItemComponent,
     BookCarComponent,
-    CustomerServiceComponent
+    CustomerServiceComponent,
+    BookingConfirmationComponent
   ],
   imports: [
     BrowserModule,
@@ -69,7 +75,8 @@ const routes = [
       libraries: ['places']
     }),
     MDBRootModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

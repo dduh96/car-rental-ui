@@ -10,13 +10,22 @@
       <img alt="icon gear" src="../../../../assets/gear.png"/>{{car.gear_type}} <br>
       <img alt="icon range" src="../../../../assets/km.png"/>{{car.engine_fuel}}<br>
       <img alt="icon suitcase big" src="../../../../assets/suitcase_big.png"/>(1 big suitcase) <br>
-      <img alt="icon suitcase small" src="../../../../assets/suitcase_small.png"/>(1 small suitcase)</td>
+      <img alt="icon suitcase small" src="../../../../assets/suitcase_small.png"/>(1 small suitcase)
+    </td>
     <td class="table-row-booking">$ {{car.price_in_doller_cent}}</td>
   </tr>
   <tr>
-    <td class="table-row-booking"><button mat-raised-button color="primary" (click)="bookCar('car.id')">book</button></td>
+    <td class="table-row-booking">
+      <button mat-raised-button color="primary" (click)="bookCar('car.id')">book</button>
+    </td>
   </tr>
-  <tr><app-book-car [inputSearch]="inputSearch" [visibilityBookCar]="visibilityBookCar" (visibilityBookCarChange)="visibilityBookCar=$event" *ngIf="visibilityBookCar"></app-book-car></tr>
-</table>
+  <tr>
+    <td colspan="3">
+      <app-book-car style="clear: both;" [inputSearch]="inputSearch" [visibilityBookCar]="visibilityBookCar"
+                    (visibilityBookCarChange)="visibilityBookCar=$event" *ngIf="visibilityBookCar"></app-book-car>
+    </td>
+  </tr>
 
+
+</table>
 

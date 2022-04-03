@@ -1,46 +1,82 @@
-<!--<div class="alignment">
-  <h1 class=".header">book-car works!</h1>
+<div *ngIf="visibility==true" class="alignment">
+  <div class="header">Booking data: </div><br>
   <table>
     <tr>
-      <td>
-        <mat-form-field appearance="fill">
-          <mat-label>Location</mat-label>
-          <mat-select [(ngModel)]="inputSearch.selectedLocation" name="location" [disabled]="true">
-            <mat-option [value]="inputSearch.selectedLocation">
-              {{inputSearch.selectedLocation}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      </td>
-      <td>from
-        <mat-form-field [style.width.px]=150 appearance="fill">
-          <mat-label>Choose a date</mat-label>
-          <input [value]="inputSearch.selectedDateFrom" matInput [matDatepicker]="$any(pickerFrom)" [disabled]="true">
-          <mat-datepicker-toggle matSuffix [for]="pickerFrom"></mat-datepicker-toggle>
-          <mat-datepicker #pickerFrom></mat-datepicker>
-        </mat-form-field>
-
-        <mat-form-field [style.width.px]=150 appearance="fill">
-          <mat-label>Choose a time</mat-label>
-          <mat-select [(ngModel)]="inputSearch.selectedTimeFrom" name="timeFrom" [disabled]="true">
-            <mat-option [value]="inputSearch.selectedTimeFrom">
-              {{inputSearch.selectedTimeFrom}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-
-      </td>
-      <td style="width: 20%;">
-        <button mat-raised-button color="primary" (click)="bookCar()">search</button>
-      </td>
+      <td>Pick up location:</td>
+      <td>{{inputSearch.selectedLocation}} </td>
     </tr>
-  </table>-->
+    <tr>
+      <td>From:</td>
+      <td>{{inputSearch.selectedDateFrom}}, {{inputSearch.selectedTimeFrom}}:00</td>
+    </tr>
+    <tr>
+      <td>To:</td>
+      <td>{{inputSearch.selectedDateTo}}, {{inputSearch.selectedTimeTo}}:00</td>
+    </tr>
+    <tr>
+      <td>id:</td>
+      <td>{{inputSearch.id}}</td>
+    </tr>
+  </table>
 
-<div *ngIf="visibility==true">
-  <p>You selected: <br>
-    location {{inputSearch.selectedLocation}} <br>
-    From {{inputSearch.selectedDateFrom}} - {{inputSearch.selectedTimeFrom}}  <br>
-    To {{inputSearch.selectedDateTo}} - {{inputSearch.selectedTimeTo}}</p>
-  <p>id: {{inputSearch.id}}</p>
-  <button mat-raised-button color="primary" (click)="cancel()" >Cancel</button>
+  <form name="booking" action="" method="post">
+    <mat-form-field class="full-width, forminput" appearance="fill" >
+      <mat-label>Firstname</mat-label>
+      <input matInput placeholder="Max" name="firstname" [formControl]="emailFormControl" [errorStateMatcher]="matcher"  required/>
+      <mat-error *ngIf="emailFormControl.hasError('required')">
+        Firstname is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width, forminput" appearance="fill">
+      <mat-label>Lastname</mat-label>
+      <input type="text" matInput placeholder="Musterfrau" name="lastname" [formControl]="emailFormControl" [errorStateMatcher]="matcher"  required/>
+      <mat-error *ngIf="emailFormControl.hasError('required')">
+        Lastname is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="full-width, forminput" appearance="fill">
+      <mat-label>Card number</mat-label>
+      <input type="number" matInput placeholder="4820 1283 4087 8657" name="cardnr" [formControl]="emailFormControl" [errorStateMatcher]="matcher"  required/>
+      <mat-error *ngIf="emailFormControl.hasError('required')">
+        Card number is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width, forminput" [style.width.px]=100  appearance="fill">
+      <mat-label>CVV</mat-label>
+      <input type="number" matInput placeholder="123" name="cvv" [formControl]="emailFormControl" [errorStateMatcher]="matcher"  required/>
+      <mat-error *ngIf="emailFormControl.hasError('required')">
+        CVV is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width, forminput" [style.width.px]=150  appearance="fill">
+      <mat-label>Valid until</mat-label>
+      <input matInput [matDatepicker]="$any(pickerTo)" name="validDate" [formControl]="emailFormControl" [errorStateMatcher]="matcher"  required/>
+      <mat-datepicker-toggle matSuffix [for]="pickerTo"></mat-datepicker-toggle>
+      <mat-datepicker #pickerTo></mat-datepicker>
+      <mat-error *ngIf="emailFormControl.hasError('required')">
+        Date is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width, forminput" appearance="fill">
+      <mat-label>Email</mat-label>
+      <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+             placeholder="max@musterfrau.at">
+      <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="emailFormControl.hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <br>
+    <button mat-raised-button color="primary" (click)="cancel()">Cancel</button>
+    <button mat-raised-button color="primary" class="alignment-button" (click)="bookCar()">buy</button>
+  </form>
+
 </div>
+

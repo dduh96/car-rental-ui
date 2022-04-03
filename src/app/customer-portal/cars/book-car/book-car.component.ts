@@ -1,7 +1,9 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {Car} from "../../../model/car";
 import {inputSearch} from "../inputSearch";
+import {MyErrorStateMatcher} from "../../../services/MyErrorStateMatcher";
+import {FormControl, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-book-car',
@@ -14,6 +16,10 @@ export class BookCarComponent implements OnInit {
   @Input('inputSearch') inputSearch!: inputSearch ;
   @Input('visibilityBookCar') visibility!: boolean;
   @Output('visibilityBookCarChange') visibilityChange = new EventEmitter<boolean>();
+
+  emailFormControl = new FormControl('', [Validators.required, Validators.email]);
+
+  matcher = new MyErrorStateMatcher();
 
   public car: Car = {
     id: "1234",
@@ -35,7 +41,8 @@ export class BookCarComponent implements OnInit {
   };
 
 
-  constructor() {
+  constructor(private router: Router,
+              private activatedRoute: ActivatedRoute) {
   }
 
   ngOnInit(): void {
@@ -44,6 +51,14 @@ export class BookCarComponent implements OnInit {
   public cancel(){
     this.visibility=false;
     this.visibilityChange.emit(this.visibility);
+  }
+
+  public bookCar(){
+    //todo erst weiter, wenn alle required erfüllt
+
+    this.router.navigate(["../confirmation"], {
+      relativeTo: this.activatedRoute
+    });
   }
 
 }

@@ -1,25 +1,36 @@
 
 .alignment{
-  padding: 3%;
+  width: 100%;
+  padding: 5%;
+
 }
 
 .header{
-  font-size: 2em;
-  margin: 1%;
+  font-size: 1.4em;
 }
 
 table{
-  width: 100%;
-  background-color: white;
-  border-radius: 1em;
+  vertical-align: center;
+  horiz-align: center;
+  width: 80%;
 }
 
 td {
-  text-align: center;
-  vertical-align: center;
-  horiz-align: center;
+  padding-right: 1%;
 }
 
 table button{
   width: 90%;
+}
+
+form{
+  padding-top: 2%;
+}
+
+.forminput{
+  margin-right: 2%;
+}
+
+.alignment-button{
+  float: right;
 }
