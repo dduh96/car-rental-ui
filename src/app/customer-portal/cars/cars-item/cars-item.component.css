@@ -1,5 +1,5 @@
 table, th, td{
-  width: 60%;
+  width: 80%;
   background-color: white;
   border-radius: 1em;
   padding:1%;
@@ -21,11 +21,11 @@ table img{
   width:50%;
 }
 
-.table-row-cardetails{
+.table-row-cardDetails{
   width:50%;
 }
 
-.table-row-cardetails img{
+.table-row-cardDetails img{
   width: 20px;
 }
 
