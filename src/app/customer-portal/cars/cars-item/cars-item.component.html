@@ -1,6 +1,6 @@
 <table>
   <tr>
-    <td rowspan="3" class="table-row-img"><img alt="des is a platzhalter bild" src="../../../../assets/car.jpg"/></td>
+    <td rowspan="4" class="table-row-img"><img alt="des is a platzhalter bild" src="../../../../assets/car.jpg"/></td>
     <td class="table-row-cartitle">Opel Mokka</td>
     <td></td>
   </tr>
@@ -16,12 +16,12 @@
   </tr>
   <tr>
     <td class="table-row-booking">
-      <button mat-raised-button color="primary" (click)="bookCar('car.id')">book</button>
+      <button mat-raised-button color="primary" (click)="bookCar('car.id')" *ngIf="!visibilityBookCar">book</button>
     </td>
   </tr>
   <tr>
-    <td colspan="3">
-      <app-book-car style="clear: both;" [inputSearch]="inputSearch" [visibilityBookCar]="visibilityBookCar"
+    <td colspan="2">
+      <app-book-car [inputSearch]="inputSearch" [visibilityBookCar]="visibilityBookCar"
                     (visibilityBookCarChange)="visibilityBookCar=$event" *ngIf="visibilityBookCar"></app-book-car>
     </td>
   </tr>

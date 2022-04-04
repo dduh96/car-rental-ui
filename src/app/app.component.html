@@ -12,18 +12,21 @@
         <img src="./assets/profile_white.png">
       </a>
     </div>
-
   </mat-toolbar>
 </div>
-
-<div style="height: 20em; overflow: hidden">
-  <img alt="car driving fast" style="width: 100%" src="https://www.vehicledynamicsinternational.com/wp-content/uploads/2019/01/huracan-evo-rear.jpg">
+<div class="banner-image">
+  <div class="banner-text">
+    <h1>We got the car you need</h1>
+    <p>and here is a subtitle</p>
+    <button mat-raised-button color="accent" [routerLink]="'/services'">Our services</button>
+  </div>
 </div>
-<mat-toolbar color="primary">
+
+<mat-toolbar color="accent">
   <a mat-button [routerLink]="'/services'">Services</a>
   <a mat-button [routerLink]="'/cars'">Cars</a>
   <a mat-button [routerLink]="'/locations'">Locations</a>
 </mat-toolbar>
-
-<router-outlet></router-outlet>
-
+<div class="alignment">
+  <router-outlet></router-outlet>
+</div>
