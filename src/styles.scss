@@ -17,7 +17,7 @@
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
 
-$theming-primary: mat.define-palette(mat.$light-green-palette,800);
+$theming-primary: mat.define-palette(mat.$light-green-palette,900);
 $theming-accent: mat.define-palette(mat.$light-green-palette, 200);
 $theming-warn: mat.define-palette(mat.$red-palette);
 
@@ -45,7 +45,7 @@ body {
   height: 100%;
   margin: 0;
   font-family: 'Source Sans Pro', "Helvetica Neue", sans-serif;
-  background-color: #F5F9F5;
+  background-color: #F4F6F4;
 }
 
 .page-title{
