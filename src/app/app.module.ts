@@ -40,7 +40,7 @@ const routes = [
     component: BookCarComponent
   },
   {
-    path: 'confirmation',
+    path: 'confirmation/:orderId',
     component: BookingConfirmationComponent
   },
   {
