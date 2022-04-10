@@ -2,6 +2,8 @@ import {AfterViewInit, Component, ElementRef, NgZone, OnInit, ViewChild} from '@
 import {MapsAPILoader} from "@agm/core";
 import {CarService} from "../../api/car.service";
 import {Car} from "../../model/car";
+import {LocationService} from "../../api/location.service";
+import {Location} from "../../model/location";
 
 
 @Component({
@@ -15,10 +17,10 @@ export class LocationsComponent implements OnInit, AfterViewInit {
 
   public address = "Favoritenstraße 226, 1100 Wien";
   private geoCoder = new google.maps.Geocoder;
-  private carList: Array<Car> | undefined;
+  private locationList: Array<Location> | undefined;
 
-  constructor(private mapsApiLoader: MapsAPILoader, private carService: CarService, private ngZone: NgZone) {
-    carService.getCars().subscribe(res => this.carList = res);
+  constructor(private mapsApiLoader: MapsAPILoader, private locationService: LocationService, private ngZone: NgZone) {
+    locationService.getLocations().subscribe( res => this.locationList = res);
   }
 
   ngOnInit(): void {

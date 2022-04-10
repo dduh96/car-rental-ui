@@ -1,5 +1,5 @@
 export interface inputSearch {
-  id?: string;
+  id?: number;
   selectedLocation: string;
   selectedTimeFrom: string;
   selectedDateFrom: string;
