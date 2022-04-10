@@ -9,20 +9,16 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { OpeningHours } from './openingHours';
 
 
-export interface Location { 
-    location_id?: number;
-    opening_hours?: OpeningHours;
-    location_name?: string;
-    street_name?: string;
-    street_number?: string;
-    city_name?: string;
-    postal_code?: number;
-    email?: string;
-    phone?: string;
-    latitude?: string;
-    longitude?: string;
+export interface OpeningHours { 
+    opening_hours_id: number;
+    monday: string;
+    tuesday: string;
+    wednesday: string;
+    thursday: string;
+    friday: string;
+    saturday: string;
+    sunday: string;
 }
 

@@ -22,7 +22,8 @@ export class BookCarComponent implements OnInit {
   matcher = new MyErrorStateMatcher();
 
   public car: Car = {
-    id: "1234",
+    car_id: 1234,
+    car_status: Car.CarStatusEnum.Available,
     chassis_number: "28djq012831",
     manufacturer: "VW",
     construction_year: "2012",
@@ -36,8 +37,10 @@ export class BookCarComponent implements OnInit {
     gear_type: "shift",
     adblue: true,
     seats: 5,
-    price_in_doller_cent: 169.06,
-    location_id: "Vienna"
+    price: 169.06,
+    currency_symbol: Car.CurrencySymbolEnum.Eur,
+    picture_link: "link",
+    //location_id: "Vienna"
   };
 
   public paymentList = [
