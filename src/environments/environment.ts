@@ -9,7 +9,7 @@ export const environment = {
 
 import { InjectionToken } from '@angular/core';
 
-export const BASE_PATH = new InjectionToken<string>('basePath');
+export const BASE_PATH = new InjectionToken<string>('http://localhost:8080/api/v1');
 export const COLLECTION_FORMATS = {
   'csv': ',',
   'tsv': '   ',
