@@ -67,7 +67,8 @@ export class BookCarComponent implements OnInit {
   public bookCar(){
     //todo erst weiter, wenn alle required erfüllt
 
-    this.router.navigate(["../confirmation"], {
+    let orderId= "123order123";
+    this.router.navigate(["../confirmation", orderId], {
       relativeTo: this.activatedRoute
     });
   }
