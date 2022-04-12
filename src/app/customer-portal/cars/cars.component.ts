@@ -14,7 +14,8 @@ import {LocationService} from "../../api/location.service";
 })
 export class CarsComponent implements OnInit {
   public car: Car = {
-    id: "123456",
+    car_id: 123456,
+    car_status: Car.CarStatusEnum.Available,
     chassis_number: "28djq012831",
     manufacturer: "VW",
     construction_year: "2012",
@@ -28,8 +29,10 @@ export class CarsComponent implements OnInit {
     gear_type: "shift",
     adblue: true,
     seats: 5,
-    price_in_doller_cent: 169.06,
-    location_id: "Vienna"
+    price: 169.06,
+    currency_symbol: Car.CurrencySymbolEnum.Eur,
+    picture_link: "link",
+    //location_id: "Vienna"
   };
   public nrItems = [1, 2, 3, 4];
   public locations = [

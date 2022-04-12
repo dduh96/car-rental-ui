@@ -11,9 +11,11 @@
  */
 
 
-export interface Car { 
-    car_id: number;
-    car_status: Car.CarStatusEnum;
+/**
+ * New car data
+ */
+export interface CarRequest { 
+    car_status: CarRequest.CarStatusEnum;
     chassis_number: string;
     manufacturer: string;
     construction_year: string;
@@ -28,10 +30,10 @@ export interface Car {
     adblue: boolean;
     seats: number;
     price: number;
-    currency_symbol: Car.CurrencySymbolEnum;
+    currency_symbol: CarRequest.CurrencySymbolEnum;
     picture_link: string;
 }
-export namespace Car {
+export namespace CarRequest {
     export type CarStatusEnum = 'REPAIR' | 'AVAILABLE' | 'RENTED';
     export const CarStatusEnum = {
         Repair: 'REPAIR' as CarStatusEnum,

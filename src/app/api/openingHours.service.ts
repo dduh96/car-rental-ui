@@ -21,11 +21,7 @@ import { Observable }                                        from 'rxjs';
 // @ts-ignore
 import { ApiError } from '../model/apiError';
 // @ts-ignore
-import { AuthenticationResponse } from '../model/authenticationResponse';
-// @ts-ignore
-import { LoginAdminRequest } from '../model/loginAdminRequest';
-// @ts-ignore
-import { LoginOrderRequest } from '../model/loginOrderRequest';
+import { OpeningHours } from '../model/openingHours';
 
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS }                     from '../../environments/environment';
@@ -36,7 +32,7 @@ import { Configuration }                                     from '../configurat
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
+export class OpeningHoursService {
 
     protected basePath = 'http://localhost:8080';
     public defaultHeaders = new HttpHeaders();
@@ -94,18 +90,14 @@ export class AuthService {
     }
 
     /**
-     * Login with orderId and lastName
-     * @param loginAdminRequest
+     * Get a list of opening hours
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public loginAdmin(loginAdminRequest: LoginAdminRequest, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<AuthenticationResponse>;
-    public loginAdmin(loginAdminRequest: LoginAdminRequest, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpResponse<AuthenticationResponse>>;
-    public loginAdmin(loginAdminRequest: LoginAdminRequest, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpEvent<AuthenticationResponse>>;
-    public loginAdmin(loginAdminRequest: LoginAdminRequest, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<any> {
-        if (loginAdminRequest === null || loginAdminRequest === undefined) {
-            throw new Error('Required parameter loginAdminRequest was null or undefined when calling loginAdmin.');
-        }
+    public getAllOpeningHours(observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<Array<OpeningHours>>;
+    public getAllOpeningHours(observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpResponse<Array<OpeningHours>>>;
+    public getAllOpeningHours(observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpEvent<Array<OpeningHours>>>;
+    public getAllOpeningHours(observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<any> {
 
         let localVarHeaders = this.defaultHeaders;
 
@@ -134,15 +126,6 @@ export class AuthService {
         }
 
 
-        // to determine the Content-Type header
-        const consumes: string[] = [
-            'application/json'
-        ];
-        const httpContentTypeSelected: string | undefined = this.configuration.selectHeaderContentType(consumes);
-        if (httpContentTypeSelected !== undefined) {
-            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
-        }
-
         let responseType_: 'text' | 'json' | 'blob' = 'json';
         if (localVarHttpHeaderAcceptSelected) {
             if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
@@ -154,8 +137,7 @@ export class AuthService {
             }
         }
 
-        return this.httpClient.post<AuthenticationResponse>(`${this.configuration.basePath}/api/v1/auth/admin`,
-            loginAdminRequest,
+        return this.httpClient.get<Array<OpeningHours>>(`${this.configuration.basePath}/api/v1/opening-hours`,
             {
                 context: localVarHttpContext,
                 responseType: <any>responseType_,
@@ -168,18 +150,17 @@ export class AuthService {
     }
 
     /**
-     * Login with email and password
-     * @param loginOrderRequest
+     * Get a opening hours by id
+     * @param id The id of the opening hours to retrieve
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
-     * @param reportProgress flag to report request and response progress.
      */
-    public loginOrder(loginOrderRequest: LoginOrderRequest, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<AuthenticationResponse>;
-    public loginOrder(loginOrderRequest: LoginOrderRequest, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpResponse<AuthenticationResponse>>;
-    public loginOrder(loginOrderRequest: LoginOrderRequest, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpEvent<AuthenticationResponse>>;
-    public loginOrder(loginOrderRequest: LoginOrderRequest, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<any> {
-        if (loginOrderRequest === null || loginOrderRequest === undefined) {
-            throw new Error('Required parameter loginOrderRequest was null or undefined when calling loginOrder.');
+    public getOpeningHoursById(id: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<OpeningHours>;
+    public getOpeningHoursById(id: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpResponse<OpeningHours>>;
+    public getOpeningHoursById(id: number, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpEvent<OpeningHours>>;
+    public getOpeningHoursById(id: number, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<any> {
+        if (id === null || id === undefined) {
+            throw new Error('Required parameter id was null or undefined when calling getOpeningHoursById.');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -209,15 +190,6 @@ export class AuthService {
         }
 
 
-        // to determine the Content-Type header
-        const consumes: string[] = [
-            'application/json'
-        ];
-        const httpContentTypeSelected: string | undefined = this.configuration.selectHeaderContentType(consumes);
-        if (httpContentTypeSelected !== undefined) {
-            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
-        }
-
         let responseType_: 'text' | 'json' | 'blob' = 'json';
         if (localVarHttpHeaderAcceptSelected) {
             if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
@@ -229,8 +201,7 @@ export class AuthService {
             }
         }
 
-        return this.httpClient.post<AuthenticationResponse>(`${this.configuration.basePath}/api/v1/auth/order`,
-            loginOrderRequest,
+        return this.httpClient.get<OpeningHours>(`${this.configuration.basePath}/api/v1/opening-hours/${encodeURIComponent(String(id))}`,
             {
                 context: localVarHttpContext,
                 responseType: <any>responseType_,

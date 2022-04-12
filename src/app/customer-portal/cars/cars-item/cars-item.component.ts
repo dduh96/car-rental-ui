@@ -16,7 +16,8 @@ export class CarsItemComponent implements OnInit {
   @Input('inputSearch') inputSearch!: inputSearch;
   public visibilityBookCar = false;
   public car: Car = {
-    id: "123456",
+    car_id: 123456,
+    car_status: Car.CarStatusEnum.Available,
     chassis_number: "28djq012831",
     manufacturer: "VW",
     construction_year: "2012",
@@ -30,8 +31,10 @@ export class CarsItemComponent implements OnInit {
     gear_type: "shift",
     adblue: true,
     seats: 5,
-    price_in_doller_cent: 169.06,
-    location_id: "Vienna"
+    price: 169.06,
+    currency_symbol: Car.CurrencySymbolEnum.Eur,
+    picture_link: "link"
+    //location_id: "Vienna"
   };
 
   ngOnInit(): void {
@@ -44,7 +47,7 @@ export class CarsItemComponent implements OnInit {
      });*/
     // this.inputSearch.id = id; todo: wieso geht das hier nicht so?
     //todo remove car.id in function call (HTML)
-    this.inputSearch.id = this.car.id;
+    this.inputSearch.id = this.car.car_id;
     this.visibilityBookCar = true;
   }
 
