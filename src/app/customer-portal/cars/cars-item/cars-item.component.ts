@@ -10,6 +10,7 @@ import {Currency} from "../../../model/currency";
 })
 export class CarsItemComponent implements OnInit {
 
+  public test = 0;
   constructor() {
   }
 
@@ -31,6 +32,7 @@ export class CarsItemComponent implements OnInit {
       rate: 1.30
     }];
 
+
   ngOnInit(): void {
   }
 
@@ -39,18 +41,15 @@ export class CarsItemComponent implements OnInit {
     this.inputSearch.car_id = this.car.car_id;
     this.visibilityBookCar = true;
   }
-/*
-  public test = this.car.price;
-  public rateUsd = this.currencyTest.find(sym => sym == Currency.SymbolEnum.Usd)!.rate;
-  public selectedRate = this.currencyTest.find(sym => sym == this.inputSearch.selectedCurrencySymbol)!.rate;
-  public getPrice(): number {
-    let rateUsd = this.currencyTest.find(sym => sym == Currency.SymbolEnum.Usd)!.rate;
-    let selectedRate = this.currencyTest.find(sym => sym == this.inputSearch.selectedCurrencySymbol)!.rate;
-    //USD-Preis / USD-Currency * Wunsch-Currency
+
+  public getPrice():number {
+    let rateUsd = this.currencyTest.find(sym => sym.symbol == Currency.SymbolEnum.Usd);
+    let selectedRate = this.currencyTest.find(sym => sym.symbol == this.inputSearch.selectedCurrencySymbol);
     if (rateUsd != undefined && selectedRate != undefined)
-      return this.car.price / rateUsd * selectedRate;
+      return Math.round(this.car.price / rateUsd.rate! * selectedRate.rate!*100)/100;
     else return -1;
-  }*/
+  }
+
 }
 
 
