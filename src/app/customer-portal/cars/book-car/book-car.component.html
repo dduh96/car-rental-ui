@@ -2,10 +2,6 @@
   <div class="header">Booking data: </div><br>
   <table>
     <tr>
-      <td>Pick up location:</td>
-      <td>{{inputSearch.selectedLocation}} </td>
-    </tr>
-    <tr>
       <td>From:</td>
       <td>{{inputSearch.selectedDateFrom}}, {{inputSearch.selectedTimeFrom}}:00</td>
     </tr>
@@ -14,8 +10,20 @@
       <td>{{inputSearch.selectedDateTo}}, {{inputSearch.selectedTimeTo}}:00</td>
     </tr>
     <tr>
-      <td>id:</td>
-      <td>{{inputSearch.id}}</td>
+      <td>car id:</td>
+      <td>{{inputSearch.car_id}}</td>
+    </tr>
+    <tr>
+      <td>
+        <mat-form-field appearance="fill">
+          <mat-label>Pick-up location</mat-label>
+          <mat-select [(ngModel)]="inputSearch.selectedLocation" name="location">
+            <mat-option *ngFor="let loc of locationsTest" [value]="loc.city_name">
+              {{loc.city_name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
     </tr>
   </table>
 
