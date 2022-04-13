@@ -1,19 +1,67 @@
-
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCI6Lh4SP_YcEmC444sEbpHI3Gnsdi4NIg" async defer></script>
 <div class="container">
-  <h1 class="text-center page-title">Car Locations</h1>
-    <div class="" style="background: aqua">
-      <img src="favicon.ico" alt="Bild vom Standort">
-      <div>
-        <p>Address:</p> <p>{{address}}</p>
+  <h1 class="text-center page-title">Our Location near you</h1>
+  <mat-form-field appearance="fill" style="float: right">
+    <mat-label>Area Code</mat-label>
+    <input matInput placeholder="Enter area code" [(ngModel)]="postalCode" (keyup.enter)="filterByPostalCode(postalCode)">
+  </mat-form-field>
+  <div class="clearfix"></div>
 
-      </div>
+  <agm-map class="map" [latitude]="defaultLocation.lat()" [longitude]="defaultLocation.lng()" [zoom]="11" style="height: 30em">
+    <div *ngFor="let item of filteredLocationList">
+      <agm-marker [latitude]="parseToNumber(item.latitude)" [longitude]="parseToNumber(item.longitude)"></agm-marker>
     </div>
+  </agm-map>
 
+  <div >
+    <div *ngFor="let item of filteredLocationList" class="margin-top-m" >
+      <table class="location-table" style="margin: auto">
+        <tr>
+          <th class="col-lg-5">{{item.location_name}}</th>
+          <th>Opening Hours</th>
+        </tr>
+        <tr>
+          <td>{{item.street_name}} {{item.street_number}}</td>
+          <td>Monday: </td>
+          <td>{{item.opening_hours?.monday}}</td>
+        </tr>
+        <tr>
+          <td>{{item.postal_code}} {{item.city_name}}</td>
+          <td>Tuesday: </td>
+          <td>{{item.opening_hours?.tuesday}}</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Wednesday: </td>
+          <td>{{item.opening_hours?.wednesday}}</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Thursday: </td>
+          <td>{{item.opening_hours?.thursday}}</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Friday: </td>
+          <td>{{item.opening_hours?.friday}}</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Saturday: </td>
+          <td>{{item.opening_hours?.saturday}}</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Sunday: </td>
+          <td>{{item.opening_hours?.sunday}}</td>
+        </tr>
+      </table>
 
- <!-- <agm-map>
+      <hr class="solid col-lg-5 margin-top-s" style="margin-left: auto; margin-right: auto">
 
-  </agm-map>-->
-  <div #map style="height: 30em; width: 80%; margin: auto"></div>
+    </div>
+  </div>
+  <!--<div #map style="height: 30em; width: 80%; margin: auto"></div>-->
 
 
 </div>
