@@ -1,8 +1,6 @@
-import {AfterViewInit, Component, ElementRef, NgZone, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, NgZone, OnInit, ViewChild} from '@angular/core';
 import {MapsAPILoader} from "@agm/core";
-import {Car} from "../../model/car";
 import {LocationService} from "../../api/location.service";
-import {GeocoderService} from "../../services/geocoder-service/geocoder.service";
 import {Location} from "../../model/location"
 
 
@@ -22,7 +20,7 @@ export class LocationsComponent implements OnInit {
 
   public defaultLocation = new google.maps.LatLng(48.20896222751492, 16.37060765814223) // Vienna City Center
 
-  constructor(private mapsApiLoader: MapsAPILoader, private locationService: LocationService, private geocoderService: GeocoderService, private ngZone: NgZone) {
+  constructor(private mapsApiLoader: MapsAPILoader, private locationService: LocationService, private ngZone: NgZone) {
     locationService.getLocations().subscribe( res => {
       this.locationList = res;
       this.filteredLocationList = res;
