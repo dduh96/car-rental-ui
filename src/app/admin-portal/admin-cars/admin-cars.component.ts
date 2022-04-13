@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Car} from "../../model/car";
+import {CarService} from "../../api/car.service";
 
 @Component({
   selector: 'app-admin-cars',
@@ -8,7 +9,23 @@ import {Car} from "../../model/car";
 })
 export class AdminCarsComponent implements OnInit {
   public carList: Car[] = [];
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns: string[] = ['car_id',
+    'car_status',
+    'chassis_number',
+    'manufacturer',
+    'construction_year',
+    'color',
+    'model',
+    'model_series',
+    'engine_fuel',
+    'engine_fuel_consumption',
+    'engine_performance',
+    'engine_type',
+    'gear_type',
+    'adblue',
+    'seats',
+    'price',
+  ];
   public ELEMENT_DATA = [
     {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
     {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
@@ -23,7 +40,10 @@ export class AdminCarsComponent implements OnInit {
   ];
 
 
-  constructor() { }
+  constructor(private carService: CarService) {
+    carService.getCars(Car.CurrencySymbolEnum.Usd).subscribe( res =>
+      this.carList = res);
+  }
 
   ngOnInit(): void {
   }

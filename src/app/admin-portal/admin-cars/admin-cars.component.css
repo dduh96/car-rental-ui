@@ -1,0 +1,96 @@
+.mat-column-car_id{
+  padding-right: 0.5em;
+  border-right: 0.1em solid lightgrey;
+}
+
+.mat-column-car_status{
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  border-right: 0.1em solid lightgrey;
+
+}
+
+.mat-column-chassis_number{
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  border-right: 0.1em solid lightgrey;
+}
+
+.mat-column-manufacturer{
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  border-right: 0.1em solid lightgrey;
+}
+
+.mat-column-construction_year{
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  border-right: 0.1em solid lightgrey;
+}
+
+.mat-column-color{
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  border-right: 0.1em solid lightgrey;
+}
+
+.mat-column-model{
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  border-right: 0.1em solid lightgrey;
+}
+
+.mat-column-model_series{
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  border-right: 0.1em solid lightgrey;
+}
+
+.mat-column-engine_fuel{
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  border-right: 0.1em solid lightgrey;
+}
+
+.mat-column-engine_fuel_consumption{
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  border-right: 0.1em solid lightgrey;
+}
+
+.mat-column-engine_performance{
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  border-right: 0.1em solid lightgrey;
+}
+.mat-column-engine_type{
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  border-right: 0.1em solid lightgrey;
+}
+
+.mat-column-gear_type{
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  border-right: 0.1em solid lightgrey;
+}
+
+.mat-column-adblue{
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  border-right: 0.1em solid lightgrey;
+}
+
+.mat-column-seats{
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  border-right: 0.1em solid lightgrey;
+}
+
+.mat-column-price{
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  border-right: 0.1em solid lightgrey;
+}
+
+
