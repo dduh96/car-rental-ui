@@ -1,0 +1,128 @@
+<div>
+  <h1 mat-dialog-title tabindex="0">
+    {{title}}
+  </h1>
+
+  <form [formGroup]="carForm" novalidate autocomplete="off">
+    <div mat-dialog-content>
+      <mat-form-field appearance="fill">
+        <mat-label>Car Status (todo: needed? dropdown? default available?)</mat-label>
+        <input matInput formControlName="required" placeholder="Car Status" [(ngModel)]="car_status">
+      </mat-form-field>
+
+      <div class="clearfix"></div>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Chassis Number</mat-label>
+        <input matInput formControlName="required" placeholder="Chassis Number" [(ngModel)]="chassis_number">
+      </mat-form-field>
+
+      <div class="clearfix"></div>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Manufacturer</mat-label>
+        <input matInput formControlName="required" placeholder="Manufacturer" [(ngModel)]="manufacturer">
+        <mat-error *ngIf="manufacturer==='oje'">Cannot be empty!</mat-error>
+      </mat-form-field>
+
+      <div class="clearfix"></div>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Construction Year</mat-label>
+        <input matInput formControlName="required" placeholder="Construction Year" [(ngModel)]="construction_year">
+      </mat-form-field>
+
+      <div class="clearfix"></div>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Color</mat-label>
+        <input matInput formControlName="required" placeholder="Color" [(ngModel)]="color">
+      </mat-form-field>
+
+      <div class="clearfix"></div>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Model</mat-label>
+        <input matInput formControlName="required" placeholder="Model" [(ngModel)]="model">
+      </mat-form-field>
+
+      <div class="clearfix"></div>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Model Series</mat-label>
+        <input matInput formControlName="required" placeholder="Model Series" [(ngModel)]="model_series">
+      </mat-form-field>
+
+      <div class="clearfix"></div>
+      <h2>Technical Specs</h2>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Engine Fuel</mat-label>
+        <input matInput formControlName="required" placeholder="Engine Fuel" [(ngModel)]="engine_fuel">
+      </mat-form-field>
+
+      <div class="clearfix"></div>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Engine Fuel Consumption</mat-label>
+        <input matInput formControlName="required" placeholder="Engine Fuel Consumptio" [(ngModel)]="engine_fuel_consumption">
+      </mat-form-field>
+
+      <div class="clearfix"></div>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Engine Performance</mat-label>
+        <input matInput formControlName="required" placeholder="Engine Performance" [(ngModel)]="engine_performance">
+      </mat-form-field>
+
+      <div class="clearfix"></div>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Engine Type</mat-label>
+        <input matInput formControlName="required" placeholder="Engine Type" [(ngModel)]="engine_type">
+      </mat-form-field>
+
+      <div class="clearfix"></div>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Gear Type</mat-label>
+        <input matInput formControlName="required" placeholder="Gear Type" [(ngModel)]="gear_type">
+      </mat-form-field>
+
+      <div class="clearfix"></div>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Adblue</mat-label>
+        <input matInput formControlName="required" placeholder="Adblue" [(ngModel)]="adblue">
+      </mat-form-field>
+
+      <div class="clearfix"></div>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Seats</mat-label>
+        <input matInput formControlName="required" placeholder="No. of Seats" [(ngModel)]="seats">
+      </mat-form-field>
+
+      <div class="clearfix"></div>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Price</mat-label>
+        <input matInput formControlName="required" placeholder="Price" [(ngModel)]="price + ' ' + currency_symbol"><!--todo: this is the issue, but also form control generally breaks two-way-binding-->
+      </mat-form-field>
+
+      <div class="clearfix"></div>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Image Link</mat-label>
+        <input matInput formControlName="required" placeholder="Image Link" [(ngModel)]="picture_link">
+      </mat-form-field>
+
+    </div>
+
+    <div mat-dialog-actions style="float: right">
+      <button mat-raised-button (click)="onDismiss()">Cancel</button>
+      <button mat-raised-button color="primary" (click)="onConfirm()">Save</button>
+    </div>
+  </form>
+
+</div>

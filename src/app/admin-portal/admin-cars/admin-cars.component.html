@@ -1,5 +1,5 @@
 <h1 class="text-center">Cars</h1>
-<button mat-raised-button color="primary" class="pull-right">Add New Car</button>
+<button mat-raised-button color="primary" class="pull-right" (click)="openAddCarDialog()">Add New Car</button>
 <div class="clearfix"></div>
 <table mat-table class="mat-elevation-z5 col-lg-12 margin-top-m" [dataSource]="carList">
 

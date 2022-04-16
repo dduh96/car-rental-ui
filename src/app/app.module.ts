@@ -29,6 +29,8 @@ import {MatRadioModule} from "@angular/material/radio";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import { AdminCarsComponent } from './admin-portal/admin-cars/admin-cars.component';
 import {MatTableModule} from "@angular/material/table";
+import { AddCarDialogComponent } from './admin-portal/dialogs/add-car-dialog/add-car-dialog.component';
+import {MatDialogModule} from "@angular/material/dialog";
 import { AdminLoginComponent } from './admin-portal/admin-login/admin-login.component';
 
 const routes = [
@@ -70,6 +72,7 @@ const routes = [
     BookingConfirmationComponent,
     AdminLoginComponent
     AdminCarsComponent
+    AddCarDialogComponent
   ],
   imports: [
     BrowserModule,
