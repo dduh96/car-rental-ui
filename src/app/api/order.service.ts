@@ -28,7 +28,7 @@ import { OrderRequest } from '../model/orderRequest';
 import { Response } from '../model/response';
 
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS }                     from '../../environments/environment';
+import { environment }                     from '../../environments/environment';
 import { Configuration }                                     from '../configuration';
 
 
@@ -38,20 +38,18 @@ import { Configuration }                                     from '../configurat
 })
 export class OrderService {
 
-    protected basePath = 'http://localhost:8080';
+    protected basePath = 'http://localhost:1234';
     public defaultHeaders = new HttpHeaders();
     public configuration = new Configuration();
     public encoder: HttpParameterCodec;
 
-    constructor(protected httpClient: HttpClient, @Optional()@Inject(BASE_PATH) basePath: string, @Optional() configuration: Configuration) {
+    constructor(protected httpClient: HttpClient, @Optional() configuration: Configuration) {
         if (configuration) {
             this.configuration = configuration;
         }
         if (typeof this.configuration.basePath !== 'string') {
-            if (typeof basePath !== 'string') {
-                basePath = this.basePath;
-            }
-            this.configuration.basePath = basePath;
+            this.basePath = environment.BASE_PATH
+            this.configuration.basePath = this.basePath;
         }
         this.encoder = this.configuration.encoder || new CustomHttpParameterCodec();
     }

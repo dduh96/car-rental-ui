@@ -4,18 +4,15 @@
 
 export const environment = {
   production: false,
-  GAPI_KEY: "AIzaSyCI6Lh4SP_YcEmC444sEbpHI3Gnsdi4NIg"
+  GAPI_KEY: "AIzaSyCI6Lh4SP_YcEmC444sEbpHI3Gnsdi4NIg",
+  BASE_PATH: 'http://localhost:8080/api/v1',
+  COLLECTION_FORMATS: {
+    'csv': ',',
+    'tsv': '   ',
+    'ssv': ' ',
+    'pipes': '|'
+  }
 };
-
-import { InjectionToken } from '@angular/core';
-
-export const BASE_PATH = new InjectionToken<string>('http://localhost:8080/api/v1');
-export const COLLECTION_FORMATS = {
-  'csv': ',',
-  'tsv': '   ',
-  'ssv': ' ',
-  'pipes': '|'
-}
 
 /*
  * For easier debugging in development mode, you can import the following file

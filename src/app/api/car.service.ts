@@ -12,11 +12,12 @@
 /* tslint:disable:no-unused-variable member-ordering */
 
 import { Inject, Injectable, Optional }                      from '@angular/core';
-import { HttpClient, HttpHeaders, HttpParams,
-         HttpResponse, HttpEvent, HttpParameterCodec, HttpContext
-        }       from '@angular/common/http';
+import {
+  HttpClient, HttpHeaders, HttpParams,
+  HttpResponse, HttpEvent, HttpParameterCodec, HttpContext, HttpErrorResponse
+} from '@angular/common/http';
 import { CustomHttpParameterCodec }                          from '../encoder';
-import { Observable }                                        from 'rxjs';
+import {catchError, Observable, throwError} from 'rxjs';
 
 // @ts-ignore
 import { ApiError } from '../model/apiError';
@@ -28,7 +29,7 @@ import { CarRequest } from '../model/carRequest';
 import { Response } from '../model/response';
 
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS }                     from '../../environments/environment';
+import {environment} from '../../environments/environment';
 import { Configuration }                                     from '../configuration';
 
 
@@ -43,15 +44,13 @@ export class CarService {
     public configuration = new Configuration();
     public encoder: HttpParameterCodec;
 
-    constructor(protected httpClient: HttpClient, @Optional()@Inject(BASE_PATH) basePath: string, @Optional() configuration: Configuration) {
+    constructor(protected httpClient: HttpClient, @Optional() configuration: Configuration) {
         if (configuration) {
             this.configuration = configuration;
         }
         if (typeof this.configuration.basePath !== 'string') {
-            if (typeof basePath !== 'string') {
-                basePath = this.basePath;
-            }
-            this.configuration.basePath = basePath;
+           this.basePath = environment.BASE_PATH;
+            this.configuration.basePath = this.basePath;
         }
         this.encoder = this.configuration.encoder || new CustomHttpParameterCodec();
     }
@@ -164,8 +163,26 @@ export class CarService {
                 observe: observe,
                 reportProgress: reportProgress
             }
+        ).pipe(
+          catchError(this.handleError)
         );
     }
+
+  private handleError(error: HttpErrorResponse) {
+    if (error.status === 0) {
+      // A client-side or network error occurred. Handle it accordingly.
+      console.error('An error occurred:', error.error);
+    } if (error.status === 400) {
+      alert("Could not create car. Please verify your input")
+    } else {
+      // The backend returned an unsuccessful response code.
+      // The response body may contain clues as to what went wrong.
+      console.error(
+        `Backend returned code ${error.status}, body was: `, error.error);
+    }
+    // Return an observable with a user-facing error message.
+    return throwError(() => new Error('Something bad happened; please try again later.'));
+  }
 
     /**
      * Delete a car by id
