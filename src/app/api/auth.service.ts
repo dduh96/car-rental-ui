@@ -28,7 +28,7 @@ import { LoginAdminRequest } from '../model/loginAdminRequest';
 import { LoginOrderRequest } from '../model/loginOrderRequest';
 
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS }                     from '../../environments/environment';
+import { environment}                     from '../../environments/environment';
 import { Configuration }                                     from '../configuration';
 
 
@@ -43,15 +43,13 @@ export class AuthService {
     public configuration = new Configuration();
     public encoder: HttpParameterCodec;
 
-    constructor(protected httpClient: HttpClient, @Optional()@Inject(BASE_PATH) basePath: string, @Optional() configuration: Configuration) {
+    constructor(protected httpClient: HttpClient, @Optional() configuration: Configuration) {
         if (configuration) {
             this.configuration = configuration;
         }
         if (typeof this.configuration.basePath !== 'string') {
-            if (typeof basePath !== 'string') {
-                basePath = this.basePath;
-            }
-            this.configuration.basePath = basePath;
+            this.basePath = environment.BASE_PATH;
+            this.configuration.basePath = this.basePath;
         }
         this.encoder = this.configuration.encoder || new CustomHttpParameterCodec();
     }

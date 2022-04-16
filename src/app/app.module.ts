@@ -62,6 +62,7 @@ const routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
+    ApiModule,
     MatToolbarModule,
     MatButtonModule,
     FormsModule,
