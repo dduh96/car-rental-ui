@@ -133,7 +133,7 @@ export class CurrencyService {
             }
         }
 
-        return this.httpClient.get<Array<Currency>>(`${this.configuration.basePath}/api/v1/currency`,
+        return this.httpClient.get<Array<Currency>>(`${this.configuration.basePath}/currency`,
             {
                 context: localVarHttpContext,
                 responseType: <any>responseType_,

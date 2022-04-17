@@ -153,7 +153,7 @@ export class CarService {
             }
         }
 
-        return this.httpClient.post<Car>(`${this.configuration.basePath}/api/v1/car`,
+        return this.httpClient.post<Car>(`${this.configuration.basePath}/car`,
             carRequest,
             {
                 context: localVarHttpContext,
@@ -236,7 +236,7 @@ export class CarService {
             }
         }
 
-        return this.httpClient.delete<Response>(`${this.configuration.basePath}/api/v1/car/${encodeURIComponent(String(id))}`,
+        return this.httpClient.delete<Response>(`${this.configuration.basePath}/car/${encodeURIComponent(String(id))}`,
             {
                 context: localVarHttpContext,
                 responseType: <any>responseType_,
@@ -300,7 +300,7 @@ export class CarService {
             }
         }
 
-        return this.httpClient.get<Car>(`${this.configuration.basePath}/api/v1/car/${encodeURIComponent(String(id))}`,
+        return this.httpClient.get<Car>(`${this.configuration.basePath}/car/${encodeURIComponent(String(id))}`,
             {
                 context: localVarHttpContext,
                 responseType: <any>responseType_,
@@ -370,7 +370,7 @@ export class CarService {
             }
         }
 
-        return this.httpClient.get<Array<Car>>(`${this.configuration.basePath}/api/v1/car`,
+        return this.httpClient.get<Array<Car>>(`${this.configuration.basePath}/car`,
             {
                 context: localVarHttpContext,
                 params: localVarQueryParameters,
@@ -441,7 +441,7 @@ export class CarService {
             }
         }
 
-        return this.httpClient.get<Array<Car>>(`${this.configuration.basePath}/api/v1/car/findByStatus`,
+        return this.httpClient.get<Array<Car>>(`${this.configuration.basePath}/car/findByStatus`,
             {
                 context: localVarHttpContext,
                 params: localVarQueryParameters,
@@ -519,7 +519,7 @@ export class CarService {
             }
         }
 
-        return this.httpClient.put<Car>(`${this.configuration.basePath}/api/v1/car/${encodeURIComponent(String(id))}`,
+        return this.httpClient.put<Car>(`${this.configuration.basePath}/car/${encodeURIComponent(String(id))}`,
             carRequest,
             {
                 context: localVarHttpContext,

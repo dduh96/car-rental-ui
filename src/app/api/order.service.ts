@@ -152,7 +152,7 @@ export class OrderService {
             }
         }
 
-        return this.httpClient.post<Order>(`${this.configuration.basePath}/api/v1/order`,
+        return this.httpClient.post<Order>(`${this.configuration.basePath}/order`,
             orderRequest,
             {
                 context: localVarHttpContext,
@@ -217,7 +217,7 @@ export class OrderService {
             }
         }
 
-        return this.httpClient.delete<Response>(`${this.configuration.basePath}/api/v1/order/${encodeURIComponent(String(id))}`,
+        return this.httpClient.delete<Response>(`${this.configuration.basePath}/order/${encodeURIComponent(String(id))}`,
             {
                 context: localVarHttpContext,
                 responseType: <any>responseType_,
@@ -277,7 +277,7 @@ export class OrderService {
             }
         }
 
-        return this.httpClient.get<Array<Order>>(`${this.configuration.basePath}/api/v1/order`,
+        return this.httpClient.get<Array<Order>>(`${this.configuration.basePath}/order`,
             {
                 context: localVarHttpContext,
                 responseType: <any>responseType_,
@@ -341,7 +341,7 @@ export class OrderService {
             }
         }
 
-        return this.httpClient.get<Order>(`${this.configuration.basePath}/api/v1/order/${encodeURIComponent(String(id))}`,
+        return this.httpClient.get<Order>(`${this.configuration.basePath}/order/${encodeURIComponent(String(id))}`,
             {
                 context: localVarHttpContext,
                 responseType: <any>responseType_,
@@ -418,7 +418,7 @@ export class OrderService {
             }
         }
 
-        return this.httpClient.put<Order>(`${this.configuration.basePath}/api/v1/order/${encodeURIComponent(String(id))}`,
+        return this.httpClient.put<Order>(`${this.configuration.basePath}/order/${encodeURIComponent(String(id))}`,
             orderRequest,
             {
                 context: localVarHttpContext,
@@ -487,7 +487,7 @@ export class OrderService {
             }
         }
 
-        return this.httpClient.put<Order>(`${this.configuration.basePath}/api/v1/order/${encodeURIComponent(String(id))}/${encodeURIComponent(String(status))}`,
+        return this.httpClient.put<Order>(`${this.configuration.basePath}/order/${encodeURIComponent(String(id))}/${encodeURIComponent(String(status))}`,
             null,
             {
                 context: localVarHttpContext,

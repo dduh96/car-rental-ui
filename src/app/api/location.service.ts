@@ -154,7 +154,7 @@ export class LocationService {
             }
         }
 
-        return this.httpClient.post<Location>(`${this.configuration.basePath}/api/v1/location`,
+        return this.httpClient.post<Location>(`${this.configuration.basePath}/location`,
             createLocationRequest,
             {
                 context: localVarHttpContext,
@@ -219,7 +219,7 @@ export class LocationService {
             }
         }
 
-        return this.httpClient.delete<Response>(`${this.configuration.basePath}/api/v1/location/${encodeURIComponent(String(id))}`,
+        return this.httpClient.delete<Response>(`${this.configuration.basePath}/location/${encodeURIComponent(String(id))}`,
             {
                 context: localVarHttpContext,
                 responseType: <any>responseType_,
@@ -283,7 +283,7 @@ export class LocationService {
             }
         }
 
-        return this.httpClient.get<Location>(`${this.configuration.basePath}/api/v1/location/${encodeURIComponent(String(id))}`,
+        return this.httpClient.get<Location>(`${this.configuration.basePath}/location/${encodeURIComponent(String(id))}`,
             {
                 context: localVarHttpContext,
                 responseType: <any>responseType_,
@@ -343,7 +343,7 @@ export class LocationService {
             }
         }
 
-        return this.httpClient.get<Array<Location>>(`${this.configuration.basePath}/api/v1/location`,
+        return this.httpClient.get<Array<Location>>(`${this.configuration.basePath}/location`,
             {
                 context: localVarHttpContext,
                 responseType: <any>responseType_,
@@ -420,7 +420,7 @@ export class LocationService {
             }
         }
 
-        return this.httpClient.put<UpdateLocationRequest>(`${this.configuration.basePath}/api/v1/location/${encodeURIComponent(String(id))}`,
+        return this.httpClient.put<UpdateLocationRequest>(`${this.configuration.basePath}/location/${encodeURIComponent(String(id))}`,
             updateLocationRequest,
             {
                 context: localVarHttpContext,
