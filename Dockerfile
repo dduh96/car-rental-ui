@@ -4,7 +4,7 @@ WORKDIR /app
 
 # install app dependencies
 COPY . .
-RUN npm ci && npm run build
+RUN npm ci && npm run build --configuration prod
 
 # nginx server
 FROM nginx:alpine
