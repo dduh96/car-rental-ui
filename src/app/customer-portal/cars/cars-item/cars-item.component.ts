@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Car} from "../../../model/car";
-import {inputSearch} from "../inputSearch";
+import {InputSearch} from "../InputSearch";
 import {Currency} from "../../../model/currency";
 
 @Component({
@@ -14,7 +14,7 @@ export class CarsItemComponent implements OnInit {
   constructor() {
   }
 
-  @Input('inputSearch') inputSearch!: inputSearch;
+  @Input('inputSearch') inputSearch!: InputSearch;
   @Input('car') car!: Car;
   public visibilityBookCar = false;
 
