@@ -4,7 +4,8 @@ import {Car} from "../../model/car";
 import {formatDate} from '@angular/common';
 import {inputSearch} from "./inputSearch";
 import {AuthService} from "../../api/auth.service";
-import {LocationService} from "../../api/location.service";
+import {Currency} from "../../model/currency";
+import {CurrencyService} from "../../api/currency.service";
 
 
 @Component({
@@ -13,31 +14,86 @@ import {LocationService} from "../../api/location.service";
   styleUrls: ['./cars.component.css']
 })
 export class CarsComponent implements OnInit {
-  public car: Car = {
-    car_id: 123456,
-    car_status: Car.CarStatusEnum.Available,
-    chassis_number: "28djq012831",
+  /**Mocking Backend**/
+  public carsTest: Car[] = [{
+    car_id: 1,
+    car_status: Car.CarStatusEnum.Repair,
+    chassis_number: "12i-23423412",
     manufacturer: "VW",
-    construction_year: "2012",
+    construction_year: "2009",
     color: "black",
     model: "Golf",
     model_series: "6",
     engine_fuel: "Diesel",
-    engine_fuel_consumption: 12,
-    engine_performance: 6,
-    engine_type: "oida keine ahnung",
-    gear_type: "shift",
+    engine_fuel_consumption: 8,
+    engine_performance: 12,
+    engine_type: "type A",
+    gear_type: "Automatic",
     adblue: true,
-    seats: 5,
-    price: 169.06,
-    currency_symbol: Car.CurrencySymbolEnum.Eur,
-    picture_link: "link",
-    //location_id: "Vienna"
-  };
-  public nrItems = [1, 2, 3, 4];
-  public locations = [
-    {value: 'Vienna', viewValue: 'Vienna'},
-    {value: 'Salzburg', viewValue: 'Salzburg'}];
+    seats: 6,
+    price: 169.19,
+    currency_symbol: Car.CurrencySymbolEnum.Usd,
+    picture_link: "https://i.pinimg.com/originals/bf/07/14/bf07144f9a02225c7e058aa8d958d2af.png"
+  },
+    {
+      car_id: 2,
+      car_status: Car.CarStatusEnum.Repair,
+      chassis_number: "12i-23423412",
+      manufacturer: "VW",
+      construction_year: "2009",
+      color: "black",
+      model: "Golf",
+      model_series: "7",
+      engine_fuel: "Diesel",
+      engine_fuel_consumption: 8,
+      engine_performance: 12,
+      engine_type: "type A",
+      gear_type: "Automatic",
+      adblue: true,
+      seats: 6,
+      price: 169.19,
+      currency_symbol: Car.CurrencySymbolEnum.Usd,
+      picture_link: "https://i.pinimg.com/originals/bf/07/14/bf07144f9a02225c7e058aa8d958d2af.png"
+    }, {
+      car_id: 3,
+      car_status: Car.CarStatusEnum.Repair,
+      chassis_number: "12i-23423412",
+      manufacturer: "VW",
+      construction_year: "2009",
+      color: "black",
+      model: "Golf",
+      model_series: "8",
+      engine_fuel: "Diesel",
+      engine_fuel_consumption: 8,
+      engine_performance: 12,
+      engine_type: "type A",
+      gear_type: "Automatic",
+      adblue: true,
+      seats: 6,
+      price: 169.19,
+      currency_symbol: Car.CurrencySymbolEnum.Usd,
+      picture_link: "https://i.pinimg.com/originals/bf/07/14/bf07144f9a02225c7e058aa8d958d2af.png"
+    }];
+  public currencyTest: Currency[] = [
+    {
+      symbol: Currency.SymbolEnum.Jpy,
+      rate: 1.78
+    },
+    {
+      symbol: Currency.SymbolEnum.Usd,
+      rate: 1.45
+    },
+    {
+      symbol: Currency.SymbolEnum.Eur,
+      rate: 1.30
+    }];
+
+
+
+
+
+  public cars: Car[] | undefined;
+  public currency: Currency[] | undefined;
   public timeList = [
     {value: '6', viewValue: '06:00'},
     {value: '7', viewValue: '07:00'},
@@ -62,22 +118,22 @@ export class CarsComponent implements OnInit {
   public dateTodayPlusSeven = this.addSeven();
 
   public inputSearch: inputSearch = {
-    selectedLocation: this.locations[0].value,
+    selectedLocation: "empty",
     selectedTimeFrom: this.timeList[5].value,
     selectedDateFrom: this.dateToday,
     selectedTimeTo: this.timeList[5].value,
-    selectedDateTo: this.dateTodayPlusSeven
+    selectedDateTo: this.dateTodayPlusSeven,
+    selectedCurrencySymbol: Currency.SymbolEnum.Usd
   };
 
+  constructor(private carService: CarService, private currencyService: CurrencyService, private authService: AuthService) {
+    carService.getCars(Car.CurrencySymbolEnum.Usd).subscribe(res => this.cars = res);
+    currencyService.getCurrencies().subscribe(res => this.currency = res);
 
-  constructor(private carService: CarService, private authService: AuthService, private locationService:LocationService) {
-    carService.getCars(Car.CurrencySymbolEnum.Usd).subscribe(res => console.log(res));
-    authService.loginOrder({
-      order_id:"14aa3925-312c-462e-acf8-279d18e9a9c8",
-      last_name:"Strasser"
-    }).subscribe(res => console.log(res)); //todo: geschützt durch auth? - würde so keinen sinn machen, oder?
-    locationService.getLocations().subscribe(
-      res=> console.log(res));
+    /*authService.loginOrder({
+      order_id: "14aa3925-312c-462e-acf8-279d18e9a9c8",
+      last_name: "Strasser"
+    }).subscribe(res => console.log(res));*/
   }
 
   ngOnInit(): void {
@@ -101,7 +157,6 @@ export class CarsComponent implements OnInit {
   public searchCars() {
 
   }
-
 
   /* public getCars(){
      this.carService.getAllCars().subscribe(resCars => {

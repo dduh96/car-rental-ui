@@ -1,7 +1,9 @@
 <table>
   <tr>
-    <td rowspan="4" class="table-row-img"><img alt="des is a platzhalter bild" src="../../../../assets/car.jpg"/></td>
-    <td class="table-row-cartitle">Opel Mokka</td>
+    <td rowspan="4" class="table-row-img">
+      <img alt="car picture" src="{{car.picture_link}}"/>
+    </td>
+    <td class="table-row-cartitle">{{car.manufacturer}} {{car.model}} {{car.model_series}} {{car.construction_year}}</td>
     <td></td>
   </tr>
   <tr>
@@ -9,14 +11,13 @@
       <img alt="icon seats" src="../../../../assets/seats.png"/>{{car.seats}} seats <br>
       <img alt="icon gear" src="../../../../assets/gear.png"/>{{car.gear_type}} <br>
       <img alt="icon range" src="../../../../assets/km.png"/>{{car.engine_fuel}}<br>
-      <img alt="icon suitcase big" src="../../../../assets/suitcase_big.png"/>(1 big suitcase) <br>
-      <img alt="icon suitcase small" src="../../../../assets/suitcase_small.png"/>(1 small suitcase)
+      <img alt="icon suitcase big" src="../../../../assets/suitcase_big.png"/>{{car.engine_fuel_consumption}}L per 100km<br>
     </td>
-    <td class="table-row-booking">$ {{car.price}}</td>
+    <td class="table-row-booking">{{getPrice()}} {{inputSearch.selectedCurrencySymbol}}</td>
   </tr>
   <tr>
     <td class="table-row-booking">
-      <button mat-raised-button color="primary" (click)="bookCar('car.id')" *ngIf="!visibilityBookCar">book</button>
+      <button mat-raised-button color="primary" (click)="bookCar()" *ngIf="!visibilityBookCar">book</button>
     </td>
   </tr>
   <tr>
