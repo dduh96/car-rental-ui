@@ -170,6 +170,7 @@ export class AuthService {
      * @param loginOrderRequest
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
+     * @param reportProgress flag to report request and response progress.
      */
     public loginOrder(loginOrderRequest: LoginOrderRequest, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<AuthenticationResponse>;
     public loginOrder(loginOrderRequest: LoginOrderRequest, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpResponse<AuthenticationResponse>>;

@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from "@angular/router";
 import {Car} from "../../../model/car";
 import {inputSearch} from "../inputSearch";
+import {Currency} from "../../../model/currency";
 
 @Component({
   selector: 'app-cars-item',
@@ -10,45 +10,56 @@ import {inputSearch} from "../inputSearch";
 })
 export class CarsItemComponent implements OnInit {
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {
+  public test = 0;
+  constructor() {
   }
 
   @Input('inputSearch') inputSearch!: inputSearch;
+  @Input('car') car!: Car;
   public visibilityBookCar = false;
-  public car: Car = {
-    car_id: 123456,
-    car_status: Car.CarStatusEnum.Available,
-    chassis_number: "28djq012831",
-    manufacturer: "VW",
-    construction_year: "2012",
-    color: "black",
-    model: "Golf",
-    model_series: "6",
-    engine_fuel: "Diesel",
-    engine_fuel_consumption: 12,
-    engine_performance: 6,
-    engine_type: "oida keine ahnung",
-    gear_type: "shift",
-    adblue: true,
-    seats: 5,
-    price: 169.06,
-    currency_symbol: Car.CurrencySymbolEnum.Eur,
-    picture_link: "link"
-    //location_id: "Vienna"
-  };
+
+  public currencyTest: Currency[] = [
+    {
+      symbol: Currency.SymbolEnum.Jpy,
+      rate: 1.78
+    },
+    {
+      symbol: Currency.SymbolEnum.Usd,
+      rate: 1.45
+    },
+    {
+      symbol: Currency.SymbolEnum.Eur,
+      rate: 1.30
+    }];
+
 
   ngOnInit(): void {
   }
 
-  //userInput: UserInput statt einzelne Vars
-  public bookCar(id: string) {
-    /* this.router.navigate(["../booking", id, inputSearch], {
-       relativeTo: this.activatedRoute
-     });*/
-    // this.inputSearch.id = id; todo: wieso geht das hier nicht so?
-    //todo remove car.id in function call (HTML)
-    this.inputSearch.id = this.car.car_id;
+
+  public bookCar() {
+    this.inputSearch.car_id = this.car.car_id;
     this.visibilityBookCar = true;
   }
 
+  public getPrice():number {
+    let rateUsd = this.currencyTest.find(sym => sym.symbol == Currency.SymbolEnum.Usd);
+    let selectedRate = this.currencyTest.find(sym => sym.symbol == this.inputSearch.selectedCurrencySymbol);
+    if (rateUsd != undefined && selectedRate != undefined)
+      return Math.round(this.car.price / rateUsd.rate! * selectedRate.rate!*100)/100;
+    else return -1;
+  }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
