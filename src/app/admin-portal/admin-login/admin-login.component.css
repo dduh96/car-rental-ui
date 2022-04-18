@@ -1,0 +1,35 @@
+
+.alignment{
+  padding: 3%;
+}
+
+.center{
+  display: flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.header{
+  font-size: 1em;
+  margin: 1%;
+}
+
+table{
+  width: 100%;
+  background-color: white;
+  border-radius: 1em;
+}
+
+td {
+  text-align: center;
+  vertical-align: center;
+  horiz-align: center;
+}
+
+table button{
+  width: 90%;
+}
+
+mat-form-field{
+  margin-right: 1%;
+}

@@ -2,14 +2,14 @@
   <mat-toolbar color="primary">
     <div>
       <a [routerLink]="'/#'">
-        <img src="./favicon.ico">
+        <img src="./favicon.ico" alt="company image">
       </a>
     </div>
-    <a mat-button [routerLink]="'/signin'">SignIn</a>
-    <a mat-button [routerLink]="'/signup'">SignUp</a>
+    <a mat-button (click)="openOrderDialog()">View Order</a>
+    <a mat-button (click)="openAdminDialog()">Admin</a>
     <div class="topnav-right">
       <a [routerLink]="'/userdetail'">
-        <img src="./assets/profile_white.png">
+        <img src="./assets/profile_white.png" alt="profile-picture">
       </a>
     </div>
   </mat-toolbar>
