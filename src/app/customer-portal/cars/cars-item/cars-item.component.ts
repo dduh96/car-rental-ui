@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Car} from "../../../model/car";
 import {inputSearch} from "../inputSearch";
 import {Currency} from "../../../model/currency";
+import {CurrencyService} from "../../../api/currency.service";
 
 @Component({
   selector: 'app-cars-item',
@@ -10,29 +11,15 @@ import {Currency} from "../../../model/currency";
 })
 export class CarsItemComponent implements OnInit {
 
-  public test = 0;
-  constructor() {
+
+  constructor(currencyService:CurrencyService) {
+    currencyService.getCurrencies().subscribe(res => this.currency = res);
   }
 
   @Input('inputSearch') inputSearch!: inputSearch;
   @Input('car') car!: Car;
+  public currency: Currency[] | undefined;
   public visibilityBookCar = false;
-
-  public currencyTest: Currency[] = [
-    {
-      symbol: Currency.SymbolEnum.Jpy,
-      rate: 1.78
-    },
-    {
-      symbol: Currency.SymbolEnum.Usd,
-      rate: 1.45
-    },
-    {
-      symbol: Currency.SymbolEnum.Eur,
-      rate: 1.30
-    }];
-
-
   ngOnInit(): void {
   }
 
@@ -43,8 +30,8 @@ export class CarsItemComponent implements OnInit {
   }
 
   public getPrice():number {
-    let rateUsd = this.currencyTest.find(sym => sym.symbol == Currency.SymbolEnum.Usd);
-    let selectedRate = this.currencyTest.find(sym => sym.symbol == this.inputSearch.selectedCurrencySymbol);
+    let rateUsd = this.currency?.find(sym => sym.symbol == Currency.SymbolEnum.Usd);
+    let selectedRate = this.currency?.find(sym => sym.symbol == this.inputSearch.selectedCurrencySymbol);
     if (rateUsd != undefined && selectedRate != undefined)
       return Math.round(this.car.price / rateUsd.rate! * selectedRate.rate!*100)/100;
     else return -1;
