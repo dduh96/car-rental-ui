@@ -135,7 +135,7 @@ export class OpeningHoursService {
             }
         }
 
-        return this.httpClient.get<Array<OpeningHours>>(`${this.configuration.basePath}/api/v1/opening-hours`,
+        return this.httpClient.get<Array<OpeningHours>>(`${this.configuration.basePath}/opening-hours`,
             {
                 context: localVarHttpContext,
                 responseType: <any>responseType_,
@@ -199,7 +199,7 @@ export class OpeningHoursService {
             }
         }
 
-        return this.httpClient.get<OpeningHours>(`${this.configuration.basePath}/api/v1/opening-hours/${encodeURIComponent(String(id))}`,
+        return this.httpClient.get<OpeningHours>(`${this.configuration.basePath}/opening-hours/${encodeURIComponent(String(id))}`,
             {
                 context: localVarHttpContext,
                 responseType: <any>responseType_,

@@ -152,7 +152,7 @@ export class AuthService {
             }
         }
 
-        return this.httpClient.post<AuthenticationResponse>(`${this.configuration.basePath}/api/v1/auth/admin`,
+        return this.httpClient.post<AuthenticationResponse>(`${this.configuration.basePath}/auth/admin`,
             loginAdminRequest,
             {
                 context: localVarHttpContext,
@@ -226,7 +226,7 @@ export class AuthService {
             }
         }
 
-        return this.httpClient.post<AuthenticationResponse>(`${this.configuration.basePath}/api/v1/auth/order`,
+        return this.httpClient.post<AuthenticationResponse>(`${this.configuration.basePath}/auth/order`,
             loginOrderRequest,
             {
                 context: localVarHttpContext,
