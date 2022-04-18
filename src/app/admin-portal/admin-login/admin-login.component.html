@@ -1,0 +1,29 @@
+<div class="alignment">
+  <form name="login" action="" method="post" [formGroup]="loginForm" (submit)="login()">
+    <p class="header">Please provide email-address and password</p>
+    <table>
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width" appearance="standard">
+            <mat-label>Email</mat-label>
+            <input [(ngModel)]="credentials.email" [ngModelOptions]="{standalone: true}" matInput type="email"  placeholder="pat@example.com"/>
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <mat-form-field appearance="standard">
+            <mat-label>Password</mat-label>
+            <input [(ngModel)]="credentials.password" [ngModelOptions]="{standalone: true}" matInput type="password" placeholder="password"/>
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button style="width: 72%;" mat-raised-button color="primary" (click)="login()">Login</button>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
+

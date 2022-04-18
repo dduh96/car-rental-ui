@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   GAPI_KEY: "AIzaSyCI6Lh4SP_YcEmC444sEbpHI3Gnsdi4NIg",
-  BASE_PATH: 'http://localhost:8080/api/v1',
+  BASE_PATH: 'http://localhost:8080',
   COLLECTION_FORMATS: {
     'csv': ',',
     'tsv': '   ',

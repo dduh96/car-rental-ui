@@ -8,7 +8,7 @@ import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatButtonModule} from "@angular/material/button";
 import {LocationsComponent} from './customer-portal/locations/locations.component';
 import {CarsItemComponent} from './customer-portal/cars/cars-item/cars-item.component';
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from "@angular/common/http";
 import {MatGridListModule} from "@angular/material/grid-list";
 import {MatSelectModule} from "@angular/material/select";
@@ -16,14 +16,17 @@ import {MatDatepickerModule} from "@angular/material/datepicker";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatInputModule} from "@angular/material/input";
 import {MDBRootModule} from "angular-bootstrap-md";
-import {ApiModule} from "./api/api.module";
 import {AgmCoreModule} from "@agm/core";
 import {environment} from "../environments/environment";
 import {CustomerServiceComponent} from './customer-portal/customer-service/customer-service.component';
 import {MatNativeDateModule} from "@angular/material/core";
 import {BookCarComponent} from './customer-portal/cars/book-car/book-car.component';
+import {MatDialogModule} from "@angular/material/dialog";
+import { OrderLoginComponent } from './customer-portal/order-login/order-login.component';
+import {MatFormFieldModule} from "@angular/material/form-field";
 import { BookingConfirmationComponent } from './customer-portal/cars/booking-confirmation/booking-confirmation.component';
 import {MatRadioModule} from "@angular/material/radio";
+import { AdminLoginComponent } from './admin-portal/admin-login/admin-login.component';
 
 
 const routes = [
@@ -57,12 +60,13 @@ const routes = [
     CarsItemComponent,
     BookCarComponent,
     CustomerServiceComponent,
-    BookingConfirmationComponent
+    OrderLoginComponent,
+    BookingConfirmationComponent,
+    AdminLoginComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
-    ApiModule,
     MatToolbarModule,
     MatButtonModule,
     FormsModule,
@@ -79,7 +83,9 @@ const routes = [
     MDBRootModule,
     MatNativeDateModule,
     ReactiveFormsModule,
-    MatRadioModule
+    MatRadioModule,
+    MatDialogModule,
+    MatFormFieldModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
