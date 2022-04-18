@@ -14,84 +14,6 @@ import {CurrencyService} from "../../api/currency.service";
   styleUrls: ['./cars.component.css']
 })
 export class CarsComponent implements OnInit {
-  /**Mocking Backend**/
-  public carsTest: Car[] = [{
-    car_id: 1,
-    car_status: Car.CarStatusEnum.Repair,
-    chassis_number: "12i-23423412",
-    manufacturer: "VW",
-    construction_year: "2009",
-    color: "black",
-    model: "Golf",
-    model_series: "6",
-    engine_fuel: "Diesel",
-    engine_fuel_consumption: 8,
-    engine_performance: 12,
-    engine_type: "type A",
-    gear_type: "Automatic",
-    adblue: true,
-    seats: 6,
-    price: 169.19,
-    currency_symbol: Car.CurrencySymbolEnum.Usd,
-    picture_link: "https://i.pinimg.com/originals/bf/07/14/bf07144f9a02225c7e058aa8d958d2af.png"
-  },
-    {
-      car_id: 2,
-      car_status: Car.CarStatusEnum.Repair,
-      chassis_number: "12i-23423412",
-      manufacturer: "VW",
-      construction_year: "2009",
-      color: "black",
-      model: "Golf",
-      model_series: "7",
-      engine_fuel: "Diesel",
-      engine_fuel_consumption: 8,
-      engine_performance: 12,
-      engine_type: "type A",
-      gear_type: "Automatic",
-      adblue: true,
-      seats: 6,
-      price: 169.19,
-      currency_symbol: Car.CurrencySymbolEnum.Usd,
-      picture_link: "https://i.pinimg.com/originals/bf/07/14/bf07144f9a02225c7e058aa8d958d2af.png"
-    }, {
-      car_id: 3,
-      car_status: Car.CarStatusEnum.Repair,
-      chassis_number: "12i-23423412",
-      manufacturer: "VW",
-      construction_year: "2009",
-      color: "black",
-      model: "Golf",
-      model_series: "8",
-      engine_fuel: "Diesel",
-      engine_fuel_consumption: 8,
-      engine_performance: 12,
-      engine_type: "type A",
-      gear_type: "Automatic",
-      adblue: true,
-      seats: 6,
-      price: 169.19,
-      currency_symbol: Car.CurrencySymbolEnum.Usd,
-      picture_link: "https://i.pinimg.com/originals/bf/07/14/bf07144f9a02225c7e058aa8d958d2af.png"
-    }];
-  public currencyTest: Currency[] = [
-    {
-      symbol: Currency.SymbolEnum.Jpy,
-      rate: 1.78
-    },
-    {
-      symbol: Currency.SymbolEnum.Usd,
-      rate: 1.45
-    },
-    {
-      symbol: Currency.SymbolEnum.Eur,
-      rate: 1.30
-    }];
-
-
-
-
-
   public cars: Car[] | undefined;
   public currency: Currency[] | undefined;
   public timeList = [
@@ -126,14 +48,9 @@ export class CarsComponent implements OnInit {
     selectedCurrencySymbol: Currency.SymbolEnum.Usd
   };
 
-  constructor(private carService: CarService, private currencyService: CurrencyService, private authService: AuthService) {
+  constructor(private carService: CarService, private currencyService: CurrencyService) {
     carService.getCars(Car.CurrencySymbolEnum.Usd).subscribe(res => this.cars = res);
     currencyService.getCurrencies().subscribe(res => this.currency = res);
-
-    /*authService.loginOrder({
-      order_id: "14aa3925-312c-462e-acf8-279d18e9a9c8",
-      last_name: "Strasser"
-    }).subscribe(res => console.log(res));*/
   }
 
   ngOnInit(): void {
