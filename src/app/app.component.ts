@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {} from 'googlemaps';
 import {MatDialog} from "@angular/material/dialog";
 import {OrderLoginComponent} from "./customer-portal/order-login/order-login.component";
+import {AdminLoginComponent} from "./admin-portal/admin-login/admin-login.component";
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,10 @@ export class AppComponent {
 
   constructor(private dialogRef: MatDialog) {}
 
-  openDialog(){
+  openOrderDialog(){
     this.dialogRef.open(OrderLoginComponent);
+  }
+  openAdminDialog(){
+    this.dialogRef.open(AdminLoginComponent);
   }
 }

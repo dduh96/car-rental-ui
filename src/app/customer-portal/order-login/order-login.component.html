@@ -4,23 +4,20 @@
     <table>
       <tr>
         <td>
-          <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Email</mat-label>
-            <input matInput type="email"  placeholder="Ex. pat@example.com"/>
-            <mat-error *ngIf="viewOrderForm.hasError('email') && !viewOrderForm.hasError('required')">
-              Please enter a valid email address
-            </mat-error>
+          <mat-form-field class="example-full-width" appearance="standard">
+            <mat-label>Lastname</mat-label>
+            <input [(ngModel)]="getOrder.givenLastname" [ngModelOptions]="{standalone: true}" matInput type="string"  placeholder="Strasser"/>
             <mat-error *ngIf="viewOrderForm.hasError('required')">
-              Email is <strong>required</strong>‚
+              Lastname is <strong>required</strong>
             </mat-error>
           </mat-form-field>
         </td>
       </tr>
       <tr>
         <td>
-          <mat-form-field appearance="fill">
-            <mat-label>Order number</mat-label>
-            <input matInput placeholder="order number"/>
+          <mat-form-field appearance="standard">
+            <mat-label>Order ID</mat-label>
+            <input [(ngModel)]="getOrder.givenOrderID" [ngModelOptions]="{standalone: true}" matInput placeholder="14aa3925-312c-462e-acf8-279d18e9a9c8"/>
           </mat-form-field>
         </td>
       </tr>

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {OrderService} from "../../api/order.service";
 import {Order} from "../../model/order";
+import {AuthService} from "../../api/auth.service";
+import {GetOrder} from "./get-order";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 
@@ -18,8 +20,12 @@ export class OrderLoginComponent implements OnInit {
   });
 
   public order: Order | undefined;
+  public getOrder: GetOrder = {
+    givenLastname:'',
+    givenOrderID:''
+  }
 
-  constructor(private orderService: OrderService) { }
+  constructor(private orderService: OrderService, public authService:AuthService) { }
 
   ngOnInit(): void {
   }
@@ -27,8 +33,14 @@ export class OrderLoginComponent implements OnInit {
   public viewOrder(){
       // Logic to update the user will go here, but for now, we'll just log the values
       console.log(
-        this.viewOrderForm.controls['email'].value,
-        this.viewOrderForm.controls['ordernumber'].value,
+        this.getOrder.givenOrderID,
+        this.getOrder.givenLastname
       )
+    this.authService.loginOrder({
+      order_id:this.getOrder.givenOrderID,
+      last_name:this.getOrder.givenLastname
+    }).subscribe(res => console.log(res));
+
+
   }
 }

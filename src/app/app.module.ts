@@ -26,6 +26,7 @@ import { OrderLoginComponent } from './customer-portal/order-login/order-login.c
 import {MatFormFieldModule} from "@angular/material/form-field";
 import { BookingConfirmationComponent } from './customer-portal/cars/booking-confirmation/booking-confirmation.component';
 import {MatRadioModule} from "@angular/material/radio";
+import { AdminLoginComponent } from './admin-portal/admin-login/admin-login.component';
 
 
 const routes = [
@@ -60,12 +61,12 @@ const routes = [
     BookCarComponent,
     CustomerServiceComponent,
     OrderLoginComponent,
-    BookingConfirmationComponent
+    BookingConfirmationComponent,
+    AdminLoginComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
-    ApiModule,
     MatToolbarModule,
     MatButtonModule,
     FormsModule,
