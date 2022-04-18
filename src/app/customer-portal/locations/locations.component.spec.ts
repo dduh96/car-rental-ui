@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LocationsComponent } from './locations.component';
+import {AgmCoreModule, MapsAPILoader} from "@agm/core";
+import {environment} from "../../../environments/environment";
+import {HttpClientTestingModule} from "@angular/common/http/testing";
 
 describe('LocationsComponent', () => {
   let component: LocationsComponent;
@@ -8,7 +11,13 @@ describe('LocationsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LocationsComponent ]
+      declarations: [ LocationsComponent ],
+      imports: [AgmCoreModule.forRoot({
+        apiKey: environment.GAPI_KEY,
+        libraries: ['places']
+      }),
+        HttpClientTestingModule
+      ]
     })
     .compileComponents();
   });
@@ -16,6 +25,7 @@ describe('LocationsComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(LocationsComponent);
     component = fixture.componentInstance;
+
     fixture.detectChanges();
   });
 

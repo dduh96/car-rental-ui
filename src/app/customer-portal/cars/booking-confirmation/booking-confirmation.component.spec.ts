@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BookingConfirmationComponent } from './booking-confirmation.component';
+import {ActivatedRoute} from "@angular/router";
+import {RouterTestingModule} from "@angular/router/testing";
 
 describe('BookingConfirmationComponent', () => {
   let component: BookingConfirmationComponent;
@@ -8,7 +10,8 @@ describe('BookingConfirmationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BookingConfirmationComponent ]
+      declarations: [ BookingConfirmationComponent ],
+      imports: [RouterTestingModule]
     })
     .compileComponents();
   });

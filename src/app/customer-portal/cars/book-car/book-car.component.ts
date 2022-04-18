@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {Car} from "../../../model/car";
-import {inputSearch} from "../inputSearch";
+import {InputSearch} from "../InputSearch";
 import {MyErrorStateMatcher} from "../../../services/MyErrorStateMatcher";
 import {FormControl, Validators} from "@angular/forms";
 import {LocationService} from "../../../api/location.service";
@@ -16,7 +16,7 @@ import {OpeningHours} from "../../../model/openingHours";
 export class BookCarComponent implements OnInit {
   public id: string | undefined;
 
-  @Input('inputSearch') public inputSearch!: inputSearch;
+  @Input('inputSearch') public inputSearch!: InputSearch;
   @Input('visibilityBookCar') visibility!: boolean;
   @Output('visibilityBookCarChange') visibilityChange = new EventEmitter<boolean>();
 

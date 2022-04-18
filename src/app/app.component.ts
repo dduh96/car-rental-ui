@@ -11,13 +11,16 @@ import {AdminLoginComponent} from "./admin-portal/admin-login/admin-login.compon
 })
 export class AppComponent {
   title = 'car-rental-ui';
+  private dialogRef: MatDialog | undefined;
 
-  constructor(private dialogRef: MatDialog) {}
+  constructor(  ) {}
 
   openOrderDialog(){
-    this.dialogRef.open(OrderLoginComponent);
+    /*this.dialogRef.open(OrderLoginComponent);*/
   }
   openAdminDialog(){
+/*
     this.dialogRef.open(AdminLoginComponent);
+*/
   }
 }

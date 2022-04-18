@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {CarService} from "../../api/car.service";
 import {Car} from "../../model/car";
 import {formatDate} from '@angular/common';
-import {inputSearch} from "./inputSearch";
+import {InputSearch} from "./InputSearch";
 import {AuthService} from "../../api/auth.service";
 import {Currency} from "../../model/currency";
 import {CurrencyService} from "../../api/currency.service";
@@ -117,7 +117,7 @@ export class CarsComponent implements OnInit {
   public dateToday = formatDate(Date.now(), 'yyyy-MM-dd', 'en');
   public dateTodayPlusSeven = this.addSeven();
 
-  public inputSearch: inputSearch = {
+  public inputSearch: InputSearch = {
     selectedLocation: "empty",
     selectedTimeFrom: this.timeList[5].value,
     selectedDateFrom: this.dateToday,
