@@ -43,7 +43,7 @@ export class AdminCarsComponent implements OnInit {
 
   public openAddCarDialog(){
     const dialogRef = this.dialog.open(AddCarDialogComponent, {
-      panelClass: "col-lg-8",
+      panelClass: "col-lg-5",
       disableClose: false
     });
 

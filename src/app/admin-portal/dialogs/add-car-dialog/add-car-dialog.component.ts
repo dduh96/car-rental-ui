@@ -23,20 +23,20 @@ export class AddCarDialogComponent implements OnInit {
 
   // car fields
   public car_status: Car.CarStatusEnum = Car.CarStatusEnum.Available;
-  public chassis_number: string = "asd";
-  public manufacturer: string = "VW";
-  public construction_year: string = "2022";
-  public color: string = "black";
-  public model: string = "audi";
-  public model_series: string = "a6";
-  public engine_fuel: string = "diesel";
-  public engine_fuel_consumption: number = 10;
-  public engine_performance: number = 110;
-  public engine_type: string = "asd";
-  public gear_type: string = "asda";
+  public chassis_number: string = "";
+  public manufacturer: string = "";
+  public construction_year: string = "";
+  public color: string = "";
+  public model: string = "";
+  public model_series: string = "";
+  public engine_fuel: string = "";
+  public engine_fuel_consumption: number = 0;
+  public engine_performance: number = 0;
+  public engine_type: string = "";
+  public gear_type: string = "";
   public adblue: boolean = false;
-  public seats: number = 3;
-  public price: number = 12312; //todo issue with form: all fields overwritten with this
+  public seats: number = 0;
+  public price: number = 0; //todo issue with form: all fields overwritten with this
   public currency_symbol: Car.CurrencySymbolEnum = Car.CurrencySymbolEnum.Usd;
   public picture_link: string = "";
 
@@ -51,13 +51,13 @@ export class AddCarDialogComponent implements OnInit {
       controlModel: new FormControl('', [Validators.required]),
       controlModelSeries: new FormControl('', [Validators.required]),
       controlEngineFuel: new FormControl('', [Validators.required]),
-      controlEngineFuelConsumption: new FormControl('', [Validators.required, Validators.pattern(RegExp('^[0-9]*$'))]),
-      controlEnginePerformance: new FormControl('', [Validators.required, Validators.pattern(RegExp('^[0-9]*$'))]),
+      controlEngineFuelConsumption: new FormControl('', [Validators.required, Validators.min(1), Validators.pattern(RegExp('^[0-9]*$'))]),
+      controlEnginePerformance: new FormControl('', [Validators.required, Validators.min(1), Validators.pattern(RegExp('^[0-9]*$'))]),
       controlEngineType: new FormControl('', [Validators.required]),
       controlGearType: new FormControl('', [Validators.required]),
-      controlAdBlue: new FormControl('', []), //todo make drop down
-      controlSeats: new FormControl('', [Validators.required,  Validators.pattern(RegExp('^[0-9]*$'))]),
-      controlPrice: new FormControl('', [Validators.required,  Validators.pattern(RegExp('^[0-9]*$'))]),
+      controlAdBlue: new FormControl('', []),
+      controlSeats: new FormControl('', [Validators.required, Validators.min(1), Validators.pattern(RegExp('^[0-9]*$'))]),
+      controlPrice: new FormControl('', [Validators.required, Validators.min(1), Validators.pattern(RegExp('^[0-9]*$'))]),
       controlPictureLink: new FormControl('', []),
     })
   }
