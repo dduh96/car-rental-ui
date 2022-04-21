@@ -12,7 +12,7 @@ import {CurrencyService} from "../../../api/currency.service";
 export class CarsItemComponent implements OnInit {
 
 
-  constructor(currencyService:CurrencyService) {
+  constructor(currencyService: CurrencyService) {
     currencyService.getCurrencies().subscribe(res => this.currency = res);
   }
 
@@ -20,6 +20,7 @@ export class CarsItemComponent implements OnInit {
   @Input('car') car!: Car;
   public currency: Currency[] | undefined;
   public visibilityBookCar = false;
+
   ngOnInit(): void {
   }
 
@@ -29,11 +30,11 @@ export class CarsItemComponent implements OnInit {
     this.visibilityBookCar = true;
   }
 
-  public getPrice():number {
+  public getPrice(): number {
     let rateUsd = this.currency?.find(sym => sym.symbol == Currency.SymbolEnum.Usd);
     let selectedRate = this.currency?.find(sym => sym.symbol == this.inputSearch.selectedCurrencySymbol);
     if (rateUsd != undefined && selectedRate != undefined)
-      return Math.round(this.car.price / rateUsd.rate! * selectedRate.rate!*100)/100;
+      return Math.round(this.car.price / rateUsd.rate! * selectedRate.rate! * 100) / 100;
     else return -1;
   }
 

@@ -16,7 +16,7 @@ import {CurrencyService} from "../../api/currency.service";
 export class CarsComponent implements OnInit {
   public cars: Car[] | undefined;
   public currency: Currency[] | undefined;
-  public timeList = [
+  public timeList = [ //todo ina: von backend beziehen
     {value: '6', viewValue: '06:00'},
     {value: '7', viewValue: '07:00'},
     {value: '8', viewValue: '08:00'},
@@ -40,7 +40,6 @@ export class CarsComponent implements OnInit {
   public dateTodayPlusSeven = this.addSeven();
 
   public inputSearch: InputSearch = {
-    selectedLocation: "empty",
     selectedTimeFrom: this.timeList[5].value,
     selectedDateFrom: this.dateToday,
     selectedTimeTo: this.timeList[5].value,

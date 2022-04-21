@@ -7,6 +7,13 @@ import {FormControl, Validators} from "@angular/forms";
 import {LocationService} from "../../../api/location.service";
 import {Location} from "../../../model/location";
 import {OpeningHours} from "../../../model/openingHours";
+import {Order} from "../../../model/order";
+import {OrderService} from "../../../api/order.service";
+import {OrderRequest} from "../../../model/orderRequest";
+import {Currency} from "../../../model/currency";
+import {CarService} from "../../../api/car.service";
+import {formatDate} from "@angular/common";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-book-car',
@@ -24,41 +31,26 @@ export class BookCarComponent implements OnInit {
 
   matcher = new MyErrorStateMatcher();
 
-  public openingHoursTest: OpeningHours[] = [
-    {
-      opening_hours_id: 1,
-      monday: "07:00-17:00",
-      tuesday: "07:00-17:00",
-      wednesday: "07:00-17:00",
-      thursday: "07:00-17:00",
-      friday: "07:00-17:00",
-      saturday: "07:00-17:00",
-      sunday: "07:00-17:00",
-    }, {
-      opening_hours_id: 2,
-      monday: "04:00-23:00",
-      tuesday: "04:00-23:00",
-      wednesday: "04:00-23:00",
-      thursday: "04:00-23:00",
-      friday: "04:00-23:00",
-      saturday: "04:00-23:00",
-      sunday: "07:00-17:00",
-    }];
-
-
   public locations: Location[] | undefined;
 
-  public paymentList = [
-    {viewValue: 'Diners Club'},
-    {viewValue: 'Visa'},
-    {viewValue: 'Mastercard'},
-    {viewValue: 'American Express'}
-  ]
+  public selectedLocation = "";
+  public paymentList = Object.keys(Order.MethodOfPaymentEnum);
+  public cardNr = "";
+  public cvv = "";
+  public validUntil = "";
+  public email = "";
+  public firstname = "";
+  public lastname = "";
 
   public selectedPayment = "";
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute, private locationService: LocationService) {
+  constructor(private router: Router,
+              private activatedRoute: ActivatedRoute,
+              private locationService: LocationService,
+              private orderService: OrderService,
+              private carService: CarService) {
     locationService.getLocations().subscribe(res => this.locations = res);
+
   }
 
   ngOnInit(): void {
@@ -67,15 +59,40 @@ export class BookCarComponent implements OnInit {
   public cancel() {
     this.visibility = false;
     this.visibilityChange.emit(this.visibility);
+
   }
 
   public bookCar() {
     //todo erst weiter, wenn alle required erfüllt
 
-    let orderId = "123order123";
-    this.router.navigate(["../confirmation", orderId], {
-      relativeTo: this.activatedRoute
-    });
+    if (this.inputSearch.car_id != undefined && this.locations != undefined && this.selectedLocation != undefined) {
+      const orderRequest: OrderRequest = {
+        car_id: this.inputSearch.car_id,
+        location_of_rental_id: this.locations.find(sym => sym.location_name == this.selectedLocation)?.location_id!,
+        location_of_return_id: this.locations.find(sym => sym.location_name == this.selectedLocation)?.location_id!,
+        date_of_booking: formatDate(Date.now(), 'yyyy-MM-dd', 'en'),
+        date_of_rental: this.inputSearch.selectedDateFrom,
+        date_of_return: this.inputSearch.selectedDateTo,
+        //method_of_payment: this.paymentList.find(pay => pay == this.selectedPayment),//TODO oida.........Dani findet sicher eine Lösung
+        method_of_payment: Order.MethodOfPaymentEnum.AmericanExpress,
+        card_number: this.cardNr,
+        card_security_code: this.cvv,
+        valid_until: this.validUntil,
+        first_name: this.firstname,
+        last_name: this.lastname,
+        email: this.email,
+        order_status: OrderRequest.OrderStatusEnum.Created
+      }
+      this.orderService.createOrder(orderRequest).subscribe(res =>{
+        this.router.navigate(["../confirmation", res.order_id], { //todo order statt ID
+          relativeTo: this.activatedRoute
+        });
+      });
+
+    }
+
+
+
   }
 
 }
