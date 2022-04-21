@@ -1,0 +1,89 @@
+<h1 class="text-center">Cars</h1>
+<button mat-raised-button color="primary" class="pull-right" (click)="openAddCarDialog()">Add New Car</button>
+<div class="clearfix"></div>
+<table mat-table class="mat-elevation-z5 col-lg-12 margin-top-m" [dataSource]="carList">
+
+  <ng-container matColumnDef="car_id" >
+    <th mat-header-cell *matHeaderCellDef> ID </th>
+    <td mat-cell *matCellDef="let car"> {{car.car_id}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="car_status">
+    <th mat-header-cell *matHeaderCellDef> Status </th>
+    <td mat-cell *matCellDef="let car"> {{car.car_status}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="chassis_number">
+    <th mat-header-cell *matHeaderCellDef> Chassis Number </th>
+    <td mat-cell *matCellDef="let car"> {{car.chassis_number}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="manufacturer">
+    <th mat-header-cell *matHeaderCellDef> Manufacturer </th>
+    <td mat-cell *matCellDef="let car"> {{car.manufacturer}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="construction_year">
+    <th mat-header-cell *matHeaderCellDef> Construction Year </th>
+    <td mat-cell *matCellDef="let car"> {{car.construction_year}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="color">
+    <th mat-header-cell *matHeaderCellDef> Color </th>
+    <td mat-cell *matCellDef="let car"> {{car.color}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="model">
+    <th mat-header-cell *matHeaderCellDef> Model </th>
+    <td mat-cell *matCellDef="let car"> {{car.model}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="model_series">
+    <th mat-header-cell *matHeaderCellDef> Series </th>
+    <td mat-cell *matCellDef="let car"> {{car.model_series}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="engine_fuel">
+    <th mat-header-cell *matHeaderCellDef> Engine Fuel </th>
+    <td mat-cell *matCellDef="let car"> {{car.engine_fuel}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="engine_fuel_consumption">
+    <th mat-header-cell *matHeaderCellDef> Fuel Consumption </th>
+    <td mat-cell *matCellDef="let car"> {{car.engine_fuel_consumption}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="engine_performance">
+    <th mat-header-cell *matHeaderCellDef> Engine Performance </th>
+    <td mat-cell *matCellDef="let car"> {{car.engine_performance}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="engine_type">
+    <th mat-header-cell *matHeaderCellDef> Engine Type </th>
+    <td mat-cell *matCellDef="let car"> {{car.engine_type}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="gear_type">
+    <th mat-header-cell *matHeaderCellDef> Gear Type </th>
+    <td mat-cell *matCellDef="let car"> {{car.gear_type}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="adblue">
+    <th mat-header-cell *matHeaderCellDef> Adblue </th>
+    <td mat-cell *matCellDef="let car"> {{car.adblue}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="seats">
+    <th mat-header-cell *matHeaderCellDef> Seats </th>
+    <td mat-cell *matCellDef="let car"> {{car.seats}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="price">
+    <th mat-header-cell *matHeaderCellDef> Price </th>
+    <td mat-cell *matCellDef="let car"> {{car.price +" "+ car.currency_symbol}} </td>
+  </ng-container>
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
