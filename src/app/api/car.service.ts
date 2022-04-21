@@ -174,6 +174,7 @@ export class CarService {
       console.error('An error occurred:', error.error);
     } if (error.status === 400) {
       alert("Could not create car. Please verify your input")
+      console.log('Error:', error.error)
     } else {
       // The backend returned an unsuccessful response code.
       // The response body may contain clues as to what went wrong.

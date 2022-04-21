@@ -7,6 +7,9 @@ import {ParseArgumentException} from "@angular/cli/models/parser";
 import {catchError, throwError} from "rxjs";
 import {HttpErrorResponse} from "@angular/common/http";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {OrderService} from "../../../api/order.service";
+import {Order} from "../../../model/order";
+import {Configuration} from "../../../configuration";
 
 @Component({
   selector: 'app-add-car-dialog',
@@ -37,9 +40,25 @@ export class AddCarDialogComponent implements OnInit {
   public currency_symbol: Car.CurrencySymbolEnum = Car.CurrencySymbolEnum.Usd;
   public picture_link: string = "";
 
+  public adBlueOptions = [true, false];
+
   constructor(public dialogRef: MatDialogRef<AddCarDialogComponent>, public carService: CarService) {
     this.carForm = new FormGroup({
-      required: new FormControl('', [Validators.required])
+      required: new FormControl('', [Validators.required]),
+      controlChassisNumber: new FormControl('', [Validators.required]),
+      controlManufacturer: new FormControl('', [Validators.required]),
+      controlColor: new FormControl('', [Validators.required]),
+      controlModel: new FormControl('', [Validators.required]),
+      controlModelSeries: new FormControl('', [Validators.required]),
+      controlEngineFuel: new FormControl('', [Validators.required]),
+      controlEngineFuelConsumption: new FormControl('', [Validators.required, Validators.pattern(RegExp('^[0-9]*$'))]),
+      controlEnginePerformance: new FormControl('', [Validators.required, Validators.pattern(RegExp('^[0-9]*$'))]),
+      controlEngineType: new FormControl('', [Validators.required]),
+      controlGearType: new FormControl('', [Validators.required]),
+      controlAdBlue: new FormControl('', []), //todo make drop down
+      controlSeats: new FormControl('', [Validators.required,  Validators.pattern(RegExp('^[0-9]*$'))]),
+      controlPrice: new FormControl('', [Validators.required,  Validators.pattern(RegExp('^[0-9]*$'))]),
+      controlPictureLink: new FormControl('', []),
     })
   }
 
@@ -51,16 +70,12 @@ export class AddCarDialogComponent implements OnInit {
     this.dialogRef.close(false);
   }
 
-  private validateInput() {
-
-  }
-
   public onConfirm() {
     const carRequest: CarRequest = {
       car_status: this.car_status,
       chassis_number: this.chassis_number,
       manufacturer: this.manufacturer,
-      construction_year: "undefined",
+      construction_year: undefined,
       color: this.color,
       model: this.model,
       model_series: this.model,

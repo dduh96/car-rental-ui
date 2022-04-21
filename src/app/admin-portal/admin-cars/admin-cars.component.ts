@@ -33,11 +33,9 @@ export class AdminCarsComponent implements OnInit {
   ];
 
 
-  constructor(private carService: CarService, private dialog: MatDialog, private authService: AuthService) {
+  constructor(private carService: CarService, private dialog: MatDialog) {
     carService.getCars(Car.CurrencySymbolEnum.Usd).subscribe( res =>
       this.carList = res);
-
-    authService.loginAdmin({email: "admin", password: "admin123"}).subscribe(res => console.log(res));
   }
 
   ngOnInit(): void {
