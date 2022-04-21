@@ -10,8 +10,6 @@ import {Location} from "../../model/location"
   styleUrls: ['./locations.component.css']
 })
 export class LocationsComponent implements OnInit {
-  @ViewChild('map', {static: false}) public mapElement: ElementRef |undefined ;
-  public gMap: google.maps.Map | undefined;
 
   public address = "Favoritenstraße 226, 1100 Wien";
   public locationList: Location[] = [];

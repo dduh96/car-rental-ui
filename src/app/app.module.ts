@@ -39,7 +39,7 @@ const routes = [
     component: LocationsComponent
   },
   {
-    path: 'booking/:id/:inputSearch',
+    path: 'booking/:id/:InputSearch',
     component: BookCarComponent
   },
   {

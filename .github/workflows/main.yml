@@ -14,8 +14,8 @@ on:
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
-jobs: 
-     
+jobs:
+
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
@@ -25,42 +25,43 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      
+
       - name: Install dependencies from package-lock.json
         run: npm ci
 
       - name: Build project
         run: ./node_modules/.bin/ng build --aot
-      
+
       - name: build artifact
         uses: actions/upload-artifact@v3.0.0
         with:
           name: artifact
           path: dist/*
-  deploy:
-    runs-on: ubuntu-latest
-    env:
-      IMAGE_NAME: us-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/gcr.io/${{ secrets.GCP_APP_NAME }}
-    steps:
-      - uses: actions/checkout@v2
-      
-      - name: 'Authenticate'
-        uses: 'google-github-actions/auth@v0'
-        with:
-          credentials_json: ${{ secrets.GCP_CREDENTIALS }}
-          
-      - name: 'Setup up Cloud SDK'
-        uses: 'google-github-actions/setup-gcloud@v0'
-        
-      - name: 'Configure Docker'
-        run: gcloud auth configure-docker us-docker.pkg.dev --quiet
-        
-      - name: 'Build Docker image'
-        run: docker build . -t $IMAGE_NAME
-        
-      - name: 'Push Docker image'
-        run: docker push $IMAGE_NAME
-        
-        
-      
-  
+# now runs via google cloud
+#  deploy:
+#    runs-on: ubuntu-latest
+#    env:
+#      IMAGE_NAME: us-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/gcr.io/${{ secrets.GCP_APP_NAME }}
+#    steps:
+#      - uses: actions/checkout@v2
+#
+#      - name: 'Authenticate'
+#        uses: 'google-github-actions/auth@v0'
+#        with:
+#          credentials_json: ${{ secrets.GCP_CREDENTIALS }}
+#
+#      - name: 'Setup up Cloud SDK'
+#        uses: 'google-github-actions/setup-gcloud@v0'
+#
+#      - name: 'Configure Docker'
+#        run: gcloud auth configure-docker us-docker.pkg.dev --quiet
+#
+#      - name: 'Build Docker image'
+#        run: docker build . -t $IMAGE_NAME
+#
+#      - name: 'Push Docker image'
+#        run: docker push $IMAGE_NAME
+#
+
+
+

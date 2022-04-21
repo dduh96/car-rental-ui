@@ -1,4 +1,4 @@
-export interface inputSearch {
+export interface InputSearch {
   car_id?: number;
   selectedLocation:string;
   selectedTimeFrom: string;
