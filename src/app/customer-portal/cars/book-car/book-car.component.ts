@@ -47,6 +47,35 @@ export class BookCarComponent implements OnInit {
 
 
   public locations: Location[] | undefined;
+  public locationsTest: Location[] = [
+    {
+      location_id: 1,
+      opening_hours: this.openingHoursTest[0],
+      location_name:"Stephansplatz",
+      street_name:"bla",
+      street_number:"12",
+      city_name: "Vienna",
+      postal_code:1010,
+      email:"email",
+      phone:"phonenr",
+      latitude:"10298314",
+      longitude:"1245678"
+    },
+    {
+      location_id: 2,
+      opening_hours: this.openingHoursTest[1],
+      location_name:"Flughafen",
+      street_name:"bla",
+      street_number:"12",
+      city_name: "Lower Austria",
+      postal_code:1010,
+      email:"email",
+      phone:"phonenr",
+      latitude:"10298314",
+      longitude:"1245678"
+    }
+  ]
+
 
   public paymentList = [
     {viewValue: 'Diners Club'},
