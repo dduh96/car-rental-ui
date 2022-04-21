@@ -1,0 +1,15 @@
+steps:
+  # build the container image
+  - name: "gcr.io/cloud-builders/docker"
+    args: ["build", "-t", "gcr.io/car-rental-ui/car-rental-ui:latest", "."]
+    # push container image
+  - name: "gcr.io/cloud-builders/docker"
+    args: ["push", "gcr.io/car-rental-ui/car-rental-ui:latest"]
+    # deploy container image to GKE
+  - name: "gcr.io/cloud-builders/gke-deploy"
+    args:
+      - run
+      - --filename=.kube/frontend-deployment.yml
+      - --image=gcr.io/car-rental-ui/car-rental-ui:latest
+      - --location=europe-west6-b
+      - --cluster=car-rental-v1
