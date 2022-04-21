@@ -23,14 +23,12 @@ import {MatNativeDateModule} from "@angular/material/core";
 import {BookCarComponent} from './customer-portal/cars/book-car/book-car.component';
 import {MatDialogModule} from "@angular/material/dialog";
 import { OrderLoginComponent } from './customer-portal/order-login/order-login.component';
-import {MatFormFieldModule} from "@angular/material/form-field";
 import { BookingConfirmationComponent } from './customer-portal/cars/booking-confirmation/booking-confirmation.component';
 import {MatRadioModule} from "@angular/material/radio";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import { AdminCarsComponent } from './admin-portal/admin-cars/admin-cars.component';
 import {MatTableModule} from "@angular/material/table";
 import { AddCarDialogComponent } from './admin-portal/dialogs/add-car-dialog/add-car-dialog.component';
-import {MatDialogModule} from "@angular/material/dialog";
 import { AdminLoginComponent } from './admin-portal/admin-login/admin-login.component';
 
 const routes = [
@@ -70,9 +68,9 @@ const routes = [
     CustomerServiceComponent,
     OrderLoginComponent,
     BookingConfirmationComponent,
-    AdminLoginComponent
-    AdminCarsComponent
-    AddCarDialogComponent
+    AdminLoginComponent,
+    AdminCarsComponent,
+    AddCarDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -97,9 +95,8 @@ const routes = [
     MatNativeDateModule,
     ReactiveFormsModule,
     MatRadioModule,
-    MatTableModule
+    MatTableModule,
     MatDialogModule,
-    MatFormFieldModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

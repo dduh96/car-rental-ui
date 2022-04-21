@@ -3,6 +3,9 @@ import {Car} from "../../model/car";
 import {CarService} from "../../api/car.service";
 import {MatDialog} from "@angular/material/dialog";
 import {AddCarDialogComponent} from "../dialogs/add-car-dialog/add-car-dialog.component";
+import {AuthService} from "../../api/auth.service";
+import {OrderService} from "../../api/order.service";
+import {Configuration} from "../../configuration";
 
 @Component({
   selector: 'app-admin-cars',
@@ -30,9 +33,11 @@ export class AdminCarsComponent implements OnInit {
   ];
 
 
-  constructor(private carService: CarService, private dialog: MatDialog) {
+  constructor(private carService: CarService, private dialog: MatDialog, private authService: AuthService) {
     carService.getCars(Car.CurrencySymbolEnum.Usd).subscribe( res =>
       this.carList = res);
+
+    authService.loginAdmin({email: "admin", password: "admin123"}).subscribe(res => console.log(res));
   }
 
   ngOnInit(): void {
