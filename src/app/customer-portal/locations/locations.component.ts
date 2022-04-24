@@ -2,6 +2,7 @@ import {Component, ElementRef, NgZone, OnInit, ViewChild} from '@angular/core';
 import {MapsAPILoader} from "@agm/core";
 import {LocationService} from "../../api/location.service";
 import {Location} from "../../model/location"
+import {Car} from "../../model/car";
 
 
 @Component({
@@ -44,6 +45,5 @@ export class LocationsComponent implements OnInit {
   public parseToNumber(input: string): number {
     return +input;
   }
-
 
 }

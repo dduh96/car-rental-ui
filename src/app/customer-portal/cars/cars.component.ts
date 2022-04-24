@@ -128,6 +128,9 @@ export class CarsComponent implements OnInit {
 
   constructor(private carService: CarService, private currencyService: CurrencyService, private authService: AuthService) {
     carService.getCars(Car.CurrencySymbolEnum.Usd).subscribe(res => this.cars = res);
+    carService.getCars(Car.CurrencySymbolEnum.Usd).subscribe(res => {
+      this.cars = res.filter(car => car.car_status == Car.CarStatusEnum.Available); //todo: test if works
+    });
     currencyService.getCurrencies().subscribe(res => this.currency = res);
 
     /*authService.loginOrder({
@@ -137,7 +140,6 @@ export class CarsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
   }
 
   public addSeven(): string {
@@ -154,9 +156,7 @@ export class CarsComponent implements OnInit {
     this.inputSearch.selectedDateTo = formatDate(date, 'yyyy-MM-dd', 'en');
   }
 
-  public searchCars() {
 
-  }
 
   /* public getCars(){
      this.carService.getAllCars().subscribe(resCars => {

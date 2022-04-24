@@ -49,7 +49,6 @@ export class CarsItemComponent implements OnInit {
       return Math.round(this.car.price / rateUsd.rate! * selectedRate.rate!*100)/100;
     else return -1;
   }
-
 }
 
 
