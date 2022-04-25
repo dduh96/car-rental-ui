@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {} from 'googlemaps';
 import {MatDialog} from "@angular/material/dialog";
 import {OrderLoginComponent} from "./customer-portal/order-login/order-login.component";
@@ -11,8 +11,9 @@ import {AdminLoginComponent} from "./admin-portal/admin-login/admin-login.compon
 })
 export class AppComponent {
   title = 'car-rental-ui';
+  isAdmin = sessionStorage.getItem('BearerToken') != null; // todo is that the right key?
 
-  constructor( private dialogRef: MatDialog ) {}
+  constructor( private dialogRef: MatDialog ) {  }
 
   openOrderDialog(){
     this.dialogRef.open(OrderLoginComponent);

@@ -6,102 +6,106 @@
   <form [formGroup]="carForm" novalidate autocomplete="off">
     <div mat-dialog-content>
 
-      <mat-form-field appearance="fill">
-        <mat-label>Chassis Number</mat-label>
-        <input matInput formControlName="required" placeholder="Chassis Number" [(ngModel)]="chassis_number" [value]="chassis_number">
+      <mat-form-field appearance="fill" class="input-margin-right">
+        <mat-label>Price per day</mat-label>
+        <input matInput formControlName="controlPrice" placeholder="Price per day" [(ngModel)]="price" [value]="price.toString()">
+        <mat-error *ngIf="carForm.controls['controlPrice'].errors">
+          Price must be a number greater than zero.
+        </mat-error>
       </mat-form-field>
-
-      <div class="clearfix"></div>
-
-      <mat-form-field appearance="fill">
-        <mat-label>Manufacturer</mat-label>
-        <input matInput formControlName="required" placeholder="Manufacturer" [(ngModel)]="manufacturer" [value]="manufacturer">
-        <mat-error *ngIf="manufacturer==='oje'">Cannot be empty!</mat-error>
-      </mat-form-field>
-
-      <div class="clearfix"></div>
 
       <mat-form-field appearance="fill">
         <mat-label>Color</mat-label>
-        <input matInput formControlName="required" placeholder="Color" [(ngModel)]="color" [value]="color">
+        <input matInput formControlName="controlColor" placeholder="Color" [(ngModel)]="color" [value]="color">
       </mat-form-field>
 
       <div class="clearfix"></div>
 
-      <mat-form-field appearance="fill">
+      <mat-form-field appearance="fill" class="input-margin-right">
+        <mat-label>Chassis Number</mat-label>
+        <input matInput formControlName="controlChassisNumber" placeholder="Chassis Number" [(ngModel)]="chassis_number" [value]="chassis_number">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="input-margin-right">
+        <mat-label>Manufacturer</mat-label>
+        <input matInput formControlName="controlManufacturer" placeholder="Manufacturer" [(ngModel)]="manufacturer" [value]="manufacturer">
+        <mat-error *ngIf="manufacturer==='oje'">Cannot be empty!</mat-error>
+      </mat-form-field>
+
+
+      <div class="clearfix"></div>
+
+      <mat-form-field appearance="fill" class="input-margin-right">
         <mat-label>Model</mat-label>
-        <input matInput formControlName="required" placeholder="Model" [(ngModel)]="model" [value]="model">
+        <input matInput formControlName="controlModel" placeholder="Model" [(ngModel)]="model" [value]="model">
       </mat-form-field>
-
-      <div class="clearfix"></div>
 
       <mat-form-field appearance="fill">
         <mat-label>Model Series</mat-label>
-        <input matInput formControlName="required" placeholder="Model Series" [(ngModel)]="model_series" [value]="model_series">
+        <input matInput formControlName="controlModelSeries" placeholder="Model Series" [(ngModel)]="model_series" [value]="model_series">
       </mat-form-field>
 
       <div class="clearfix"></div>
       <h2>Technical Specs</h2>
 
-      <mat-form-field appearance="fill">
+      <mat-form-field appearance="fill" class="input-margin-right">
         <mat-label>Engine Fuel</mat-label>
-        <input matInput formControlName="required" placeholder="Engine Fuel" [(ngModel)]="engine_fuel" [value]="engine_fuel">
+        <input matInput formControlName="controlEngineFuel" placeholder="Diesel" [(ngModel)]="engine_fuel" [value]="engine_fuel">
       </mat-form-field>
-
-      <div class="clearfix"></div>
-
-      <mat-form-field appearance="fill">
-        <mat-label>Engine Fuel Consumption</mat-label>
-        <input matInput formControlName="required" placeholder="Engine Fuel Consumptio" [(ngModel)]="engine_fuel_consumption" [value]="engine_fuel_consumption.toString()">
-      </mat-form-field>
-
-      <div class="clearfix"></div>
-
-      <mat-form-field appearance="fill">
-        <mat-label>Engine Performance</mat-label>
-        <input matInput formControlName="required" placeholder="Engine Performance" [(ngModel)]="engine_performance" [value]="engine_performance.toString()">
-      </mat-form-field>
-
-      <div class="clearfix"></div>
-
-      <mat-form-field appearance="fill">
-        <mat-label>Engine Type</mat-label>
-        <input matInput formControlName="required" placeholder="Engine Type" [(ngModel)]="engine_type" [value]="engine_type">
-      </mat-form-field>
-
-      <div class="clearfix"></div>
 
       <mat-form-field appearance="fill">
         <mat-label>Gear Type</mat-label>
-        <input matInput formControlName="required" placeholder="Gear Type" [(ngModel)]="gear_type" [value]="gear_type">
+        <input matInput formControlName="controlGearType" placeholder="Gear Type" [(ngModel)]="gear_type" [value]="gear_type">
       </mat-form-field>
 
       <div class="clearfix"></div>
+
+      <mat-form-field appearance="fill" class="input-margin-right">
+        <mat-label>Engine Fuel Consumption</mat-label>
+        <input matInput formControlName="controlEngineFuelConsumption" placeholder="Engine Fuel Consumption" [(ngModel)]="engine_fuel_consumption" [value]="engine_fuel_consumption.toString()">
+        <mat-error *ngIf="carForm.controls['controlEngineFuelConsumption'].errors">
+          Fuel Consumption must be a number greater than zero.
+        </mat-error>
+      </mat-form-field>
 
       <mat-form-field appearance="fill">
         <mat-label>Adblue</mat-label>
-        <input matInput formControlName="required" placeholder="Adblue" [(ngModel)]="adblue" [value]="adblue.toString()">
+        <!--<input matInput formControlName="controlAdBlue" placeholder="Adblue" [(ngModel)]="adblue" [value]="adblue.toString()">-->
+        <mat-select formControlName="controlAdBlue"  [(value)]="adblue" name="adblue">
+          <mat-option *ngFor="let option of adBlueOptions" [value]="option">
+            {{option}}
+          </mat-option>
+        </mat-select>
       </mat-form-field>
 
       <div class="clearfix"></div>
+
+      <mat-form-field appearance="fill" class="input-margin-right">
+        <mat-label>Engine Performance</mat-label>
+        <input matInput formControlName="controlEnginePerformance" placeholder="Engine Performance" [(ngModel)]="engine_performance" [value]="engine_performance.toString()">
+        <mat-error *ngIf="carForm.controls['controlEnginePerformance'].errors">
+          Engine Performance must be a number greater than zero.
+        </mat-error>
+      </mat-form-field>
 
       <mat-form-field appearance="fill">
         <mat-label>Seats</mat-label>
-        <input matInput formControlName="required" placeholder="No. of Seats" [(ngModel)]="seats" [value]="seats.toString()">
+        <input matInput formControlName="controlSeats" placeholder="No. of Seats" [(ngModel)]="seats" [value]="seats.toString()">
+        <mat-error *ngIf="carForm.controls['controlSeats'].errors">
+          Seats must be a number greater than zero.
+        </mat-error>
       </mat-form-field>
 
       <div class="clearfix"></div>
 
-      <mat-form-field appearance="fill">
-        <mat-label>Price</mat-label>
-        <input matInput formControlName="required" placeholder="Price" [(ngModel)]="price" [value]="price.toString()"><!-- + ' ' + currency_symbol todo: https://dev.to/jwp/angular-10-ngmodel-and-formcontrols-e0g this is the issue, but also form control generally breaks two-way-binding-->
+      <mat-form-field appearance="fill" class="input-margin-right">
+        <mat-label>Engine Type</mat-label>
+        <input matInput formControlName="controlEngineType" placeholder="Engine Type" [(ngModel)]="engine_type" [value]="engine_type">
       </mat-form-field>
-
-      <div class="clearfix"></div>
 
       <mat-form-field appearance="fill">
         <mat-label>Image Link</mat-label>
-        <input matInput formControlName="required" placeholder="Image Link" [(ngModel)]="picture_link" [value]="picture_link">
+        <input matInput formControlName="controlPictureLink" placeholder="Image Link" [(ngModel)]="picture_link" [value]="picture_link">
       </mat-form-field>
 
     </div>

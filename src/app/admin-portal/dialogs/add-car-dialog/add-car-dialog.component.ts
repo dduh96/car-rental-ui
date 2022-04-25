@@ -7,6 +7,9 @@ import {ParseArgumentException} from "@angular/cli/models/parser";
 import {catchError, throwError} from "rxjs";
 import {HttpErrorResponse} from "@angular/common/http";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {OrderService} from "../../../api/order.service";
+import {Order} from "../../../model/order";
+import {Configuration} from "../../../configuration";
 
 @Component({
   selector: 'app-add-car-dialog',
@@ -20,26 +23,42 @@ export class AddCarDialogComponent implements OnInit {
 
   // car fields
   public car_status: Car.CarStatusEnum = Car.CarStatusEnum.Available;
-  public chassis_number: string = "asd";
-  public manufacturer: string = "VW";
-  public construction_year: string = "2022";
-  public color: string = "black";
-  public model: string = "audi";
-  public model_series: string = "a6";
-  public engine_fuel: string = "diesel";
-  public engine_fuel_consumption: number = 10;
-  public engine_performance: number = 110;
-  public engine_type: string = "asd";
-  public gear_type: string = "asda";
+  public chassis_number: string = "";
+  public manufacturer: string = "";
+  public construction_year: string = "";
+  public color: string = "";
+  public model: string = "";
+  public model_series: string = "";
+  public engine_fuel: string = "";
+  public engine_fuel_consumption: number = 0;
+  public engine_performance: number = 0;
+  public engine_type: string = "";
+  public gear_type: string = "";
   public adblue: boolean = false;
-  public seats: number = 3;
-  public price: number = 12312; //todo issue with form: all fields overwritten with this
+  public seats: number = 0;
+  public price: number = 0; //todo issue with form: all fields overwritten with this
   public currency_symbol: Car.CurrencySymbolEnum = Car.CurrencySymbolEnum.Usd;
   public picture_link: string = "";
 
+  public adBlueOptions = [true, false];
+
   constructor(public dialogRef: MatDialogRef<AddCarDialogComponent>, public carService: CarService) {
     this.carForm = new FormGroup({
-      required: new FormControl('', [Validators.required])
+      required: new FormControl('', [Validators.required]),
+      controlChassisNumber: new FormControl('', [Validators.required]),
+      controlManufacturer: new FormControl('', [Validators.required]),
+      controlColor: new FormControl('', [Validators.required]),
+      controlModel: new FormControl('', [Validators.required]),
+      controlModelSeries: new FormControl('', [Validators.required]),
+      controlEngineFuel: new FormControl('', [Validators.required]),
+      controlEngineFuelConsumption: new FormControl('', [Validators.required, Validators.min(1), Validators.pattern(RegExp('^[0-9]*$'))]),
+      controlEnginePerformance: new FormControl('', [Validators.required, Validators.min(1), Validators.pattern(RegExp('^[0-9]*$'))]),
+      controlEngineType: new FormControl('', [Validators.required]),
+      controlGearType: new FormControl('', [Validators.required]),
+      controlAdBlue: new FormControl('', []),
+      controlSeats: new FormControl('', [Validators.required, Validators.min(1), Validators.pattern(RegExp('^[0-9]*$'))]),
+      controlPrice: new FormControl('', [Validators.required, Validators.min(1), Validators.pattern(RegExp('^[0-9]*$'))]),
+      controlPictureLink: new FormControl('', []),
     })
   }
 
@@ -51,16 +70,12 @@ export class AddCarDialogComponent implements OnInit {
     this.dialogRef.close(false);
   }
 
-  private validateInput() {
-
-  }
-
   public onConfirm() {
     const carRequest: CarRequest = {
       car_status: this.car_status,
       chassis_number: this.chassis_number,
       manufacturer: this.manufacturer,
-      construction_year: "undefined",
+      construction_year: undefined,
       color: this.color,
       model: this.model,
       model_series: this.model,
