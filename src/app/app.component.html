@@ -14,7 +14,7 @@
   <div class="banner-text">
     <h1 class="title">We got the car you need</h1>
     <p>and here is a subtitle</p>
-    <button mat-raised-button color="accent" [routerLink]="'/services'">Our services</button>
+    <button mat-raised-button color="accent" [routerLink]="''">Our services</button>
   </div>
 </div>
 
@@ -24,6 +24,7 @@
   <a class="button-element" mat-button [routerLink]="'/cars'">Cars</a>
   <a class="button-element" mat-button [routerLink]="'/locations'">Locations</a>
   <a class="button-element" mat-button *ngIf="isAdmin" [routerLink]="'/admin-cars'">Admin Cars </a>
+  <a mat-button [routerLink]="'/admin-order'">View Orders Admin</a>
   <span class="button-element"></span>
 </mat-toolbar>
 <div class="alignment">
