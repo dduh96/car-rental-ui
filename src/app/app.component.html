@@ -19,10 +19,12 @@
 </div>
 
 <mat-toolbar color="accent">
-  <a mat-button [routerLink]="'/services'">Services</a>
-  <a mat-button [routerLink]="'/cars'">Cars</a>
-  <a mat-button [routerLink]="'/locations'">Locations</a>
-  <a mat-button *ngIf="isAdmin" [routerLink]="'/admin-cars'">Admin Cars </a>
+  <span class="button-element"></span>
+  <a class="button-element" mat-button [routerLink]="'/services'">Services</a>
+  <a class="button-element" mat-button [routerLink]="'/cars'">Cars</a>
+  <a class="button-element" mat-button [routerLink]="'/locations'">Locations</a>
+  <a class="button-element" mat-button *ngIf="isAdmin" [routerLink]="'/admin-cars'">Admin Cars </a>
+  <span class="button-element"></span>
 </mat-toolbar>
 <div class="alignment">
   <router-outlet></router-outlet>
