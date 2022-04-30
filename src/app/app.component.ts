@@ -21,4 +21,5 @@ export class AppComponent {
   openAdminDialog(){
     this.dialogRef.open(AdminLoginComponent);
   }
+
 }
