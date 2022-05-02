@@ -47,7 +47,6 @@ describe('CarsItemComponent', () => {
     component.car = mockCar;
 
     const mockInputSearch: InputSearch = {
-      selectedLocation: "empty",
       selectedTimeFrom: "now",
       selectedDateFrom: "this.dateToday",
       selectedTimeTo: "this.timeList[5].value",
