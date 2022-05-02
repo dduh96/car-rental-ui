@@ -30,12 +30,12 @@ export class CarsItemComponent implements OnInit {
     this.visibilityBookCar = true;
   }
 
-  public getPrice(): number {
+  public getPrice(): string {
     let rateUsd = this.currency?.find(sym => sym.symbol == Currency.SymbolEnum.Usd);
     let selectedRate = this.currency?.find(sym => sym.symbol == this.inputSearch.selectedCurrencySymbol);
     if (rateUsd != undefined && selectedRate != undefined)
-      return Math.round(this.car.price / rateUsd.rate! * selectedRate.rate! * 100) / 100;
-    else return -1;
+      return ((this.car.price / rateUsd.rate! * selectedRate.rate!)/100).toFixed(2);
+    else return "";
   }
 
 }

@@ -82,17 +82,16 @@ export class BookCarComponent implements OnInit {
         last_name: this.lastname,
         email: this.email,
         order_status: OrderRequest.OrderStatusEnum.Created
-      }
-      this.orderService.createOrder(orderRequest).subscribe(res =>{
-        this.router.navigate(["../confirmation", res.order_id], { //todo order statt ID
-          relativeTo: this.activatedRoute
-        });
+      };
+
+      this.orderService.createOrder(orderRequest).subscribe(order => {
+        if (order.orderId != undefined) {
+          this.router.navigate(["../confirmation", order.orderId], {
+            relativeTo: this.activatedRoute
+          });
+        }
       });
 
     }
-
-
-
   }
-
 }

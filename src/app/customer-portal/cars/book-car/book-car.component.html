@@ -18,7 +18,7 @@
         <mat-form-field appearance="fill">
           <mat-label>Pick-up location</mat-label>
           <mat-select [(ngModel)]="selectedLocation" name="location">
-            <mat-option *ngFor="let loc of locations" [value]="loc.city_name">
+            <mat-option *ngFor="let loc of locations" [value]="loc.location_name">
               {{loc.street_name}}, {{loc.postal_code}}
             </mat-option>
           </mat-select>
