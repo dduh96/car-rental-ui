@@ -52,7 +52,7 @@ const routes = [
     component: BookingConfirmationComponent
   },
   {
-    path: '', //default
+    path: 'services',
     component: CustomerServiceComponent
   },
   {

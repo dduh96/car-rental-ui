@@ -30,6 +30,7 @@ import { LoginOrderRequest } from '../model/loginOrderRequest';
 // @ts-ignore
 import { environment}                     from '../../environments/environment';
 import { Configuration }                                     from '../configuration';
+import {Credentials} from "../admin-portal/admin-login/credentials";
 
 
 
@@ -238,6 +239,14 @@ export class AuthService {
                 reportProgress: reportProgress
             }
         );
+    }
+
+    public getAdminCredentials(): any {
+      if(sessionStorage.getItem('admin_token')!= null) {
+        return {'bearerAuth': sessionStorage.getItem("admin_token")};
+      } else {
+        return undefined;
+      }
     }
 
 }

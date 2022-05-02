@@ -10,6 +10,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {OrderService} from "../../../api/order.service";
 import {Order} from "../../../model/order";
 import {Configuration} from "../../../configuration";
+import {AuthService} from "../../../api/auth.service";
 
 @Component({
   selector: 'app-add-car-dialog',
@@ -42,21 +43,20 @@ export class AddCarDialogComponent implements OnInit {
 
   public adBlueOptions = [true, false];
 
-  constructor(public dialogRef: MatDialogRef<AddCarDialogComponent>, public carService: CarService) {
+  constructor(public dialogRef: MatDialogRef<AddCarDialogComponent>, public carService: CarService, public authService: AuthService) {
     this.carForm = new FormGroup({
-      required: new FormControl('', [Validators.required]),
       controlChassisNumber: new FormControl('', [Validators.required]),
       controlManufacturer: new FormControl('', [Validators.required]),
       controlColor: new FormControl('', [Validators.required]),
       controlModel: new FormControl('', [Validators.required]),
       controlModelSeries: new FormControl('', [Validators.required]),
       controlEngineFuel: new FormControl('', [Validators.required]),
-      controlEngineFuelConsumption: new FormControl('', [Validators.required, Validators.min(1), Validators.pattern(RegExp('^[0-9]*$'))]),
+      controlEngineFuelConsumption: new FormControl('', [Validators.required, Validators.min(1), Validators.max(100)]),
       controlEnginePerformance: new FormControl('', [Validators.required, Validators.min(1), Validators.pattern(RegExp('^[0-9]*$'))]),
       controlEngineType: new FormControl('', [Validators.required]),
       controlGearType: new FormControl('', [Validators.required]),
       controlAdBlue: new FormControl('', []),
-      controlSeats: new FormControl('', [Validators.required, Validators.min(1), Validators.pattern(RegExp('^[0-9]*$'))]),
+      controlSeats: new FormControl('', [Validators.required, Validators.min(1), Validators.max(8), Validators.pattern(RegExp('^[0-9]*$'))]),
       controlPrice: new FormControl('', [Validators.required, Validators.min(1), Validators.pattern(RegExp('^[0-9]*$'))]),
       controlPictureLink: new FormControl('', []),
     })
@@ -69,6 +69,7 @@ export class AddCarDialogComponent implements OnInit {
   public onDismiss() {
     this.dialogRef.close(false);
   }
+  
 
   public onConfirm() {
     const carRequest: CarRequest = {
@@ -91,10 +92,16 @@ export class AddCarDialogComponent implements OnInit {
       picture_link: this.picture_link
     };
 
-    this.carService.createCar(carRequest).subscribe(res => {
-      console.log(res);
-      this.dialogRef.close(true);
-    })
+
+    if(this.authService.getAdminCredentials() != undefined) {
+      // @ts-ignore
+      this.carService.configuration.credentials = this.authService.getAdminCredentials();
+      this.carService.createCar(carRequest).subscribe(res => {
+        console.log(res);
+        this.dialogRef.close(true);
+      })
+    }
+
 
 
   }

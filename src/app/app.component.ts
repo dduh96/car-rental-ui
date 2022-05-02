@@ -3,6 +3,7 @@ import {} from 'googlemaps';
 import {MatDialog} from "@angular/material/dialog";
 import {OrderLoginComponent} from "./customer-portal/order-login/order-login.component";
 import {AdminLoginComponent} from "./admin-portal/admin-login/admin-login.component";
+import {filter, fromEvent, map} from "rxjs";
 
 @Component({
   selector: 'app-root',
@@ -11,9 +12,12 @@ import {AdminLoginComponent} from "./admin-portal/admin-login/admin-login.compon
 })
 export class AppComponent {
   title = 'car-rental-ui';
-  isAdmin = sessionStorage.getItem('BearerToken') != null; // todo is that the right key?
+  isAdmin = sessionStorage.getItem('admin_token') != null;
 
-  constructor( private dialogRef: MatDialog ) {  }
+
+  constructor( private dialogRef: MatDialog ) {
+
+  }
 
   openOrderDialog(){
     this.dialogRef.open(OrderLoginComponent);
