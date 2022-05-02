@@ -55,6 +55,10 @@ const routes = [
   {
     path: 'admin-cars',
     component: AdminCarsComponent
+  },
+  {
+    path: '',
+    component: CustomerServiceComponent
   }
 ]
 
