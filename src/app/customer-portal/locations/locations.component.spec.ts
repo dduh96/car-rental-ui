@@ -12,11 +12,12 @@ describe('LocationsComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ LocationsComponent ],
-      imports: [AgmCoreModule.forRoot({
+      imports: [
+        AgmCoreModule.forRoot({
         apiKey: environment.GAPI_KEY,
         libraries: ['places']
       }),
-        HttpClientTestingModule
+        HttpClientTestingModule,
       ]
     })
     .compileComponents();
