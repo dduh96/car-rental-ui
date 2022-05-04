@@ -4,6 +4,7 @@ import {Order} from "../../model/order";
 import {AuthService} from "../../api/auth.service";
 import {GetOrder} from "./get-order";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {ActivatedRoute, Router} from "@angular/router";
 
 
 
@@ -25,7 +26,10 @@ export class OrderLoginComponent implements OnInit {
     givenOrderID:''
   }
 
-  constructor(private orderService: OrderService, public authService:AuthService) { }
+  constructor(private orderService: OrderService,
+              public authService:AuthService,
+              private router: Router,
+              private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
   }
@@ -36,10 +40,17 @@ export class OrderLoginComponent implements OnInit {
         this.getOrder.givenOrderID,
         this.getOrder.givenLastname
       )
+
     this.authService.loginOrder({
       order_id:this.getOrder.givenOrderID,
       last_name:this.getOrder.givenLastname
-    }).subscribe(res => console.log(res));
+    }).subscribe(res => {
+      if (this.getOrder.givenOrderID != undefined) {
+        this.router.navigate(["../confirmation", this.getOrder.givenOrderID], {
+          relativeTo: this.activatedRoute
+        });
+      }
+    });
 
 
   }
