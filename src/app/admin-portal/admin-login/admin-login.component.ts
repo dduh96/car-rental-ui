@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Credentials} from "./credentials";
 import {AuthService} from "../../api/auth.service";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {MatDialogRef} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-admin-login',
@@ -19,7 +20,7 @@ export class AdminLoginComponent implements OnInit {
     password:''
   }
 
-  constructor(public authService:AuthService) { }
+  constructor(public dialogRef: MatDialogRef<AdminLoginComponent>, public authService:AuthService) { }
 
   ngOnInit(): void {
   }
@@ -28,7 +29,13 @@ export class AdminLoginComponent implements OnInit {
     this.authService.loginAdmin({
       email:this.credentials.email,
       password:this.credentials.password
-    }).subscribe(res => sessionStorage.setItem('admin_token', res.token));
+    }).subscribe(res => {
+      if(res != undefined){
+        sessionStorage.setItem('admin_token', res.token)
+        this.dialogRef.close(true);
+      }
+
+    });
 
   }
 

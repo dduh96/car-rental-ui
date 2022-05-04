@@ -6,6 +6,8 @@
       </a>
     </div>
     <span class="example-spacer" ></span>
+    <a class="button-element" mat-button *ngIf="isAdmin" [routerLink]="'/admin-cars'">Car Administration</a>
+    <a class="button-element" mat-button *ngIf="isAdmin" [routerLink]="'/admin-order'">Order Administration</a>
       <a mat-button (click)="openOrderDialog()">View Order</a>
       <a mat-button (click)="openAdminDialog()">Admin</a>
   </mat-toolbar>
@@ -23,8 +25,6 @@
   <a class="button-element" mat-button [routerLink]="'/services'">Services</a>
   <a class="button-element" mat-button [routerLink]="'/cars'">Cars</a>
   <a class="button-element" mat-button [routerLink]="'/locations'">Locations</a>
-  <a class="button-element" mat-button *ngIf="isAdmin" [routerLink]="'/admin-cars'">Admin Cars </a>
-  <a mat-button [routerLink]="'/admin-order'">View Orders Admin</a>
   <span class="button-element"></span>
 </mat-toolbar>
 <div class="alignment">

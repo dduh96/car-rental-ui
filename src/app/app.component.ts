@@ -15,15 +15,22 @@ export class AppComponent {
   isAdmin = sessionStorage.getItem('admin_token') != null;
 
 
-  constructor( private dialogRef: MatDialog ) {
+  constructor( private dialog: MatDialog ) {
 
   }
 
   openOrderDialog(){
-    this.dialogRef.open(OrderLoginComponent);
+    this.dialog.open(OrderLoginComponent).afterClosed().subscribe( res => {
+      if (res)
+        window.location.reload();
+    });
   }
+
   openAdminDialog(){
-    this.dialogRef.open(AdminLoginComponent);
+    this.dialog.open(AdminLoginComponent).afterClosed().subscribe( res => {
+      if (res)
+        window.location.reload();
+    });
   }
 
 }
