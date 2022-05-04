@@ -1,5 +1,6 @@
 <div *ngIf="visibility==true" class="alignment">
-  <div class="header">Booking data: </div><br>
+  <div class="header">Booking data:</div>
+  <br>
   <table>
     <tr>
       <td>From:</td>
@@ -28,76 +29,98 @@
   </table>
 
   <form name="booking" action="" method="post">
-    <mat-form-field class="full-width, forminput" appearance="fill" >
+    <mat-form-field class="full-width, forminput" appearance="fill">
       <mat-label>Firstname</mat-label>
-      <input matInput placeholder="Max" name="firstname" [formControl]="emailFormControl" [errorStateMatcher]="matcher" [(ngModel)]="firstname" required/>
-      <mat-error *ngIf="emailFormControl.hasError('required')">
+      <input matInput placeholder="Max" name="firstname" formControlName="firstnameFormControl"
+             [errorStateMatcher]="matcher" [(ngModel)]="firstname" required/>
+      <mat-error *ngIf="carForm.controls['firstnameFormControl'].hasError('required')">
         Firstname is <strong>required</strong>
       </mat-error>
     </mat-form-field>
 
     <mat-form-field class="full-width, forminput" appearance="fill">
       <mat-label>Lastname</mat-label>
-      <input type="text" matInput placeholder="Musterfrau" name="lastname" [formControl]="emailFormControl" [errorStateMatcher]="matcher" [(ngModel)]="lastname" required/>
-      <mat-error *ngIf="emailFormControl.hasError('required')">
+      <input type="text" matInput placeholder="Musterfrau" name="lastname" formControlName="lastnameFormControl"
+             [errorStateMatcher]="matcher" [(ngModel)]="lastname" required/>
+      <mat-error *ngIf="carForm.controls['lastnameFormControl'].hasError('required')">
         Lastname is <strong>required</strong>
       </mat-error>
     </mat-form-field>
     <br>
     <mat-form-field [style.width.px]=150 class="full-width, forminput" appearance="fill">
       <mat-label>Paymentmethod</mat-label>
-      <mat-select [(ngModel)]="selectedPayment" name="payment" [formControl]="emailFormControl" [errorStateMatcher]="matcher"  required>
-        <mat-option *ngFor="let payment of paymentList" [value]="payment" >
+      <mat-select [(ngModel)]="selectedPayment" name="payment" formControlName="paymentmethFormControl"
+                  [errorStateMatcher]="matcher" required>
+        <mat-option *ngFor="let payment of paymentList" [value]="payment">
           {{payment}}
         </mat-option>
       </mat-select>
-      <mat-error *ngIf="emailFormControl.hasError('required')">
+      <mat-error *ngIf="carForm.controls['paymentmethFormControl'].hasError('required')">
         Payment option is <strong>required</strong>
       </mat-error>
     </mat-form-field>
 
     <mat-form-field class="full-width, forminput" appearance="fill">
       <mat-label>Card number</mat-label>
-      <input type="number" matInput placeholder="4820 1283 4087 8657" name="cardnr" [formControl]="emailFormControl" [errorStateMatcher]="matcher" [(ngModel)]="cardNr" required/>
-      <mat-error *ngIf="emailFormControl.hasError('required')">
+      <input matInput placeholder="4820 1283 4087 8657" name="cardnr" formControlName="cardnrFormControl"
+             [errorStateMatcher]="matcher" [(ngModel)]="cardNr"
+             required/>
+      <mat-error *ngIf="carForm.controls['cardnrFormControl'].hasError('required')">
         Card number is <strong>required</strong>
       </mat-error>
     </mat-form-field>
 
     <br>
-    <mat-form-field class="full-width, forminput" [style.width.px]=100  appearance="fill">
+    <mat-form-field class="full-width, forminput" [style.width.px]=100 appearance="fill">
       <mat-label>CVV</mat-label>
-      <input type="number" matInput placeholder="123" name="cvv" [formControl]="emailFormControl" [errorStateMatcher]="matcher" [(ngModel)]="cvv" required/>
-      <mat-error *ngIf="emailFormControl.hasError('required')">
+      <input matInput placeholder="123" name="cvv" formControlName="cvvFormControl" [errorStateMatcher]="matcher"
+             [(ngModel)]="cvv" required/>
+      <mat-error *ngIf="carForm.controls['cvvFormControl'].hasError('required')">
         CVV is <strong>required</strong>
       </mat-error>
     </mat-form-field>
 
-    <mat-form-field class="full-width, forminput" [style.width.px]=150  appearance="fill">
-      <mat-label>Valid until</mat-label>
-      <input matInput [matDatepicker]="$any(pickerTo)" name="validDate" [formControl]="emailFormControl" [errorStateMatcher]="matcher" [(ngModel)]="validUntil" required/>
-      <mat-datepicker-toggle matSuffix [for]="pickerTo"></mat-datepicker-toggle>
-      <mat-datepicker #pickerTo></mat-datepicker>
-      <mat-error *ngIf="emailFormControl.hasError('required')">
-        Date is <strong>required</strong>
+    <mat-form-field [style.width.px]=150 class="full-width, forminput" appearance="fill">
+      <mat-label>Valid Month</mat-label>
+      <mat-select [(ngModel)]="selectedMonth" name="payment" formControlName="validMonthFormControl"
+                  [errorStateMatcher]="matcher" required>
+        <mat-option *ngFor="let month of monthList" [value]="month">
+          {{month}}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="carForm.controls['validMonthFormControl'].hasError('required')">
+        Valid year is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field [style.width.px]=150 class="full-width, forminput" appearance="fill">
+      <mat-label>Valid Year</mat-label>
+      <mat-select [(ngModel)]="selectedYear" name="payment" formControlName="validYearFormControl"
+                  [errorStateMatcher]="matcher" required>
+        <mat-option *ngFor="let year of yearList" [value]="year">
+          {{year}}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="carForm.controls['validYearFormControl'].hasError('required')">
+        Valid year is <strong>required</strong>
       </mat-error>
     </mat-form-field>
 
     <br>
     <mat-form-field class="example-full-width, forminput" appearance="fill">
       <mat-label>Email</mat-label>
-      <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher" [(ngModel)]="email"
+      <input type="email" matInput formControlName="emailFormControl" [errorStateMatcher]="matcher" [(ngModel)]="email"
              placeholder="max@musterfrau.at">
-      <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+      <mat-error *ngIf="carForm.controls['emailFormControl'].hasError('email') && !carForm.controls['emailFormControl'].hasError('required')">
         Please enter a valid email address
       </mat-error>
-      <mat-error *ngIf="emailFormControl.hasError('required')">
+      <mat-error *ngIf="carForm.controls['emailFormControl'].hasError('email')">
         Email is <strong>required</strong>
       </mat-error>
     </mat-form-field>
     <br>
     <button mat-raised-button color="primary" (click)="cancel()">Cancel</button>
-    <button mat-raised-button color="primary" class="alignment-button" (click)="bookCar()">buy</button>
+    <button mat-raised-button color="primary" [disabled]="!carForm.valid" class="alignment-button" (click)="bookCar()">buy</button>
   </form>
 
 </div>
