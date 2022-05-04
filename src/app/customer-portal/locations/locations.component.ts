@@ -16,10 +16,10 @@ export class LocationsComponent implements OnInit {
   public filteredLocationList: Location[] = [];
   public postalCode = "";
 
-  public defaultLocation = new google.maps.LatLng(48.20896222751492, 16.37060765814223) // Vienna City Center
+  public defaultLocation = new google.maps.LatLng(48.20896222751492, 16.37060765814223); // Vienna City Center
 
   constructor(private mapsApiLoader: MapsAPILoader, private locationService: LocationService, private ngZone: NgZone) {
-    locationService.getLocations().subscribe( res => {
+    locationService.getLocations().subscribe(res => {
       this.locationList = res;
       this.filteredLocationList = res;
     });
@@ -30,11 +30,11 @@ export class LocationsComponent implements OnInit {
   }
 
 
-  public filterByPostalCode(postalCodeString:string){
+  public filterByPostalCode(postalCodeString: string) {
     const postalCode: number = +postalCodeString;
-    if(postalCodeString != ""){
-      this.filteredLocationList = this.locationList.filter( location =>
-        location.postal_code!=undefined  && location.postal_code===postalCode);
+    if (postalCodeString != "") {
+      this.filteredLocationList = this.locationList.filter(location =>
+        location.postal_code != undefined && location.postal_code === postalCode);
     } else {
       this.filteredLocationList = this.locationList
     }

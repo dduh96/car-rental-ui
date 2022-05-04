@@ -1,0 +1,45 @@
+<h1 class="text-center">Orders</h1>
+
+<div>
+  <!--<div *ngFor="let order of orderList">
+    <p>{{order.orderId}}</p>
+  </div>-->
+  <table *ngIf="orderList!=undefined" mat-table class="mat-elevation-z5 col-lg-12 margin-top-m" [dataSource]="orderList">
+    <ng-container matColumnDef="order_id">
+      <th mat-header-cell *matHeaderCellDef> Order ID </th>
+      <td mat-cell *matCellDef="let order"> {{order.orderId}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="customer_name">
+      <th mat-header-cell *matHeaderCellDef> Customer</th>
+      <td mat-cell *matCellDef="let order"> {{order.first_name + " " + order.last_name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="car">
+      <th mat-header-cell *matHeaderCellDef> Car </th>
+      <td mat-cell *matCellDef="let order"> {{order.car.manufacturer + " " + order.car.model + " " + order.car.model_series}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="date_of_booking">
+      <th mat-header-cell *matHeaderCellDef > Date of booking </th>
+      <td mat-cell *matCellDef="let order"> {{order.date_of_booking}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="order_status">
+      <th mat-header-cell *matHeaderCellDef> Status </th>
+      <td mat-cell *matCellDef="let order"> {{order.order_status}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="view_details">
+      <th mat-header-cell *matHeaderCellDef>  </th>
+      <td mat-cell *matCellDef="let order">
+        <button mat-raised-button color="primary" (click)="openOrderDetailsDialog(order)"> View Details</button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+
+</div>

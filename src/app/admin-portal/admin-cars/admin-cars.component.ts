@@ -33,7 +33,7 @@ export class AdminCarsComponent implements OnInit {
   ];
 
 
-  constructor(private carService: CarService, private dialog: MatDialog) {
+  constructor(private carService: CarService, private authService: AuthService, private dialog: MatDialog) {
     carService.getCars(Car.CurrencySymbolEnum.Usd).subscribe( res =>
       this.carList = res);
   }

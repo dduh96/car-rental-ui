@@ -6,6 +6,8 @@
       </a>
     </div>
     <span class="example-spacer" ></span>
+    <a class="button-element" mat-button *ngIf="isAdmin" [routerLink]="'/admin-cars'">Car Administration</a>
+    <a class="button-element" mat-button *ngIf="isAdmin" [routerLink]="'/admin-order'">Order Administration</a>
       <a mat-button (click)="openOrderDialog()">View Order</a>
       <a mat-button (click)="openAdminDialog()">Admin</a>
   </mat-toolbar>
@@ -14,7 +16,7 @@
   <div class="banner-text">
     <h1 class="title">We got the car you need</h1>
     <p>and here is a subtitle</p>
-    <button mat-raised-button color="accent" [routerLink]="'/services'">Our services</button>
+    <button mat-raised-button color="accent" [routerLink]="''">Our services</button>
   </div>
 </div>
 
@@ -23,7 +25,6 @@
   <a class="button-element" mat-button [routerLink]="'/services'">Services</a>
   <a class="button-element" mat-button [routerLink]="'/cars'">Cars</a>
   <a class="button-element" mat-button [routerLink]="'/locations'">Locations</a>
-  <a class="button-element" mat-button *ngIf="isAdmin" [routerLink]="'/admin-cars'">Admin Cars </a>
   <span class="button-element"></span>
 </mat-toolbar>
 <div class="alignment">

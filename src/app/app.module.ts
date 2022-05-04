@@ -30,6 +30,9 @@ import { AdminCarsComponent } from './admin-portal/admin-cars/admin-cars.compone
 import {MatTableModule} from "@angular/material/table";
 import { AddCarDialogComponent } from './admin-portal/dialogs/add-car-dialog/add-car-dialog.component';
 import { AdminLoginComponent } from './admin-portal/admin-login/admin-login.component';
+import { AdminOrderComponent } from './admin-portal/admin-order/admin-order.component';
+import {MatSortModule} from "@angular/material/sort";
+import { OrderDetailDialogComponent } from './admin-portal/dialogs/order-detail-dialog/order-detail-dialog.component';
 
 const routes = [
   {
@@ -59,6 +62,10 @@ const routes = [
   {
     path: '',
     component: CustomerServiceComponent
+  },
+  {
+    path: 'admin-order',
+    component: AdminOrderComponent
   }
 ]
 
@@ -75,6 +82,8 @@ const routes = [
     AdminLoginComponent,
     AdminCarsComponent,
     AddCarDialogComponent,
+    AdminOrderComponent,
+    OrderDetailDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -101,6 +110,7 @@ const routes = [
     MatRadioModule,
     MatTableModule,
     MatDialogModule,
+    MatSortModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

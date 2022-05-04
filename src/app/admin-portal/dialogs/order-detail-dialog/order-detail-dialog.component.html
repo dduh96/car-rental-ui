@@ -1,0 +1,77 @@
+<div>
+  <h1 mat-dialog-title tabindex="0">Order Details</h1>
+
+  <table>
+    <tr >
+      <th class="table-header">Order ID</th>
+      <td>{{order.orderId}}</td>
+    </tr>
+
+    <tr>
+      <th class="table-header">Status</th>
+      <td>
+        <mat-form-field style="margin-top: 2em;" appearance="fill">
+          <mat-label>Change Status</mat-label>
+          <mat-select [(ngModel)]="selectedStatus">
+            <mat-option *ngFor="let item of statusKeys" [value]="item" >{{item}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+    </tr>
+
+    <tr class="table-row">
+      <th class="table-header">Date of Booking</th>
+      <td>{{order.date_of_booking}}</td>
+    </tr>
+  </table>
+
+
+  <h2 style="margin-top: 2em;">Customer</h2>
+  <table>
+    <tr>
+      <th class="table-header">Name</th>
+      <td>{{order.first_name + " " + order.last_name}}</td>
+    </tr>
+
+    <tr>
+      <th class="table-header">E-Mail</th>
+      <td>{{order.email}}</td>
+    </tr>
+
+    <tr>
+      <th class="table-header">Method of payment</th>
+      <td>{{order.method_of_payment}}</td>
+    </tr>
+  </table>
+
+
+  <h2 style="margin-top: 2em;">Car Details</h2>
+  <table>
+    <tr>
+      <th class="table-header">Status</th>
+      <td>{{order.car.car_status}}</td>
+    </tr>
+
+    <tr>
+      <th class="table-header">Car ID</th>
+      <td>{{order.car.car_id}}</td>
+    </tr>
+
+    <tr>
+      <th class="table-header">Manufacturer</th>
+      <td>{{order.car.manufacturer}}</td>
+    </tr>
+
+    <tr>
+      <th class="table-header">Model</th>
+      <td>{{order.car.model + " " + order.car.model_series}}</td>
+    </tr>
+  </table>
+
+
+  <div mat-dialog-actions style="float: right">
+    <button mat-raised-button (click)="onDismiss()">Cancel</button>
+    <button mat-raised-button color="primary" (click)="onConfirm()">Save</button>
+  </div>
+
+</div>
