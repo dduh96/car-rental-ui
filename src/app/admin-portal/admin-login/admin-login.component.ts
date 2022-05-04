@@ -28,7 +28,7 @@ export class AdminLoginComponent implements OnInit {
     this.authService.loginAdmin({
       email:this.credentials.email,
       password:this.credentials.password
-    }).subscribe(res => console.log(res));
+    }).subscribe(res => sessionStorage.setItem('admin_token', res.token));
 
   }
 

@@ -16,26 +16,26 @@ export class AdminOrderComponent implements OnInit, AfterViewInit {
   public orderList: Order[] = [];
 
   displayedColumns: string[] = [
-    "order_id", // todo abbreviated
-    "car", // todo manufacturer + model (series)
+    "order_id",
+    "customer_name",
+    "car",
     "date_of_booking",
-    "date_of_rental",
-    "date_of_return",
     "order_status",
     "view_details"
   ]
 
   /* todo
-  *   only basic info in table, button "View Details" (maybe expandable?), in details: "Update Status"*/
+  *   update order status + car endpoint, update date of rental / date of return */
 
-  constructor(private orderService: OrderService, private dialog: MatDialog) {
+  constructor(private orderService: OrderService, private dialog: MatDialog, private authService: AuthService) {
+    if(authService.getAdminCredentials() != undefined) {
+      // @ts-ignore
+      this.orderService.configuration.credentials = authService.getAdminCredentials();
+    }
+
     this.orderService.getAllOrders().subscribe(res => {
 
       this.orderList = res;
-      const mockOrder = Object.assign({}, this.orderList[0] );
-      mockOrder.orderId = "0";
-      mockOrder.date_of_booking = "2022-05-02"
-      this.orderList.push(mockOrder);
 
     });
 

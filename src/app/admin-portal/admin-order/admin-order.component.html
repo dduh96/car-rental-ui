@@ -10,24 +10,19 @@
       <td mat-cell *matCellDef="let order"> {{order.orderId}} </td>
     </ng-container>
 
+    <ng-container matColumnDef="customer_name">
+      <th mat-header-cell *matHeaderCellDef> Customer</th>
+      <td mat-cell *matCellDef="let order"> {{order.first_name + " " + order.last_name}} </td>
+    </ng-container>
+
     <ng-container matColumnDef="car">
       <th mat-header-cell *matHeaderCellDef> Car </th>
-      <td mat-cell *matCellDef="let order"> {{order.car.manufacturer + " " +order.car.model + " " + order.car.model_series}} </td>
+      <td mat-cell *matCellDef="let order"> {{order.car.manufacturer + " " + order.car.model + " " + order.car.model_series}} </td>
     </ng-container>
 
     <ng-container matColumnDef="date_of_booking">
       <th mat-header-cell *matHeaderCellDef > Date of booking </th>
       <td mat-cell *matCellDef="let order"> {{order.date_of_booking}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="date_of_rental">
-      <th mat-header-cell *matHeaderCellDef> Date of rental </th>
-      <td mat-cell *matCellDef="let order"> {{order.date_of_rental}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="date_of_return">
-      <th mat-header-cell *matHeaderCellDef> Date of Return </th>
-      <td mat-cell *matCellDef="let order"> {{order.date_of_return}} </td>
     </ng-container>
 
     <ng-container matColumnDef="order_status">

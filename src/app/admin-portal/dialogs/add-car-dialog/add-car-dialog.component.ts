@@ -69,7 +69,7 @@ export class AddCarDialogComponent implements OnInit {
   public onDismiss() {
     this.dialogRef.close(false);
   }
-  
+
 
   public onConfirm() {
     const carRequest: CarRequest = {

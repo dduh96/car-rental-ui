@@ -2,7 +2,7 @@
   <h1 mat-dialog-title tabindex="0">Order Details</h1>
 
   <table>
-    <tr class="table-row">
+    <tr >
       <th class="table-header">Order ID</th>
       <td>{{order.orderId}}</td>
     </tr>
@@ -10,7 +10,7 @@
     <tr>
       <th class="table-header">Status</th>
       <td>
-        <mat-form-field appearance="fill">
+        <mat-form-field style="margin-top: 2em;" appearance="fill">
           <mat-label>Change Status</mat-label>
           <mat-select [(ngModel)]="selectedStatus">
             <mat-option *ngFor="let item of statusKeys" [value]="item" >{{item}}</mat-option>
@@ -21,12 +21,12 @@
 
     <tr class="table-row">
       <th class="table-header">Date of Booking</th>
-      <td>{{order.orderId}}</td>
+      <td>{{order.date_of_booking}}</td>
     </tr>
   </table>
 
 
-  <h2>Customer</h2>
+  <h2 style="margin-top: 2em;">Customer</h2>
   <table>
     <tr>
       <th class="table-header">Name</th>
@@ -45,8 +45,13 @@
   </table>
 
 
-  <h2>Car Details</h2>
+  <h2 style="margin-top: 2em;">Car Details</h2>
   <table>
+    <tr>
+      <th class="table-header">Status</th>
+      <td>{{order.car.car_status}}</td>
+    </tr>
+
     <tr>
       <th class="table-header">Car ID</th>
       <td>{{order.car.car_id}}</td>
