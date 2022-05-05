@@ -24,14 +24,11 @@ export class AdminOrderComponent implements OnInit, AfterViewInit {
     "view_details"
   ]
 
-  /* todo
-  *   update order status + car endpoint, update date of rental / date of return */
-
   constructor(private orderService: OrderService, private dialog: MatDialog, private authService: AuthService) {
     if(authService.getAdminCredentials() != undefined) {
       // @ts-ignore
       this.orderService.configuration.credentials = authService.getAdminCredentials();
-    }
+    } // todo else
 
     this.orderService.getAllOrders().subscribe(res => {
 
