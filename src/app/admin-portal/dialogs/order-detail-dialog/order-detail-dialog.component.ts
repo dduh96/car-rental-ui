@@ -48,23 +48,12 @@ export class OrderDetailDialogComponent implements OnInit {
       first_name: this.order.first_name,
       last_name: this.order.last_name,
       email: this.order.email,
-      order_status: this.selectedStatus // todo undefined safety
+      order_status: this.selectedStatus //
     } //todo remove
 
     this.orderService.updateStatusById(this.order.orderId, this.selectedStatus).subscribe( res =>
       this.dialogRef.close(true)
     );
-
-  }
-
-  public wasSetToActive(): boolean {
-    return this.selectedStatus == Order.OrderStatusEnum.Active
-      && this.selectedStatus != this.order.order_status;
-  }
-
-  public wasSetToReturned(): boolean {
-    return this.selectedStatus == Order.OrderStatusEnum.Returned
-      && this.selectedStatus != this.order.order_status;
   }
 
 }
