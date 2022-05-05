@@ -16,7 +16,7 @@ import {CurrencyService} from "../../api/currency.service";
 export class CarsComponent implements OnInit {
   public cars: Car[] | undefined;
   public currency: Currency[] | undefined;
-  public timeList = [ //todo ina: von backend beziehen
+  public timeList = [
     {value: '6', viewValue: '06:00'},
     {value: '7', viewValue: '07:00'},
     {value: '8', viewValue: '08:00'},
@@ -48,11 +48,10 @@ export class CarsComponent implements OnInit {
   };
 
   constructor(private carService: CarService, private currencyService: CurrencyService) {
-    // carService.getCars(Car.CurrencySymbolEnum.Usd).subscribe(res => this.cars = res);
-    /*carService.getCars(Car.CurrencySymbolEnum.Usd).subscribe(res => {
+   // carService.getCars(Car.CurrencySymbolEnum.Usd).subscribe(res => this.cars = res);
+    carService.getCars(Car.CurrencySymbolEnum.Usd).subscribe(res => {
       this.cars = res.filter(car => car.car_status == Car.CarStatusEnum.Available); //todo: test if works
-    });*/
-    carService.getCarsByStatus(Car.CarStatusEnum.Available).subscribe(res => this.cars = res);
+    });
     currencyService.getCurrencies().subscribe(res => this.currency = res);
   }
 

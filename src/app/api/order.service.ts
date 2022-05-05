@@ -516,7 +516,7 @@ export class OrderService {
           ).pipe(
               switchMap(res2 => {
                 this.configuration.credentials = this.authService.getCredentialsForToken(res2.token);
-                return this.updateStatusById(res.orderId, res.order_status).pipe(
+                return this.updateStatusById(res.orderId, Order.OrderStatusEnum.Active).pipe(
                   map(res3 => res3.orderId)
                 )
               })
