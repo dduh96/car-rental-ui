@@ -1,8 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BookingConfirmationComponent } from './booking-confirmation.component';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, convertToParamMap} from "@angular/router";
 import {RouterTestingModule} from "@angular/router/testing";
+import {HttpClientTestingModule} from "@angular/common/http/testing";
+import {of} from "rxjs";
+
 
 describe('BookingConfirmationComponent', () => {
   let component: BookingConfirmationComponent;
@@ -11,7 +14,16 @@ describe('BookingConfirmationComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ BookingConfirmationComponent ],
-      imports: [RouterTestingModule]
+      imports: [
+        RouterTestingModule,
+        HttpClientTestingModule
+      ],
+      providers: [
+        { provide: ActivatedRoute, useValue: {
+            snapshot:{paramMap: of( convertToParamMap( { userId: 1 } ) )}
+          }
+        }
+      ],
     })
     .compileComponents();
   });
