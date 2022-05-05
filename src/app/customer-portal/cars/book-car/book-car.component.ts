@@ -38,16 +38,14 @@ export class BookCarComponent implements OnInit {
 
 
   public selectedLocation = "";
-  public paymentList = Object.keys(Order.MethodOfPaymentEnum);
+  public paymentList = Object.values(Order.MethodOfPaymentEnum);
   public cardNr = "";
   public cvv = "";
-  public validMonth = ""; //todo löschen?
-  public validYear = "";//todo löschen?
   public email = "";
   public firstname = "";
   public lastname = "";
 
-  public selectedPayment = "";
+  public selectedPayment = Order.MethodOfPaymentEnum.AmericanExpress;
   public selectedYear = "";
   public selectedMonth = "";
 
@@ -79,15 +77,13 @@ export class BookCarComponent implements OnInit {
   public cancel() {
     this.visibility = false;
     this.visibilityChange.emit(this.visibility);
-
   }
 
   public bookCar() {
     if (true) {
       //todo: check if number is int
       let dateInput = new Date(parseInt(this.selectedYear), parseInt(this.selectedMonth));
-      let valid = formatDate(dateInput, 'yyyy-MM-dd', 'en'); //todo: mit dem gehts machmal nicht
-      console.log(valid);
+      let valid = formatDate(dateInput, 'yyyy-MM-dd', 'en');
 
       if (this.inputSearch.car_id != undefined && this.locations != undefined && this.selectedLocation != undefined) {
         const orderRequest: OrderRequest = {
@@ -97,8 +93,7 @@ export class BookCarComponent implements OnInit {
           date_of_booking: formatDate(Date.now(), 'yyyy-MM-dd', 'en'),
           date_of_rental: this.inputSearch.selectedDateFrom,
           date_of_return: this.inputSearch.selectedDateTo,
-          //method_of_payment: this.paymentList.find(pay => pay == this.selectedPayment),//TODO oida.........Dani findet sicher eine Lösung
-          method_of_payment: Order.MethodOfPaymentEnum.AmericanExpress,
+          method_of_payment: this.selectedPayment,
           card_number: this.cardNr,
           card_security_code: this.cvv,
           valid_until: valid,

@@ -14,6 +14,24 @@
 <a mat-button [routerLink]="'/cars'">Cars</a>
    ```
 
+## Tests
+### admin-portal
+- [ ] admin-cars
+- [ ] admin-login
+- [ ] admin-order
+- [x] add-car-dialog
+- [x] order-detail-dialog
+
+###customer-portal
+- [ ] book-car
+- [ ] booking-confirmation
+- [ ] cars-item
+- [ ] cars
+- [ ] customer-service
+- [ ] order-login
+
+
+
 ## @ Des wurde autogeneriert
 
 ### Building
