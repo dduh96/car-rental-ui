@@ -16,7 +16,7 @@ import {CurrencyService} from "../../api/currency.service";
 export class CarsComponent implements OnInit {
   public cars: Car[] | undefined;
   public currency: Currency[] | undefined;
-  public timeList = [ //todo ina: von backend beziehen
+  public timeList = [
     {value: '6', viewValue: '06:00'},
     {value: '7', viewValue: '07:00'},
     {value: '8', viewValue: '08:00'},

@@ -28,7 +28,7 @@
     </tr>
   </table>
 
-  <form name="booking" action="" method="post">
+  <form name="booking" [formGroup]="carForm" method="post">
     <mat-form-field class="full-width, forminput" appearance="fill">
       <mat-label>Firstname</mat-label>
       <input matInput placeholder="Max" name="firstname" formControlName="firstnameFormControl"
@@ -62,7 +62,7 @@
 
     <mat-form-field class="full-width, forminput" appearance="fill">
       <mat-label>Card number</mat-label>
-      <input matInput placeholder="4820 1283 4087 8657" name="cardnr" formControlName="cardnrFormControl"
+      <input matInput placeholder="4820128340878657" name="cardnr" formControlName="cardnrFormControl"
              [errorStateMatcher]="matcher" [(ngModel)]="cardNr"
              required/>
       <mat-error *ngIf="carForm.controls['cardnrFormControl'].hasError('required')">
