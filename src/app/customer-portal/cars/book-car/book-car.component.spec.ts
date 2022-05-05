@@ -25,4 +25,23 @@ describe('BookCarComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should close view when button clicked', function (){
+    component.cancel();
+    expect(component.visibility).toBeFalsy();
+  });
+
+ /* it('', function ()){
+
+  }*/
+
 });
+
+
+
+
+
+
+
+
+
