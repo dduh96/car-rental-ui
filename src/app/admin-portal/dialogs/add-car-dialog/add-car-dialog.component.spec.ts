@@ -10,7 +10,7 @@ describe('AddCarDialogComponent', () => {
   let component: AddCarDialogComponent;
   let fixture: ComponentFixture<AddCarDialogComponent>;
   let mockCar = buildCar();
-  const mockCloseDialog = {
+  const mockDialog = {
     close: () => {}
   }
 
@@ -19,7 +19,7 @@ describe('AddCarDialogComponent', () => {
       declarations: [ AddCarDialogComponent ],
       imports: [HttpClientTestingModule, MatDialogModule],
       providers: [
-        {provide: MatDialogRef, useValue: mockCloseDialog},
+        {provide: MatDialogRef, useValue: mockDialog},
         {provide: MAT_DIALOG_DATA, useValue: []},
       ]
     })
@@ -52,7 +52,7 @@ describe('AddCarDialogComponent', () => {
     );
   });
 
-  it('should close dialog onConfirm when admin_token unavailable', function () {
+  it('should alert window onConfirm when admin_token unavailable', function () {
     let spy = spyOn(window, "alert");
     component.onConfirm();
     fixture.detectChanges();
