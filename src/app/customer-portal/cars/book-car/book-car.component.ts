@@ -108,13 +108,17 @@ export class BookCarComponent implements OnInit {
           order_status: OrderRequest.OrderStatusEnum.Created
         };
 
-        this.orderService.createOrder(orderRequest).subscribe(order => {
-          if (order.orderId != undefined) {
-            this.router.navigate(["../confirmation", order.orderId], {
-              relativeTo: this.activatedRoute
-            });
-          }
-        });
+        this.orderService.createOrder(orderRequest).subscribe(
+          res => {
+            if (res.orderId != undefined) {
+              this.router.navigate(["../confirmation", res.orderId], {
+                relativeTo: this.activatedRoute
+              })
+            }
+          },
+          err => alert('Error: could not create order, please try again with correct inputs!'),
+          () => console.log('HTTP request completed.')
+        );
       }
     }
   }
