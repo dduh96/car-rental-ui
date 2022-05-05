@@ -5,6 +5,7 @@ import {AuthService} from "../../api/auth.service";
 import {GetOrder} from "./get-order";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
+import {MatDialogRef} from "@angular/material/dialog";
 
 
 
@@ -29,7 +30,8 @@ export class OrderLoginComponent implements OnInit {
   constructor(private orderService: OrderService,
               public authService:AuthService,
               private router: Router,
-              private activatedRoute: ActivatedRoute) { }
+              private activatedRoute: ActivatedRoute,
+              public dialogRef: MatDialogRef<OrderLoginComponent>) { }
 
   ngOnInit(): void {
   }
@@ -49,6 +51,7 @@ export class OrderLoginComponent implements OnInit {
         this.router.navigate(["../confirmation", this.getOrder.givenOrderID], {
           relativeTo: this.activatedRoute
         });
+        this.dialogRef.close(true)
       }
     });
 

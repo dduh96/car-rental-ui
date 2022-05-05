@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import {MatDialog, MatDialogModule} from "@angular/material/dialog";
+import {MAT_DIALOG_DATA, MatDialog, MatDialogModule, MatDialogRef} from "@angular/material/dialog";
 import {Router, RouterModule} from "@angular/router";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {CarsComponent} from "./customer-portal/cars/cars.component";
@@ -79,8 +79,12 @@ describe('AppComponent', () => {
         }),
         MatToolbarModule,
         ReactiveFormsModule,
+        MatDialogModule
       ],
-      providers: []
+      providers: [
+        {provide: MatDialogRef, useValue: {}},
+        {provide: MAT_DIALOG_DATA, useValue: []},
+      ]
     }).compileComponents();
   });
 

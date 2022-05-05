@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AdminCarsComponent } from './admin-cars.component';
+import {HttpClientTestingModule} from "@angular/common/http/testing";
+import {MAT_DIALOG_DATA, MatDialogModule, MatDialogRef} from "@angular/material/dialog";
 
 describe('AdminCarsComponent', () => {
   let component: AdminCarsComponent;
@@ -8,7 +10,15 @@ describe('AdminCarsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AdminCarsComponent ]
+      declarations: [ AdminCarsComponent ],
+      imports: [
+        HttpClientTestingModule,
+        MatDialogModule
+      ],
+      providers: [
+        {provide: MatDialogRef, useValue: {}},
+        {provide: MAT_DIALOG_DATA, useValue: []},
+      ]
     })
     .compileComponents();
   });

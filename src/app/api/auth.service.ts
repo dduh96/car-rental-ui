@@ -249,4 +249,8 @@ export class AuthService {
       }
     }
 
+    public getCredentialsForToken(token: string){
+      return {'bearerAuth': token};
+    }
+
 }
