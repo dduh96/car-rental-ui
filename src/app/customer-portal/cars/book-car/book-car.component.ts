@@ -108,10 +108,10 @@ export class BookCarComponent implements OnInit {
           order_status: OrderRequest.OrderStatusEnum.Created
         };
 
-        this.orderService.createOrder(orderRequest).subscribe(
+        this.orderService.createOrderUpdateCar(orderRequest).subscribe(
           res => {
-            if (res.orderId != undefined) {
-              this.router.navigate(["../confirmation", res.orderId], {
+            if (res != undefined) {
+              this.router.navigate(["../confirmation", res], {
                 relativeTo: this.activatedRoute
               })
             }
