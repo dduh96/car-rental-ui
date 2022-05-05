@@ -4,11 +4,13 @@ import {OrderDetailDialogComponent} from './order-detail-dialog.component';
 import {MAT_DIALOG_DATA, MatDialogModule, MatDialogRef} from "@angular/material/dialog";
 import {HttpClientTestingModule} from "@angular/common/http/testing";
 import {Order} from "../../../model/order";
+import {buildOrder} from "../../../mock/order-mock/buildOrder";
 
 
 describe('OrderDetailDialogComponent', () => {
   let component: OrderDetailDialogComponent;
   let fixture: ComponentFixture<OrderDetailDialogComponent>;
+  let matDialogData: Order = buildOrder();
 
   let matDialogData: Order = {
     orderId: "14aa3925-312c-462e-acf8-279d18e9a9c8",
