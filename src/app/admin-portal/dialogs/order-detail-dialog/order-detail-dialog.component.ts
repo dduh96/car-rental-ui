@@ -34,37 +34,9 @@ export class OrderDetailDialogComponent implements OnInit {
       return;
     }
 
-    const orderRequest: OrderRequest = {
-      car_id: this.order.car.car_id,
-      location_of_rental_id: this.order.location_of_rental.location_id!,
-      location_of_return_id: this.order.location_of_return.location_id!,
-      date_of_booking: this.order.date_of_booking,
-      date_of_rental: this.order.date_of_rental,
-      date_of_return: this.order.date_of_return,
-      method_of_payment: this.order.method_of_payment,
-      card_number: this.order.card_number,
-      card_security_code: this.order.card_security_code,
-      valid_until: this.order.valid_until,
-      first_name: this.order.first_name,
-      last_name: this.order.last_name,
-      email: this.order.email,
-      order_status: this.selectedStatus // todo undefined safety
-    } //todo remove
-
-    this.orderService.updateStatusById(this.order.orderId, this.selectedStatus).subscribe( res =>
+    this.orderService.updateStatusById(this.order.orderId, this.selectedStatus).subscribe( _ =>
       this.dialogRef.close(true)
     );
-
-  }
-
-  public wasSetToActive(): boolean {
-    return this.selectedStatus == Order.OrderStatusEnum.Active
-      && this.selectedStatus != this.order.order_status;
-  }
-
-  public wasSetToReturned(): boolean {
-    return this.selectedStatus == Order.OrderStatusEnum.Returned
-      && this.selectedStatus != this.order.order_status;
   }
 
 }

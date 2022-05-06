@@ -100,7 +100,7 @@ export class AddCarDialogComponent implements OnInit {
         console.log(res);
         this.dialogRef.close(true);
       })
-    }
+    }else alert("Unable to create car. Please try logging in again");
 
 
 
