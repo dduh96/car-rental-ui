@@ -1,0 +1,1912 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>car-rental-ui documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href=".." class="navbar-brand">car-rental-ui documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Injectables</li>
+  <li >AuthService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/api/auth.service.ts</code>
+        </p>
+
+
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#_isLoggedIn" >_isLoggedIn</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#basePath" >basePath</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#configuration" >configuration</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#defaultHeaders" >defaultHeaders</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#encoder" >encoder</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#addToHttpParams" >addToHttpParams</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#addToHttpParamsRecursive" >addToHttpParamsRecursive</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getAdminCredentials" >getAdminCredentials</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getCredentialsForToken" >getCredentialsForToken</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#loginAdmin" >loginAdmin</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#loginAdmin" >loginAdmin</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#loginAdmin" >loginAdmin</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#loginAdmin" >loginAdmin</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#loginOrder" >loginOrder</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#loginOrder" >loginOrder</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#loginOrder" >loginOrder</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#loginOrder" >loginOrder</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(httpClient: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>, configuration: <a href="../classes/Configuration.html" target="_self">Configuration</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/api/auth.service.ts:46</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>httpClient</td>
+
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/common/http/HttpClient" target="_blank" >HttpClient</a></code>
+                                                        </td>
+
+                                                    <td>
+                                                            No
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+                                                        <td>configuration</td>
+
+                                                        <td>
+                                                                        <code><a href="../classes/Configuration.html" target="_self" >Configuration</a></code>
+                                                        </td>
+
+                                                    <td>
+                                                            No
+                                                    </td>
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addToHttpParams"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>addToHttpParams</b></span>
+                        <a href="#addToHttpParams"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>addToHttpParams(httpParams: <a href="https://angular.io/api/common/http/HttpParams" target="_blank">HttpParams</a>, value: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, key?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="60"
+                            class="link-to-prism">src/app/api/auth.service.ts:60</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>httpParams</td>
+                                    <td>
+                                                <code><a href="https://angular.io/api/common/http/HttpParams" target="_blank" >HttpParams</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>value</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>key</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://angular.io/api/common/http/HttpParams" target="_blank" >HttpParams</a></code>
+
+                    </div>
+                    <div class="io-description">
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addToHttpParamsRecursive"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>addToHttpParamsRecursive</b></span>
+                        <a href="#addToHttpParamsRecursive"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>addToHttpParamsRecursive(httpParams: <a href="https://angular.io/api/common/http/HttpParams" target="_blank">HttpParams</a>, value?: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, key?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="69"
+                            class="link-to-prism">src/app/api/auth.service.ts:69</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>httpParams</td>
+                                    <td>
+                                                <code><a href="https://angular.io/api/common/http/HttpParams" target="_blank" >HttpParams</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>value</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>key</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://angular.io/api/common/http/HttpParams" target="_blank" >HttpParams</a></code>
+
+                    </div>
+                    <div class="io-description">
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAdminCredentials"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>getAdminCredentials</b></span>
+                        <a href="#getAdminCredentials"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getAdminCredentials()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="247"
+                            class="link-to-prism">src/app/api/auth.service.ts:247</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getCredentialsForToken"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>getCredentialsForToken</b></span>
+                        <a href="#getCredentialsForToken"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getCredentialsForToken(token: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="255"
+                            class="link-to-prism">src/app/api/auth.service.ts:255</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>token</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>{ bearerAuth: string; }</code>
+
+                    </div>
+                    <div class="io-description">
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loginAdmin"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>loginAdmin</b></span>
+                        <a href="#loginAdmin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>loginAdmin(loginAdminRequest: <a href="../interfaces/LoginAdminRequest.html" target="_self">LoginAdminRequest</a>, observe?, reportProgress?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>, options?: literal type)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="104"
+                            class="link-to-prism">src/app/api/auth.service.ts:104</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Login with orderId and lastName</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>loginAdminRequest</td>
+                                    <td>
+                                                <code><a href="../interfaces/LoginAdminRequest.html" target="_self" >LoginAdminRequest</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>observe</td>
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                    <td>
+                                        <p>set whether or not to return the data Observable as the body, response or events. defaults to returning the body.</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>reportProgress</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                    <td>
+                                        <p>flag to report request and response progress.</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>options</td>
+                                    <td>
+                                            <code>literal type</code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                    <td>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;AuthenticationResponse&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loginAdmin"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>loginAdmin</b></span>
+                        <a href="#loginAdmin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>loginAdmin(loginAdminRequest: <a href="../interfaces/LoginAdminRequest.html" target="_self">LoginAdminRequest</a>, observe?, reportProgress?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>, options?: literal type)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="105"
+                            class="link-to-prism">src/app/api/auth.service.ts:105</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>loginAdminRequest</td>
+                                    <td>
+                                                <code><a href="../interfaces/LoginAdminRequest.html" target="_self" >LoginAdminRequest</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>observe</td>
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>reportProgress</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>options</td>
+                                    <td>
+                                            <code>literal type</code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;HttpResponse&lt;AuthenticationResponse&gt;&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loginAdmin"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>loginAdmin</b></span>
+                        <a href="#loginAdmin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>loginAdmin(loginAdminRequest: <a href="../interfaces/LoginAdminRequest.html" target="_self">LoginAdminRequest</a>, observe?, reportProgress?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>, options?: literal type)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="106"
+                            class="link-to-prism">src/app/api/auth.service.ts:106</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>loginAdminRequest</td>
+                                    <td>
+                                                <code><a href="../interfaces/LoginAdminRequest.html" target="_self" >LoginAdminRequest</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>observe</td>
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>reportProgress</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>options</td>
+                                    <td>
+                                            <code>literal type</code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;HttpEvent&lt;AuthenticationResponse&gt;&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loginAdmin"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>loginAdmin</b></span>
+                        <a href="#loginAdmin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>loginAdmin(loginAdminRequest: <a href="../interfaces/LoginAdminRequest.html" target="_self">LoginAdminRequest</a>, observe: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, reportProgress: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>, options?: literal type)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="107"
+                            class="link-to-prism">src/app/api/auth.service.ts:107</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>loginAdminRequest</td>
+                                    <td>
+                                                <code><a href="../interfaces/LoginAdminRequest.html" target="_self" >LoginAdminRequest</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>observe</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>&#x27;body&#x27;</code>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>reportProgress</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>false</code>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>options</td>
+                                    <td>
+                                            <code>literal type</code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loginOrder"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>loginOrder</b></span>
+                        <a href="#loginOrder"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>loginOrder(loginOrderRequest: <a href="../interfaces/LoginOrderRequest.html" target="_self">LoginOrderRequest</a>, observe?, reportProgress?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>, options?: literal type)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="179"
+                            class="link-to-prism">src/app/api/auth.service.ts:179</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Login with email and password</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>loginOrderRequest</td>
+                                    <td>
+                                                <code><a href="../interfaces/LoginOrderRequest.html" target="_self" >LoginOrderRequest</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>observe</td>
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                    <td>
+                                        <p>set whether or not to return the data Observable as the body, response or events. defaults to returning the body.</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>reportProgress</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                    <td>
+                                        <p>flag to report request and response progress.</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>options</td>
+                                    <td>
+                                            <code>literal type</code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                    <td>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;AuthenticationResponse&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loginOrder"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>loginOrder</b></span>
+                        <a href="#loginOrder"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>loginOrder(loginOrderRequest: <a href="../interfaces/LoginOrderRequest.html" target="_self">LoginOrderRequest</a>, observe?, reportProgress?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>, options?: literal type)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="180"
+                            class="link-to-prism">src/app/api/auth.service.ts:180</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>loginOrderRequest</td>
+                                    <td>
+                                                <code><a href="../interfaces/LoginOrderRequest.html" target="_self" >LoginOrderRequest</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>observe</td>
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>reportProgress</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>options</td>
+                                    <td>
+                                            <code>literal type</code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;HttpResponse&lt;AuthenticationResponse&gt;&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loginOrder"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>loginOrder</b></span>
+                        <a href="#loginOrder"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>loginOrder(loginOrderRequest: <a href="../interfaces/LoginOrderRequest.html" target="_self">LoginOrderRequest</a>, observe?, reportProgress?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>, options?: literal type)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="181"
+                            class="link-to-prism">src/app/api/auth.service.ts:181</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>loginOrderRequest</td>
+                                    <td>
+                                                <code><a href="../interfaces/LoginOrderRequest.html" target="_self" >LoginOrderRequest</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>observe</td>
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>reportProgress</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>options</td>
+                                    <td>
+                                            <code>literal type</code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;HttpEvent&lt;AuthenticationResponse&gt;&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loginOrder"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>loginOrder</b></span>
+                        <a href="#loginOrder"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>loginOrder(loginOrderRequest: <a href="../interfaces/LoginOrderRequest.html" target="_self">LoginOrderRequest</a>, observe: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, reportProgress: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>, options?: literal type)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="182"
+                            class="link-to-prism">src/app/api/auth.service.ts:182</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>loginOrderRequest</td>
+                                    <td>
+                                                <code><a href="../interfaces/LoginOrderRequest.html" target="_self" >LoginOrderRequest</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>observe</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>&#x27;body&#x27;</code>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>reportProgress</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>false</code>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>options</td>
+                                    <td>
+                                            <code>literal type</code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+            <section>
+
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_isLoggedIn"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>_isLoggedIn</b></span>
+                        <a href="#_isLoggedIn"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Subject&lt;boolean&gt;()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/api/auth.service.ts:46</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="basePath"></a>
+                    <span class="name">
+                            <span class="modifier">Protected</span>
+                        <span ><b>basePath</b></span>
+                        <a href="#basePath"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;http://localhost:8080&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/api/auth.service.ts:42</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="configuration"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>configuration</b></span>
+                        <a href="#configuration"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Configuration()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/api/auth.service.ts:44</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="defaultHeaders"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>defaultHeaders</b></span>
+                        <a href="#defaultHeaders"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new HttpHeaders()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/api/auth.service.ts:43</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="encoder"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>encoder</b></span>
+                        <a href="#encoder"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/common/http/HttpParameterCodec" target="_blank" >HttpParameterCodec</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/api/auth.service.ts:45</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Inject, Injectable, Optional }                      from &#x27;@angular/core&#x27;;
+import { HttpClient, HttpHeaders, HttpParams,
+         HttpResponse, HttpEvent, HttpParameterCodec, HttpContext
+        }       from &#x27;@angular/common/http&#x27;;
+import { CustomHttpParameterCodec }                          from &#x27;../encoder&#x27;;
+import {filter, fromEvent, map, Observable, Subject} from &#x27;rxjs&#x27;;
+
+// @ts-ignore
+import { ApiError } from &#x27;../model/apiError&#x27;;
+// @ts-ignore
+import { AuthenticationResponse } from &#x27;../model/authenticationResponse&#x27;;
+// @ts-ignore
+import { LoginAdminRequest } from &#x27;../model/loginAdminRequest&#x27;;
+// @ts-ignore
+import { LoginOrderRequest } from &#x27;../model/loginOrderRequest&#x27;;
+
+// @ts-ignore
+import { environment}                     from &#x27;../../environments/environment&#x27;;
+import { Configuration }                                     from &#x27;../configuration&#x27;;
+import {Credentials} from &quot;../admin-portal/admin-login/credentials&quot;;
+
+
+
+@Injectable({
+  providedIn: &#x27;root&#x27;
+})
+export class AuthService {
+
+    protected basePath &#x3D; &#x27;http://localhost:8080&#x27;;
+    public defaultHeaders &#x3D; new HttpHeaders();
+    public configuration &#x3D; new Configuration();
+    public encoder: HttpParameterCodec;
+    private _isLoggedIn &#x3D; new Subject&lt;boolean&gt;();
+
+    constructor(protected httpClient: HttpClient, @Optional() configuration: Configuration) {
+        if (configuration) {
+            this.configuration &#x3D; configuration;
+        }
+        if (typeof this.configuration.basePath !&#x3D;&#x3D; &#x27;string&#x27;) {
+            this.basePath &#x3D; environment.BASE_PATH;
+            this.configuration.basePath &#x3D; this.basePath;
+        }
+        this.encoder &#x3D; this.configuration.encoder || new CustomHttpParameterCodec();
+    }
+
+
+    private addToHttpParams(httpParams: HttpParams, value: any, key?: string): HttpParams {
+        if (typeof value &#x3D;&#x3D;&#x3D; &quot;object&quot; &amp;&amp; value instanceof Date &#x3D;&#x3D;&#x3D; false) {
+            httpParams &#x3D; this.addToHttpParamsRecursive(httpParams, value);
+        } else {
+            httpParams &#x3D; this.addToHttpParamsRecursive(httpParams, value, key);
+        }
+        return httpParams;
+    }
+
+    private addToHttpParamsRecursive(httpParams: HttpParams, value?: any, key?: string): HttpParams {
+        if (value &#x3D;&#x3D; null) {
+            return httpParams;
+        }
+
+        if (typeof value &#x3D;&#x3D;&#x3D; &quot;object&quot;) {
+            if (Array.isArray(value)) {
+                (value as any[]).forEach( elem &#x3D;&gt; httpParams &#x3D; this.addToHttpParamsRecursive(httpParams, elem, key));
+            } else if (value instanceof Date) {
+                if (key !&#x3D; null) {
+                    httpParams &#x3D; httpParams.append(key,
+                        (value as Date).toISOString().substr(0, 10));
+                } else {
+                   throw Error(&quot;key may not be null if value is Date&quot;);
+                }
+            } else {
+                Object.keys(value).forEach( k &#x3D;&gt; httpParams &#x3D; this.addToHttpParamsRecursive(
+                    httpParams, value[k], key !&#x3D; null ? &#x60;${key}.${k}&#x60; : k));
+            }
+        } else if (key !&#x3D; null) {
+            httpParams &#x3D; httpParams.append(key, value);
+        } else {
+            throw Error(&quot;key may not be null if value is not object or array&quot;);
+        }
+        return httpParams;
+    }
+
+
+
+    /**
+     * Login with orderId and lastName
+     * @param loginAdminRequest
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public loginAdmin(loginAdminRequest: LoginAdminRequest, observe?: &#x27;body&#x27;, reportProgress?: boolean, options?: {httpHeaderAccept?: &#x27;application/json&#x27;, context?: HttpContext}): Observable&lt;AuthenticationResponse&gt;;
+    public loginAdmin(loginAdminRequest: LoginAdminRequest, observe?: &#x27;response&#x27;, reportProgress?: boolean, options?: {httpHeaderAccept?: &#x27;application/json&#x27;, context?: HttpContext}): Observable&lt;HttpResponse&lt;AuthenticationResponse&gt;&gt;;
+    public loginAdmin(loginAdminRequest: LoginAdminRequest, observe?: &#x27;events&#x27;, reportProgress?: boolean, options?: {httpHeaderAccept?: &#x27;application/json&#x27;, context?: HttpContext}): Observable&lt;HttpEvent&lt;AuthenticationResponse&gt;&gt;;
+    public loginAdmin(loginAdminRequest: LoginAdminRequest, observe: any &#x3D; &#x27;body&#x27;, reportProgress: boolean &#x3D; false, options?: {httpHeaderAccept?: &#x27;application/json&#x27;, context?: HttpContext}): Observable&lt;any&gt; {
+        if (loginAdminRequest &#x3D;&#x3D;&#x3D; null || loginAdminRequest &#x3D;&#x3D;&#x3D; undefined) {
+            throw new Error(&#x27;Required parameter loginAdminRequest was null or undefined when calling loginAdmin.&#x27;);
+        }
+
+        let localVarHeaders &#x3D; this.defaultHeaders;
+
+        let localVarCredential: string | undefined;
+        // authentication (bearerAuth) required
+        localVarCredential &#x3D; this.configuration.lookupCredential(&#x27;bearerAuth&#x27;);
+        if (localVarCredential) {
+            localVarHeaders &#x3D; localVarHeaders.set(&#x27;Authorization&#x27;, &#x27;Bearer &#x27; + localVarCredential);
+        }
+
+        let localVarHttpHeaderAcceptSelected: string | undefined &#x3D; options &amp;&amp; options.httpHeaderAccept;
+        if (localVarHttpHeaderAcceptSelected &#x3D;&#x3D;&#x3D; undefined) {
+            // to determine the Accept header
+            const httpHeaderAccepts: string[] &#x3D; [
+                &#x27;application/json&#x27;
+            ];
+            localVarHttpHeaderAcceptSelected &#x3D; this.configuration.selectHeaderAccept(httpHeaderAccepts);
+        }
+        if (localVarHttpHeaderAcceptSelected !&#x3D;&#x3D; undefined) {
+            localVarHeaders &#x3D; localVarHeaders.set(&#x27;Accept&#x27;, localVarHttpHeaderAcceptSelected);
+        }
+
+        let localVarHttpContext: HttpContext | undefined &#x3D; options &amp;&amp; options.context;
+        if (localVarHttpContext &#x3D;&#x3D;&#x3D; undefined) {
+            localVarHttpContext &#x3D; new HttpContext();
+        }
+
+
+        // to determine the Content-Type header
+        const consumes: string[] &#x3D; [
+            &#x27;application/json&#x27;
+        ];
+        const httpContentTypeSelected: string | undefined &#x3D; this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected !&#x3D;&#x3D; undefined) {
+            localVarHeaders &#x3D; localVarHeaders.set(&#x27;Content-Type&#x27;, httpContentTypeSelected);
+        }
+
+        let responseType_: &#x27;text&#x27; | &#x27;json&#x27; | &#x27;blob&#x27; &#x3D; &#x27;json&#x27;;
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith(&#x27;text&#x27;)) {
+                responseType_ &#x3D; &#x27;text&#x27;;
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ &#x3D; &#x27;json&#x27;;
+            } else {
+                responseType_ &#x3D; &#x27;blob&#x27;;
+            }
+        }
+
+        return this.httpClient.post&lt;AuthenticationResponse&gt;(&#x60;${this.configuration.basePath}/auth/admin&#x60;,
+            loginAdminRequest,
+            {
+                context: localVarHttpContext,
+                responseType: &lt;any&gt;responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
+     * Login with email and password
+     * @param loginOrderRequest
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public loginOrder(loginOrderRequest: LoginOrderRequest, observe?: &#x27;body&#x27;, reportProgress?: boolean, options?: {httpHeaderAccept?: &#x27;application/json&#x27;, context?: HttpContext}): Observable&lt;AuthenticationResponse&gt;;
+    public loginOrder(loginOrderRequest: LoginOrderRequest, observe?: &#x27;response&#x27;, reportProgress?: boolean, options?: {httpHeaderAccept?: &#x27;application/json&#x27;, context?: HttpContext}): Observable&lt;HttpResponse&lt;AuthenticationResponse&gt;&gt;;
+    public loginOrder(loginOrderRequest: LoginOrderRequest, observe?: &#x27;events&#x27;, reportProgress?: boolean, options?: {httpHeaderAccept?: &#x27;application/json&#x27;, context?: HttpContext}): Observable&lt;HttpEvent&lt;AuthenticationResponse&gt;&gt;;
+    public loginOrder(loginOrderRequest: LoginOrderRequest, observe: any &#x3D; &#x27;body&#x27;, reportProgress: boolean &#x3D; false, options?: {httpHeaderAccept?: &#x27;application/json&#x27;, context?: HttpContext}): Observable&lt;any&gt; {
+        if (loginOrderRequest &#x3D;&#x3D;&#x3D; null || loginOrderRequest &#x3D;&#x3D;&#x3D; undefined) {
+            throw new Error(&#x27;Required parameter loginOrderRequest was null or undefined when calling loginOrder.&#x27;);
+        }
+
+        let localVarHeaders &#x3D; this.defaultHeaders;
+
+        let localVarCredential: string | undefined;
+        // authentication (bearerAuth) required
+        localVarCredential &#x3D; this.configuration.lookupCredential(&#x27;bearerAuth&#x27;);
+        if (localVarCredential) {
+            localVarHeaders &#x3D; localVarHeaders.set(&#x27;Authorization&#x27;, &#x27;Bearer &#x27; + localVarCredential);
+        }
+
+        let localVarHttpHeaderAcceptSelected: string | undefined &#x3D; options &amp;&amp; options.httpHeaderAccept;
+        if (localVarHttpHeaderAcceptSelected &#x3D;&#x3D;&#x3D; undefined) {
+            // to determine the Accept header
+            const httpHeaderAccepts: string[] &#x3D; [
+                &#x27;application/json&#x27;
+            ];
+            localVarHttpHeaderAcceptSelected &#x3D; this.configuration.selectHeaderAccept(httpHeaderAccepts);
+        }
+        if (localVarHttpHeaderAcceptSelected !&#x3D;&#x3D; undefined) {
+            localVarHeaders &#x3D; localVarHeaders.set(&#x27;Accept&#x27;, localVarHttpHeaderAcceptSelected);
+        }
+
+        let localVarHttpContext: HttpContext | undefined &#x3D; options &amp;&amp; options.context;
+        if (localVarHttpContext &#x3D;&#x3D;&#x3D; undefined) {
+            localVarHttpContext &#x3D; new HttpContext();
+        }
+
+
+        // to determine the Content-Type header
+        const consumes: string[] &#x3D; [
+            &#x27;application/json&#x27;
+        ];
+        const httpContentTypeSelected: string | undefined &#x3D; this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected !&#x3D;&#x3D; undefined) {
+            localVarHeaders &#x3D; localVarHeaders.set(&#x27;Content-Type&#x27;, httpContentTypeSelected);
+        }
+
+        let responseType_: &#x27;text&#x27; | &#x27;json&#x27; | &#x27;blob&#x27; &#x3D; &#x27;json&#x27;;
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith(&#x27;text&#x27;)) {
+                responseType_ &#x3D; &#x27;text&#x27;;
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ &#x3D; &#x27;json&#x27;;
+            } else {
+                responseType_ &#x3D; &#x27;blob&#x27;;
+            }
+        }
+
+        return this.httpClient.post&lt;AuthenticationResponse&gt;(&#x60;${this.configuration.basePath}/auth/order&#x60;,
+            loginOrderRequest,
+            {
+                context: localVarHttpContext,
+                responseType: &lt;any&gt;responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    public getAdminCredentials(): any {
+      if(sessionStorage.getItem(&#x27;admin_token&#x27;)!&#x3D; null) {
+        return {&#x27;bearerAuth&#x27;: sessionStorage.getItem(&quot;admin_token&quot;)};
+      } else {
+        return undefined;
+      }
+    }
+
+    public getCredentialsForToken(token: string){
+      return {&#x27;bearerAuth&#x27;: token};
+    }
+
+
+
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'AuthService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

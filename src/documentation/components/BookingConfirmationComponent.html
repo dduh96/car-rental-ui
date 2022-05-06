@@ -1,0 +1,574 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>car-rental-ui documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href=".." class="navbar-brand">car-rental-ui documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  BookingConfirmationComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/customer-portal/cars/booking-confirmation/booking-confirmation.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-booking-confirmation</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./booking-confirmation.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./booking-confirmation.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#order" >order</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#orderId" >orderId</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(activatedRoute: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, orderService: <a href="../injectables/OrderService.html" target="_self">OrderService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/customer-portal/cars/booking-confirmation/booking-confirmation.component.ts:13</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>activatedRoute</td>
+
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+
+                                                    <td>
+                                                            No
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+                                                        <td>orderService</td>
+
+                                                        <td>
+                                                                        <code><a href="../injectables/OrderService.html" target="_self" >OrderService</a></code>
+                                                        </td>
+
+                                                    <td>
+                                                            No
+                                                    </td>
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="19"
+                            class="link-to-prism">src/app/customer-portal/cars/booking-confirmation/booking-confirmation.component.ts:19</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="order"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>order</b></span>
+                        <a href="#order"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Order.html" target="_self" >Order | undefined</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/customer-portal/cars/booking-confirmation/booking-confirmation.component.ts:13</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="orderId"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>orderId</b></span>
+                        <a href="#orderId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string | undefined</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/customer-portal/cars/booking-confirmation/booking-confirmation.component.ts:12</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import {ActivatedRoute} from &quot;@angular/router&quot;;
+import {OrderService} from &quot;../../../api/order.service&quot;;
+import {Order} from &quot;../../../model/order&quot;;
+
+@Component({
+  selector: &#x27;app-booking-confirmation&#x27;,
+  templateUrl: &#x27;./booking-confirmation.component.html&#x27;,
+  styleUrls: [&#x27;./booking-confirmation.component.css&#x27;]
+})
+export class BookingConfirmationComponent implements OnInit {
+  public orderId: string | undefined;
+  public order: Order | undefined;
+
+  constructor(private activatedRoute: ActivatedRoute, private orderService: OrderService) {
+    orderService.getOrderById(this.activatedRoute.snapshot.params[&quot;orderId&quot;]).subscribe(res &#x3D;&gt; this.order &#x3D; res);
+  }
+
+  ngOnInit(): void {
+    this.orderId &#x3D; this.activatedRoute.snapshot.params[&quot;orderId&quot;];
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;alignment&quot;&gt;
+  &lt;div class&#x3D;&quot;header&quot;&gt;Car is booked!&lt;/div&gt;
+  &lt;br&gt;
+  &lt;p class&#x3D;&quot;text&quot;&gt;
+    The car is booked. Below you find all booking information you need.&lt;br&gt;
+    &lt;b&gt;IMPORTANT: &lt;/b&gt;&lt;br&gt;
+      For login: Please note the &lt;b&gt;booking ID + lastname&lt;/b&gt; because you need it for your login.&lt;br&gt;
+  &lt;/p&gt;
+  &lt;h1 class&#x3D;&quot;header&quot;&gt;Your order:&lt;/h1&gt;
+  &lt;div *ngIf&#x3D;&quot;order !&#x3D;&#x3D; undefined&quot; class&#x3D;&quot;text&quot;&gt;
+    &lt;table&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Order ID:&lt;/td&gt;
+        &lt;td&gt;{{order.orderId}} &lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;First name:&lt;/td&gt;
+        &lt;td&gt;{{order.first_name}}&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Last name:&lt;/td&gt;
+        &lt;td&gt;{{order.last_name}}&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;E-mail:&lt;/td&gt;
+        &lt;td&gt;{{order.email}}&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Car:&lt;/td&gt;
+        &lt;td&gt;{{order.car.manufacturer}} {{order.car.model}} {{order.car.model_series}} {{order.car.construction_year}}&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Card number:&lt;/td&gt;
+        &lt;td&gt;{{order.card_number}}&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Date of booking:&lt;/td&gt;
+        &lt;td&gt;{{order.date_of_booking}}&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Date of rental:&lt;/td&gt;
+        &lt;td&gt;{{order.date_of_rental}}&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Date of return:&lt;/td&gt;
+        &lt;td&gt;{{order.date_of_return}}&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Location of rental:&lt;/td&gt;
+        &lt;td&gt;{{order.location_of_rental.location_name}} {{order.location_of_rental.street_name}} {{order.location_of_rental.city_name}}&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Location of return:&lt;/td&gt;
+        &lt;td&gt;{{order.location_of_return.location_name}} {{order.location_of_return.street_name}} {{order.location_of_return.city_name}}&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Payment method:&lt;/td&gt;
+        &lt;td&gt;{{order.method_of_payment}}&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Price:&lt;/td&gt;
+        &lt;td&gt;{{(order.car.price/100).toFixed(2)}} {{order.car.currency_symbol}}&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Order status:&lt;/td&gt;
+        &lt;td&gt;{{order.order_status}}&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+      &lt;td&gt;Car status:&lt;/td&gt;
+      &lt;td&gt;{{order.car.car_status}}&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./booking-confirmation.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">
+.header{
+  font-size: 2em;
+  margin: 1%;
+}
+
+
+.text{
+  margin-left: 5%;
+  font-size: 1.2em;
+  line-height: 1.7em;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="alignment">  <div class="header">Car is booked!</div>  <br>  <p class="text">    The car is booked. Below you find all booking information you need.<br>    <b>IMPORTANT: </b><br>      For login: Please note the <b>booking ID + lastname</b> because you need it for your login.<br>  </p>  <h1 class="header">Your order:</h1>  <div *ngIf="order !== undefined" class="text">    <table>      <tr>        <td>Order ID:</td>        <td>{{order.orderId}} </td>      </tr>      <tr>        <td>First name:</td>        <td>{{order.first_name}}</td>      </tr>      <tr>        <td>Last name:</td>        <td>{{order.last_name}}</td>      </tr>      <tr>        <td>E-mail:</td>        <td>{{order.email}}</td>      </tr>      <tr>        <td>Car:</td>        <td>{{order.car.manufacturer}} {{order.car.model}} {{order.car.model_series}} {{order.car.construction_year}}</td>      </tr>      <tr>        <td>Card number:</td>        <td>{{order.card_number}}</td>      </tr>      <tr>        <td>Date of booking:</td>        <td>{{order.date_of_booking}}</td>      </tr>      <tr>        <td>Date of rental:</td>        <td>{{order.date_of_rental}}</td>      </tr>      <tr>        <td>Date of return:</td>        <td>{{order.date_of_return}}</td>      </tr>      <tr>        <td>Location of rental:</td>        <td>{{order.location_of_rental.location_name}} {{order.location_of_rental.street_name}} {{order.location_of_rental.city_name}}</td>      </tr>      <tr>        <td>Location of return:</td>        <td>{{order.location_of_return.location_name}} {{order.location_of_return.street_name}} {{order.location_of_return.city_name}}</td>      </tr>      <tr>        <td>Payment method:</td>        <td>{{order.method_of_payment}}</td>      </tr>      <tr>        <td>Price:</td>        <td>{{(order.car.price/100).toFixed(2)}} {{order.car.currency_symbol}}</td>      </tr>      <tr>        <td>Order status:</td>        <td>{{order.order_status}}</td>      </tr>      <tr>      <td>Car status:</td>      <td>{{order.car.car_status}}</td>    </tr>    </table>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AddCarDialogComponent', 'selector': 'app-add-car-dialog'},{'name': 'AdminCarsComponent', 'selector': 'app-admin-cars'},{'name': 'AdminLoginComponent', 'selector': 'app-admin-login'},{'name': 'AdminOrderComponent', 'selector': 'app-admin-order'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BookCarComponent', 'selector': 'app-book-car'},{'name': 'BookingConfirmationComponent', 'selector': 'app-booking-confirmation'},{'name': 'CarsComponent', 'selector': 'app-cars'},{'name': 'CarsItemComponent', 'selector': 'app-cars-item'},{'name': 'CustomerServiceComponent', 'selector': 'app-customer-service'},{'name': 'LocationsComponent', 'selector': 'app-locations'},{'name': 'OrderDetailDialogComponent', 'selector': 'app-order-detail-dialog'},{'name': 'OrderLoginComponent', 'selector': 'app-order-login'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'BookingConfirmationComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'BookingConfirmationComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
