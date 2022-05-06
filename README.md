@@ -30,6 +30,15 @@
 - [ ] customer-service
 - [ ] order-login
 
+###services
+- [ ] auth service - WIP Dani
+- [ ] car service
+- [ ] currency service
+- [ ] location service
+- [ ] opening hours service
+- [ ] order service
+- [ ] user service
+
 
 
 ## @ Des wurde autogeneriert
