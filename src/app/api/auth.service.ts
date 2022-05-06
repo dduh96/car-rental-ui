@@ -16,7 +16,7 @@ import { HttpClient, HttpHeaders, HttpParams,
          HttpResponse, HttpEvent, HttpParameterCodec, HttpContext
         }       from '@angular/common/http';
 import { CustomHttpParameterCodec }                          from '../encoder';
-import { Observable }                                        from 'rxjs';
+import {filter, fromEvent, map, Observable, Subject} from 'rxjs';
 
 // @ts-ignore
 import { ApiError } from '../model/apiError';
@@ -43,6 +43,7 @@ export class AuthService {
     public defaultHeaders = new HttpHeaders();
     public configuration = new Configuration();
     public encoder: HttpParameterCodec;
+    private _isLoggedIn = new Subject<boolean>();
 
     constructor(protected httpClient: HttpClient, @Optional() configuration: Configuration) {
         if (configuration) {
@@ -91,6 +92,8 @@ export class AuthService {
         }
         return httpParams;
     }
+
+
 
     /**
      * Login with orderId and lastName
@@ -252,5 +255,7 @@ export class AuthService {
     public getCredentialsForToken(token: string){
       return {'bearerAuth': token};
     }
+
+
 
 }
