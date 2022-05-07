@@ -40,7 +40,7 @@ jobs:
           
       - name: Test
         run: |
-          ./node_modules/.bin/ng test --code-coverage --browsers=ChromeHeadlessCI
+          ./node_modules/.bin/ng test --code-coverage --browsers=ChromeHeadless
           
       - name: Codecov Upload
         env:
