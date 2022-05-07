@@ -47,9 +47,7 @@ describe('CarsItemComponent', () => {
     component.car = mockCar;
 
     const mockInputSearch: InputSearch = {
-      selectedTimeFrom: "now",
       selectedDateFrom: "this.dateToday",
-      selectedTimeTo: "this.timeList[5].value",
       selectedDateTo: "this.dateTodayPlusSeven",
       selectedCurrencySymbol: Currency.SymbolEnum.Usd
     };

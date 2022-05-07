@@ -33,19 +33,12 @@ export class CarsItemComponent implements OnInit {
   public getPrice(): string {
     let dateTo = new Date(this.inputSearch.selectedDateTo);
     let dateFrom = new Date(this.inputSearch.selectedDateFrom);
-    let timeToInMs = parseInt(this.inputSearch.selectedTimeTo) * 60 * 1000;
-    let timeFromInMs = parseInt(this.inputSearch.selectedTimeFrom) * 60 * 1000;
-    let dateToInMs = dateTo.getTime() + timeToInMs;
-    let dateFromInMs = dateFrom.getTime() + timeFromInMs;
+    let dateToInMs = dateTo.getTime();
+    let dateFromInMs = dateFrom.getTime();
 
     const diffInMs = Math.abs(dateToInMs - dateFromInMs);
-    let diff =  diffInMs / (1000 * 60 * 60 * 24);
+    let diff =  diffInMs / (1000 * 60 * 60 * 24) + 1;
 
-    /*let rateUsd = this.currency?.find(sym => sym.symbol == Currency.SymbolEnum.Usd);
-    let selectedRate = this.currency?.find(sym => sym.symbol == this.inputSearch.selectedCurrencySymbol);
-    if (rateUsd != undefined && selectedRate != undefined)
-      return (((this.car.price / rateUsd.rate! * selectedRate.rate!)/100)*Math.ceil(diff)).toFixed(2);
-    else return "";*/
     return (this.car.price / 100 * Math.ceil(diff)).toFixed(2);
   }
 
