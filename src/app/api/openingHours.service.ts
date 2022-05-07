@@ -44,7 +44,7 @@ export class OpeningHoursService {
             this.configuration = configuration;
         }
         if (typeof this.configuration.basePath !== 'string') {
-            this.basePath = environment.BASE_PATH
+            this.basePath = environment.OPENING_HOURS_PATH
             this.configuration.basePath = this.basePath;
         }
         this.encoder = this.configuration.encoder || new CustomHttpParameterCodec();
