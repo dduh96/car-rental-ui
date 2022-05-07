@@ -440,10 +440,10 @@ export class OrderService {
    * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
    * @param reportProgress flag to report request and response progress.
    */
-  public updateStatusById(id: string, status: 'CREATED' | 'CANCELED' | 'ACTIVE' | 'RETURNED', observe?: 'body', reportProgress?: boolean, options?: { httpHeaderAccept?: 'application/json', context?: HttpContext }): Observable<Order>;
-  public updateStatusById(id: string, status: 'CREATED' | 'CANCELED' | 'ACTIVE' | 'RETURNED', observe?: 'response', reportProgress?: boolean, options?: { httpHeaderAccept?: 'application/json', context?: HttpContext }): Observable<HttpResponse<Order>>;
-  public updateStatusById(id: string, status: 'CREATED' | 'CANCELED' | 'ACTIVE' | 'RETURNED', observe?: 'events', reportProgress?: boolean, options?: { httpHeaderAccept?: 'application/json', context?: HttpContext }): Observable<HttpEvent<Order>>;
-  public updateStatusById(id: string, status: 'CREATED' | 'CANCELED' | 'ACTIVE' | 'RETURNED', observe: any = 'body', reportProgress: boolean = false, options?: { httpHeaderAccept?: 'application/json', context?: HttpContext }): Observable<any> {
+  public updateStatusById(id: BigInt, status: 'CREATED' | 'CANCELED' | 'ACTIVE' | 'RETURNED', observe?: 'body', reportProgress?: boolean, options?: { httpHeaderAccept?: 'application/json', context?: HttpContext }): Observable<Order>;
+  public updateStatusById(id: BigInt, status: 'CREATED' | 'CANCELED' | 'ACTIVE' | 'RETURNED', observe?: 'response', reportProgress?: boolean, options?: { httpHeaderAccept?: 'application/json', context?: HttpContext }): Observable<HttpResponse<Order>>;
+  public updateStatusById(id: BigInt, status: 'CREATED' | 'CANCELED' | 'ACTIVE' | 'RETURNED', observe?: 'events', reportProgress?: boolean, options?: { httpHeaderAccept?: 'application/json', context?: HttpContext }): Observable<HttpEvent<Order>>;
+  public updateStatusById(id: BigInt, status: 'CREATED' | 'CANCELED' | 'ACTIVE' | 'RETURNED', observe: any = 'body', reportProgress: boolean = false, options?: { httpHeaderAccept?: 'application/json', context?: HttpContext }): Observable<any> {
     if (id === null || id === undefined) {
       throw new Error('Required parameter id was null or undefined when calling updateStatusById.');
     }
