@@ -31,16 +31,10 @@ jobs:
 
       - name: Build project
         run: ./node_modules/.bin/ng build --aot
-
-      - name: build artifact
-        uses: actions/upload-artifact@v3.0.0
-        with:
-          name: artifact
-          path: dist/*
-          
+        
       - name: Test
         run: |
-          ./node_modules/.bin/ng test --code-coverage --browsers=ChromeHeadless
+          npm test --code-coverage --browsers=ChromeHeadless
           
       - name: Codecov Upload
         env:
@@ -49,6 +43,14 @@ jobs:
           curl -Os https://uploader.codecov.io/latest/linux/codecov
           chmod +x codecov
           ./codecov -t ${CODECOV_TOKEN}   
+
+      - name: build artifact
+        uses: actions/upload-artifact@v3.0.0
+        with:
+          name: artifact
+          path: dist/*
+          
+
 # now runs via google cloud
 #  deploy:
 #    runs-on: ubuntu-latest
