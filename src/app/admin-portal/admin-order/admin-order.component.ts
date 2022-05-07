@@ -31,12 +31,8 @@ export class AdminOrderComponent implements OnInit, AfterViewInit {
       this.orderService.getAllOrders().subscribe(res => {
         res.filter(order => order.saga_status == Order.SagaStatusEnum.Finished)
         this.orderList = res;
-    }else this.authService.handleAdminCredentialsInvalid();
-
       });
-    } 
-
-
+    }else this.authService.handleAdminCredentialsInvalid();
   }
 
   ngOnInit(): void {
