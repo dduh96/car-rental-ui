@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {OrderService} from "../../../api/order.service";
 import {Order} from "../../../model/order";
+import {AuthService} from "../../../api/auth.service";
 
 @Component({
   selector: 'app-booking-confirmation',
@@ -13,7 +14,12 @@ export class BookingConfirmationComponent implements OnInit {
   public order: Order | undefined;
   public price: string | undefined;
 
-  constructor(private activatedRoute: ActivatedRoute, private orderService: OrderService) {
+  constructor(private activatedRoute: ActivatedRoute, private orderService: OrderService, private authService: AuthService) {
+    if(sessionStorage.getItem('order_token') != undefined){
+      // @ts-ignore
+      this.orderService.configuration.credentials =  this.authService.getCredentialsForToken(sessionStorage.getItem('order_token'));
+    }
+
     orderService.getOrderById(this.activatedRoute.snapshot.params["orderId"]).subscribe(res => {
       this.order = res
 
