@@ -58,4 +58,14 @@ describe('CarsComponent', () => {
       }
     )
   }));
+
+  it('should set selectedDateFrom', ()=>{
+    component.onDateChangeFrom("01/01/2022");
+    expect(component.inputSearch.selectedDateFrom).toBe("2022-01-01");
+  });
+
+  it('should set selectedDateTo', ()=>{
+    component.onDateChangeTo("02/02/2022");
+    expect(component.inputSearch.selectedDateTo).toBe("2022-02-02");
+  });
 });
