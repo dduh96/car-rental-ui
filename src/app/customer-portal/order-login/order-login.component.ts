@@ -47,6 +47,7 @@ export class OrderLoginComponent implements OnInit {
       order_id:this.getOrder.givenOrderID,
       last_name:this.getOrder.givenLastname
     }).subscribe(res => {
+      sessionStorage.setItem('order_token', res.token)
       if (this.getOrder.givenOrderID != undefined) {
         this.router.navigate(["../confirmation", this.getOrder.givenOrderID], {
           relativeTo: this.activatedRoute
