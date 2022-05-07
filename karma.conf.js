@@ -44,7 +44,7 @@ module.exports = function (config) {
         flags: ['--no-sandbox']
       }
     },
-    browsers: ['ChromeHeadlessCI', 'ChromeHeadless', 'Firefox'],
+    browsers: ['ChromeHeadlessCI', 'Firefox'],
     singleRun: false,
     restartOnFileChange: true
   });
