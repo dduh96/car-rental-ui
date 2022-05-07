@@ -37,6 +37,18 @@ jobs:
         with:
           name: artifact
           path: dist/*
+          
+      - name: Test
+        run: |
+          ./node_modules/.bin/ng test
+          
+      - name: Codecov Upload
+        env:
+            CODECOV_TOKEN: ${{secrets.CODECOV_TOKEN}}
+        run: |
+          curl -Os https://uploader.codecov.io/latest/linux/codecov
+          chmod +x codecov
+          ./codecov -t ${CODECOV_TOKEN}   
 # now runs via google cloud
 #  deploy:
 #    runs-on: ubuntu-latest
