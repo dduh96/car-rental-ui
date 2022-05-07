@@ -36,19 +36,19 @@ jobs:
         run: |
           npm test --code-coverage --browsers=ChromeHeadlessCI
           
-      - name: Codecov Upload
-        env:
-            CODECOV_TOKEN: ${{secrets.CODECOV_TOKEN}}
-        run: |
-          curl -Os https://uploader.codecov.io/latest/linux/codecov
-          chmod +x codecov
-          ./codecov -t ${CODECOV_TOKEN}   
+#      - name: Codecov Upload
+#        env:
+#            CODECOV_TOKEN: ${{secrets.CODECOV_TOKEN}}
+#        run: |
+#          curl -Os https://uploader.codecov.io/latest/linux/codecov
+#          chmod +x codecov
+#          ./codecov -t ${CODECOV_TOKEN}   
 
-      - name: build artifact
-        uses: actions/upload-artifact@v3.0.0
-        with:
-          name: artifact
-          path: dist/*
+#      - name: build artifact
+#        uses: actions/upload-artifact@v3.0.0
+#        with:
+#          name: artifact
+#          path: dist/*
           
 
 # now runs via google cloud
