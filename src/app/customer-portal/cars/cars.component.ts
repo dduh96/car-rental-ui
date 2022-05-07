@@ -33,7 +33,7 @@ export class CarsComponent implements OnInit {
   public loadCars(){
     if(this.inputSearch.selectedCurrencySymbol != undefined){
       this.carService.getCars(this.inputSearch.selectedCurrencySymbol as Car.CurrencySymbolEnum).subscribe(res => {
-        this.cars = res.filter(car => car.car_status == Car.CarStatusEnum.Available); //todo: test if works
+        this.cars = res.filter(car => car.car_status == Car.CarStatusEnum.Available);
       });
     }
   }
