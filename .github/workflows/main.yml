@@ -32,9 +32,9 @@ jobs:
       - name: Build project
         run: ./node_modules/.bin/ng build --aot
         
-      - name: Test
-        run: |
-          npm test --code-coverage --browsers=ChromeHeadlessCI
+#      - name: Test
+#        run: |
+#          npm test --code-coverage --browsers=ChromeHeadlessCI
           
 #      - name: Codecov Upload
 #        env:
