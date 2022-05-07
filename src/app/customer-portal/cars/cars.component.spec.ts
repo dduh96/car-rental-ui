@@ -18,6 +18,9 @@ describe('CarsComponent', () => {
   let component: CarsComponent;
   let fixture: ComponentFixture<CarsComponent>;
   let service: CarService;
+  const mockHttp = {
+    request: jasmine.createSpy('request')
+  };
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -45,9 +48,6 @@ describe('CarsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  const mockHttp = {
-    request: jasmine.createSpy('request')
-  };
 
   it('should load cars', fakeAsync(() => {
     mockHttp.request.and.returnValue(
