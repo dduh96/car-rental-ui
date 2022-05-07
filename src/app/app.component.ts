@@ -33,4 +33,9 @@ export class AppComponent {
     });
   }
 
+  logout(){
+    sessionStorage.removeItem('admin_token');
+    window.location.reload();
+  }
+
 }

@@ -20,6 +20,7 @@
 $theming-primary: mat.define-palette(mat.$light-green-palette,900);
 $theming-accent: mat.define-palette(mat.$light-green-palette, 200);
 $theming-warn: mat.define-palette(mat.$red-palette);
+$theming-accent-blue: mat.define-palette(mat.$blue-palette, 300);
 
 // Create the theme object (a Sass map containing all of the palettes).
 
@@ -27,6 +28,7 @@ $theme: mat.define-light-theme((
   color: (
     primary: $theming-primary,
     accent: $theming-accent,
+    accent-blue: $theming-accent-blue,
     warn: $theming-warn
   )
 ));

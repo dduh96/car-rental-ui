@@ -33,6 +33,7 @@ import { AdminLoginComponent } from './admin-portal/admin-login/admin-login.comp
 import { AdminOrderComponent } from './admin-portal/admin-order/admin-order.component';
 import {MatSortModule} from "@angular/material/sort";
 import { OrderDetailDialogComponent } from './admin-portal/dialogs/order-detail-dialog/order-detail-dialog.component';
+import {MatIconModule} from "@angular/material/icon";
 
 const routes = [
   {
@@ -85,33 +86,34 @@ const routes = [
     AdminOrderComponent,
     OrderDetailDialogComponent,
   ],
-  imports: [
-    BrowserModule,
-    RouterModule.forRoot(routes),
-    MatToolbarModule,
-    MatButtonModule,
-    FormsModule,
-    HttpClientModule,
-    MatGridListModule,
-    MDBRootModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatSelectModule,
-    MatDatepickerModule,
-    BrowserAnimationsModule,
-    MatInputModule,
-    AgmCoreModule.forRoot({
-      apiKey: environment.GAPI_KEY,
-      libraries: ['places']
-    }),
-    MDBRootModule,
-    MatNativeDateModule,
-    ReactiveFormsModule,
-    MatRadioModule,
-    MatTableModule,
-    MatDialogModule,
-    MatSortModule,
-  ],
+    imports: [
+        BrowserModule,
+        RouterModule.forRoot(routes),
+        MatToolbarModule,
+        MatButtonModule,
+        FormsModule,
+        HttpClientModule,
+        MatGridListModule,
+        MDBRootModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatSelectModule,
+        MatDatepickerModule,
+        BrowserAnimationsModule,
+        MatInputModule,
+        AgmCoreModule.forRoot({
+            apiKey: environment.GAPI_KEY,
+            libraries: ['places']
+        }),
+        MDBRootModule,
+        MatNativeDateModule,
+        ReactiveFormsModule,
+        MatRadioModule,
+        MatTableModule,
+        MatDialogModule,
+        MatSortModule,
+        MatIconModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

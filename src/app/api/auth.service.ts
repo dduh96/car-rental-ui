@@ -12,11 +12,12 @@
 /* tslint:disable:no-unused-variable member-ordering */
 
 import { Inject, Injectable, Optional }                      from '@angular/core';
-import { HttpClient, HttpHeaders, HttpParams,
-         HttpResponse, HttpEvent, HttpParameterCodec, HttpContext
-        }       from '@angular/common/http';
+import {
+  HttpClient, HttpHeaders, HttpParams,
+  HttpResponse, HttpEvent, HttpParameterCodec, HttpContext, HttpErrorResponse
+} from '@angular/common/http';
 import { CustomHttpParameterCodec }                          from '../encoder';
-import {filter, fromEvent, map, Observable, Subject} from 'rxjs';
+import {catchError, filter, fromEvent, map, Observable, Subject, throwError} from 'rxjs';
 
 // @ts-ignore
 import { ApiError } from '../model/apiError';
@@ -31,6 +32,8 @@ import { LoginOrderRequest } from '../model/loginOrderRequest';
 import { environment}                     from '../../environments/environment';
 import { Configuration }                                     from '../configuration';
 import {Credentials} from "../admin-portal/admin-login/credentials";
+import {parseJson} from "ajv/dist/runtime/parseJson";
+import message = parseJson.message;
 
 
 
@@ -166,7 +169,7 @@ export class AuthService {
                 observe: observe,
                 reportProgress: reportProgress
             }
-        );
+        ).pipe(catchError(this.handleError));
     }
 
     /**
@@ -241,8 +244,27 @@ export class AuthService {
                 observe: observe,
                 reportProgress: reportProgress
             }
-        );
+        ).pipe(catchError(this.handleError));
     }
+
+
+  private handleError(error: HttpErrorResponse) {
+      let errorMessage = "Something bad happened; please try again later."
+    if (error.status === 0) {
+      // A client-side or network error occurred. Handle it accordingly.
+      console.error('An error occurred:', error.error);
+    } if (error.status === 400) {
+      alert("Incorrect credentials. Verify your input.")
+      console.log('Error:', error.error)
+    } else {
+      // The backend returned an unsuccessful response code.
+      // The response body may contain clues as to what went wrong.
+      console.error(
+        `Backend returned code ${error.status}, body was: `, error.error);
+    }
+    // Return an observable with a user-facing error message.
+    return throwError(() => new Error(errorMessage));
+  }
 
     public getAdminCredentials(): any {
       if(sessionStorage.getItem('admin_token')!= null) {
