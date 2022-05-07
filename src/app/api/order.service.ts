@@ -14,10 +14,10 @@
 import {Inject, Injectable, Optional} from '@angular/core';
 import {
   HttpClient, HttpHeaders, HttpParams,
-  HttpResponse, HttpEvent, HttpParameterCodec, HttpContext
+  HttpResponse, HttpEvent, HttpParameterCodec, HttpContext, HttpErrorResponse
 } from '@angular/common/http';
 import {CustomHttpParameterCodec} from '../encoder';
-import {filter, flatMap, map, Observable, switchAll, switchMap} from 'rxjs';
+import {catchError, filter, flatMap, map, Observable, switchAll, switchMap, throwError} from 'rxjs';
 
 // @ts-ignore
 import {ApiError} from '../model/apiError';
@@ -511,18 +511,38 @@ export class OrderService {
   public createOrderUpdateCar(orderRequest: OrderRequest): Observable<String> { // todo make this return the id
     return this.createOrder(orderRequest)
       .pipe(
+        catchError(this.handleError),
         switchMap(
-          res => this.authService.loginOrder({order_id: res.orderId, last_name: res.last_name}
+          res => this.authService.loginOrder({order_id: res.orderId, last_name: res.last_name} // todo hier kommt der spass grad her
           ).pipe(
+            catchError(this.handleError),
               switchMap(res2 => {
                 this.configuration.credentials = this.authService.getCredentialsForToken(res2.token);
                 return this.updateStatusById(res.orderId, Order.OrderStatusEnum.Active).pipe(
-                  map(res3 => res3.orderId)
+                  catchError(this.handleError),
+                  map(res3 => res3)
                 )
               })
           )
         )
       );
+  }
+
+
+  private handleError(error: HttpErrorResponse) {
+    if (error.status === 0) {
+      // A client-side or network error occurred. Handle it accordingly.
+      console.error('An error occurred:', error.error);
+    } if (error.status === 400) {
+      console.log('Error:', error.error)
+    } else {
+      // The backend returned an unsuccessful response code.
+      // The response body may contain clues as to what went wrong.
+      console.error(
+        `Backend returned code ${error.status}, body was: `, error.error);
+    }
+    // Return an observable with a user-facing error message.
+    return throwError(() => new Error('Something bad happened; please try again later.'));
   }
 
 }
