@@ -31,10 +31,20 @@ export class CarsItemComponent implements OnInit {
   }
 
   public getPrice(): string {
+    let dateTo = new Date(this.inputSearch.selectedDateTo);
+    let dateFrom = new Date(this.inputSearch.selectedDateFrom);
+    let timeToInMs = parseInt(this.inputSearch.selectedTimeTo) * 60 * 1000;
+    let timeFromInMs = parseInt(this.inputSearch.selectedTimeFrom) * 60 * 1000;
+    let dateToInMs = dateTo.getTime() + timeToInMs;
+    let dateFromInMs = dateFrom.getTime() + timeFromInMs;
+
+    const diffInMs = Math.abs(dateToInMs - dateFromInMs);
+    let diff =  diffInMs / (1000 * 60 * 60 * 24);
+
     let rateUsd = this.currency?.find(sym => sym.symbol == Currency.SymbolEnum.Usd);
     let selectedRate = this.currency?.find(sym => sym.symbol == this.inputSearch.selectedCurrencySymbol);
     if (rateUsd != undefined && selectedRate != undefined)
-      return ((this.car.price / rateUsd.rate! * selectedRate.rate!)/100).toFixed(2);
+      return (((this.car.price / rateUsd.rate! * selectedRate.rate!)/100)*Math.ceil(diff)).toFixed(2);
     else return "";
   }
 
