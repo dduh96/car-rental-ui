@@ -10,7 +10,7 @@ export const environment = {
   ORDER_PATH: 'http://localhost:8072/order-service/api/v1',
   CAR_PATH: 'http://localhost:8072/car-service/api/v1',
   CURRENCY_PATH: 'http://localhost:8072/currency-service/api/v1',
-  AUTH_PATH: 'http://localhost:8072/authentication-service/api/v1', // todo
+  AUTH_PATH: 'http://localhost:8072/authentication-service/api/v1',
   OPENING_HOURS_PATH: 'http://localhost:8072/opening-hours-service/api/v1',
   COLLECTION_FORMATS: {
     'csv': ',',
