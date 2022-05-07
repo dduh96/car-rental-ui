@@ -21,7 +21,7 @@ export class AppComponent {
   constructor( private dialog: MatDialog, private authService: AuthService) {
     if(this.isAdmin){
       timer(0, this.verifyStillAdminInterval).pipe(
-        map(_ => this.authService.checkAdminCredentials())
+        map(_ => this.authService.handleAdminCredentialsInvalid())
       ).subscribe()
     }
   }
