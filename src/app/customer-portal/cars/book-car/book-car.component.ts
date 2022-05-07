@@ -1,19 +1,15 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
-import {Car} from "../../../model/car";
 import {InputSearch} from "../InputSearch";
 import {MyErrorStateMatcher} from "../../../services/MyErrorStateMatcher";
 import {Form, FormControl, FormGroup, Validators} from "@angular/forms";
 import {LocationService} from "../../../api/location.service";
 import {Location} from "../../../model/location";
-import {OpeningHours} from "../../../model/openingHours";
 import {Order} from "../../../model/order";
 import {OrderService} from "../../../api/order.service";
 import {OrderRequest} from "../../../model/orderRequest";
-import {Currency} from "../../../model/currency";
 import {CarService} from "../../../api/car.service";
 import {formatDate, formatNumber} from "@angular/common";
-import {Observable} from "rxjs";
 import {WhiteSpaceValidator} from "../../../services/WhiteSpaceValidator";
 
 @Component({
