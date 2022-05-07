@@ -25,8 +25,8 @@
 ### customer-portal
 - [ ] book-car
 - [ ] booking-confirmation
-- [ ] cars-item
-- [ ] cars
+- [x] cars-item
+- [x] cars
 - [ ] customer-service
 - [ ] order-login
 

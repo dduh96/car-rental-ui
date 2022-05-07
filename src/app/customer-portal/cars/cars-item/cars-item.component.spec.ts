@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { CarsItemComponent } from './cars-item.component';
+import {CarsItemComponent} from './cars-item.component';
 import {HttpClientTestingModule} from "@angular/common/http/testing";
 import {BookCarComponent} from "../book-car/book-car.component";
 import {Car} from "../../../model/car";
@@ -14,11 +14,11 @@ describe('CarsItemComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CarsItemComponent, BookCarComponent ],
+      declarations: [CarsItemComponent, BookCarComponent],
       imports: [HttpClientTestingModule],
       providers: [CarService]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
@@ -40,7 +40,7 @@ describe('CarsItemComponent', () => {
       gear_type: "Automatic",
       adblue: true,
       seats: 6,
-      price: 169.19,
+      price: 200,
       currency_symbol: Car.CurrencySymbolEnum.Usd,
       picture_link: "https://i.pinimg.com/originals/bf/07/14/bf07144f9a02225c7e058aa8d958d2af.png"
     }
@@ -59,4 +59,17 @@ describe('CarsItemComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should set visibility on true', () => {
+    component.bookCar();
+    expect(component.visibilityBookCar).toBeTruthy();
+  });
+
+  it('should calculate price',()=>{
+    component.inputSearch.selectedDateFrom="2022-01-01";
+    component.inputSearch.selectedDateTo="2022-01-02";
+    component.car.price=20000;
+    return expect(component.getPrice()).toBe("400.00");
+  });
+
 });
