@@ -32,7 +32,7 @@ export class AdminOrderComponent implements OnInit, AfterViewInit {
         res.filter(order => order.saga_status == Order.SagaStatusEnum.Finished)
         this.orderList = res;
       });
-    }else this.authService.handleAdminCredentialsInvalid();
+    }
   }
 
   ngOnInit(): void {

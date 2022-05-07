@@ -100,7 +100,7 @@ export class AddCarDialogComponent implements OnInit {
         console.log(res);
         this.dialogRef.close(true);
       })
-    }else this.authService.handleAdminCredentialsInvalid();
+    }
 
 
 
