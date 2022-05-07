@@ -14,7 +14,7 @@ import { Location } from './location';
 
 
 export interface Order {
-    orderId: string;
+    orderId: BigInt;
     car: Car;
     location_of_rental: Location;
     location_of_return: Location;
