@@ -1,0 +1,724 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>car-rental-ui documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href=".." class="navbar-brand">car-rental-ui documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  CarsItemComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/customer-portal/cars/cars-item/cars-item.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-cars-item</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./cars-item.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./cars-item.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#currency" >currency</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#visibilityBookCar" >visibilityBookCar</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#bookCar" >bookCar</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getPrice" >getPrice</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#car" >car</a>
+                            </li>
+                            <li>
+                                <a href="#inputSearch" >inputSearch</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(currencyService: <a href="../injectables/CurrencyService.html" target="_self">CurrencyService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/customer-portal/cars/cars-item/cars-item.component.ts:12</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>currencyService</td>
+
+                                                        <td>
+                                                                        <code><a href="../injectables/CurrencyService.html" target="_self" >CurrencyService</a></code>
+                                                        </td>
+
+                                                    <td>
+                                                            No
+                                                    </td>
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="car"></a>
+                        <b>car</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Car.html" target="_self" >Car</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/customer-portal/cars/cars-item/cars-item.component.ts:20</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="inputSearch"></a>
+                        <b>inputSearch</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/InputSearch.html" target="_self" >InputSearch</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/customer-portal/cars/cars-item/cars-item.component.ts:19</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+    <section>
+
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="bookCar"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>bookCar</b></span>
+                        <a href="#bookCar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>bookCar()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="28"
+                            class="link-to-prism">src/app/customer-portal/cars/cars-item/cars-item.component.ts:28</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getPrice"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>getPrice</b></span>
+                        <a href="#getPrice"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getPrice()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="33"
+                            class="link-to-prism">src/app/customer-portal/cars/cars-item/cars-item.component.ts:33</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="24"
+                            class="link-to-prism">src/app/customer-portal/cars/cars-item/cars-item.component.ts:24</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="currency"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>currency</b></span>
+                        <a href="#currency"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Currency[] | undefined</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/customer-portal/cars/cars-item/cars-item.component.ts:21</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="visibilityBookCar"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>visibilityBookCar</b></span>
+                        <a href="#visibilityBookCar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/customer-portal/cars/cars-item/cars-item.component.ts:22</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component, Input, OnInit} from &#x27;@angular/core&#x27;;
+import {Car} from &quot;../../../model/car&quot;;
+import {InputSearch} from &quot;../InputSearch&quot;;
+import {Currency} from &quot;../../../model/currency&quot;;
+import {CurrencyService} from &quot;../../../api/currency.service&quot;;
+
+@Component({
+  selector: &#x27;app-cars-item&#x27;,
+  templateUrl: &#x27;./cars-item.component.html&#x27;,
+  styleUrls: [&#x27;./cars-item.component.css&#x27;]
+})
+export class CarsItemComponent implements OnInit {
+
+
+  constructor(currencyService: CurrencyService) {
+    currencyService.getCurrencies().subscribe(res &#x3D;&gt; this.currency &#x3D; res);
+  }
+
+  @Input(&#x27;inputSearch&#x27;) inputSearch!: InputSearch;
+  @Input(&#x27;car&#x27;) car!: Car;
+  public currency: Currency[] | undefined;
+  public visibilityBookCar &#x3D; false;
+
+  ngOnInit(): void {
+  }
+
+
+  public bookCar() {
+    this.inputSearch.car_id &#x3D; this.car.car_id;
+    this.visibilityBookCar &#x3D; true;
+  }
+
+  public getPrice(): string {
+    let rateUsd &#x3D; this.currency?.find(sym &#x3D;&gt; sym.symbol &#x3D;&#x3D; Currency.SymbolEnum.Usd);
+    let selectedRate &#x3D; this.currency?.find(sym &#x3D;&gt; sym.symbol &#x3D;&#x3D; this.inputSearch.selectedCurrencySymbol);
+    if (rateUsd !&#x3D; undefined &amp;&amp; selectedRate !&#x3D; undefined)
+      return ((this.car.price / rateUsd.rate! * selectedRate.rate!)/100).toFixed(2);
+    else return &quot;&quot;;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td rowspan&#x3D;&quot;4&quot; class&#x3D;&quot;table-row-img&quot;&gt;
+      &lt;img alt&#x3D;&quot;car picture&quot; src&#x3D;&quot;{{car.picture_link}}&quot;/&gt;
+    &lt;/td&gt;
+    &lt;td class&#x3D;&quot;table-row-cartitle&quot;&gt;{{car.manufacturer}} {{car.model}} {{car.model_series}} {{car.construction_year}}&lt;/td&gt;
+    &lt;td&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td rowspan&#x3D;&quot;2&quot; class&#x3D;&quot;table-row-cardDetails&quot;&gt;
+      &lt;img alt&#x3D;&quot;icon seats&quot; src&#x3D;&quot;../../../../assets/seats.png&quot;/&gt;{{car.seats}} seats &lt;br&gt;
+      &lt;img alt&#x3D;&quot;icon gear&quot; src&#x3D;&quot;../../../../assets/gear.png&quot;/&gt;{{car.gear_type}} &lt;br&gt;
+      &lt;img alt&#x3D;&quot;icon range&quot; src&#x3D;&quot;../../../../assets/km.png&quot;/&gt;{{car.engine_fuel}}&lt;br&gt;
+      &lt;img alt&#x3D;&quot;icon suitcase big&quot; src&#x3D;&quot;../../../../assets/suitcase_big.png&quot;/&gt;{{car.engine_fuel_consumption}}L per 100km&lt;br&gt;
+    &lt;/td&gt;
+    &lt;td class&#x3D;&quot;table-row-booking&quot;&gt;{{getPrice()}} {{inputSearch.selectedCurrencySymbol}}&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class&#x3D;&quot;table-row-booking&quot;&gt;
+      &lt;button mat-raised-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;bookCar()&quot; *ngIf&#x3D;&quot;!visibilityBookCar&quot;&gt;book&lt;/button&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td colspan&#x3D;&quot;2&quot;&gt;
+      &lt;app-book-car [inputSearch]&#x3D;&quot;inputSearch&quot; [visibilityBookCar]&#x3D;&quot;visibilityBookCar&quot;
+                    (visibilityBookCarChange)&#x3D;&quot;visibilityBookCar&#x3D;$event&quot; *ngIf&#x3D;&quot;visibilityBookCar&quot;&gt;&lt;/app-book-car&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+
+&lt;/table&gt;
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./cars-item.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">table, th, td{
+  width: 80%;
+  background-color: white;
+  border-radius: 1em;
+  padding:1%;
+  margin: 1%;
+}
+
+table img{
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.table-row-img{
+  width:25%;
+  padding: 2%;
+}
+
+.table-row-cartitle{
+  font-size: 1.5em;
+  width:50%;
+  padding-top: 3%;
+}
+
+.table-row-cardDetails{
+  width:50%;
+}
+
+.table-row-cardDetails img{
+  width: 20px;
+}
+
+.table-row-booking{
+  text-align: right;
+  font-size: 2em;
+  padding-right: 1%;
+}
+
+button{
+  width:100%;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><table>  <tr>    <td rowspan="4" class="table-row-img">      <img alt="car picture" src="{{car.picture_link}}"/>    </td>    <td class="table-row-cartitle">{{car.manufacturer}} {{car.model}} {{car.model_series}} {{car.construction_year}}</td>    <td></td>  </tr>  <tr>    <td rowspan="2" class="table-row-cardDetails">      <img alt="icon seats" src="../../../../assets/seats.png"/>{{car.seats}} seats <br>      <img alt="icon gear" src="../../../../assets/gear.png"/>{{car.gear_type}} <br>      <img alt="icon range" src="../../../../assets/km.png"/>{{car.engine_fuel}}<br>      <img alt="icon suitcase big" src="../../../../assets/suitcase_big.png"/>{{car.engine_fuel_consumption}}L per 100km<br>    </td>    <td class="table-row-booking">{{getPrice()}} {{inputSearch.selectedCurrencySymbol}}</td>  </tr>  <tr>    <td class="table-row-booking">      <button mat-raised-button color="primary" (click)="bookCar()" *ngIf="!visibilityBookCar">book</button>    </td>  </tr>  <tr>    <td colspan="2">      <app-book-car [inputSearch]="inputSearch" [visibilityBookCar]="visibilityBookCar"                    (visibilityBookCarChange)="visibilityBookCar=$event" *ngIf="visibilityBookCar"></app-book-car>    </td>  </tr></table></div>'
+    var COMPONENTS = [{'name': 'AddCarDialogComponent', 'selector': 'app-add-car-dialog'},{'name': 'AdminCarsComponent', 'selector': 'app-admin-cars'},{'name': 'AdminLoginComponent', 'selector': 'app-admin-login'},{'name': 'AdminOrderComponent', 'selector': 'app-admin-order'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BookCarComponent', 'selector': 'app-book-car'},{'name': 'BookingConfirmationComponent', 'selector': 'app-booking-confirmation'},{'name': 'CarsComponent', 'selector': 'app-cars'},{'name': 'CarsItemComponent', 'selector': 'app-cars-item'},{'name': 'CustomerServiceComponent', 'selector': 'app-customer-service'},{'name': 'LocationsComponent', 'selector': 'app-locations'},{'name': 'OrderDetailDialogComponent', 'selector': 'app-order-detail-dialog'},{'name': 'OrderLoginComponent', 'selector': 'app-order-login'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'CarsItemComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'CarsItemComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,756 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>car-rental-ui documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href=".." class="navbar-brand">car-rental-ui documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  OrderDetailDialogComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/admin-portal/dialogs/order-detail-dialog/order-detail-dialog.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-order-detail-dialog</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./order-detail-dialog.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./order-detail-dialog.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#dialogRef" >dialogRef</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#order" >order</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#selectedStatus" >selectedStatus</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#statusKeys" >statusKeys</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onConfirm" >onConfirm</a>
+                            </li>
+                            <li>
+                                <a href="#onDismiss" >onDismiss</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(dialogRef: <a href="../interfaces/Order.html" target="_self">MatDialogRef&lt;OrderDetailDialogComponent&gt;</a>, orderService: <a href="../injectables/OrderService.html" target="_self">OrderService</a>, order: <a href="../interfaces/Order.html" target="_self">Order</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/admin-portal/dialogs/order-detail-dialog/order-detail-dialog.component.ts:14</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>dialogRef</td>
+
+                                                        <td>
+                                                                        <code><a href="../interfaces/Order.html" target="_self" >MatDialogRef&lt;OrderDetailDialogComponent&gt;</a></code>
+                                                        </td>
+
+                                                    <td>
+                                                            No
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+                                                        <td>orderService</td>
+
+                                                        <td>
+                                                                        <code><a href="../injectables/OrderService.html" target="_self" >OrderService</a></code>
+                                                        </td>
+
+                                                    <td>
+                                                            No
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+                                                        <td>order</td>
+
+                                                        <td>
+                                                                        <code><a href="../interfaces/Order.html" target="_self" >Order</a></code>
+                                                        </td>
+
+                                                    <td>
+                                                            No
+                                                    </td>
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="24"
+                            class="link-to-prism">src/app/admin-portal/dialogs/order-detail-dialog/order-detail-dialog.component.ts:24</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onConfirm"></a>
+                    <span class="name">
+                        <span ><b>onConfirm</b></span>
+                        <a href="#onConfirm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onConfirm()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="31"
+                            class="link-to-prism">src/app/admin-portal/dialogs/order-detail-dialog/order-detail-dialog.component.ts:31</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onDismiss"></a>
+                    <span class="name">
+                        <span ><b>onDismiss</b></span>
+                        <a href="#onDismiss"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onDismiss()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="27"
+                            class="link-to-prism">src/app/admin-portal/dialogs/order-detail-dialog/order-detail-dialog.component.ts:27</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dialogRef"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>dialogRef</b></span>
+                        <a href="#dialogRef"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Order.html" target="_self" >MatDialogRef&lt;OrderDetailDialogComponent&gt;</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/admin-portal/dialogs/order-detail-dialog/order-detail-dialog.component.ts:17</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="order"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>order</b></span>
+                        <a href="#order"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Order.html" target="_self" >Order</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @Inject(MAT_DIALOG_DATA)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/admin-portal/dialogs/order-detail-dialog/order-detail-dialog.component.ts:19</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedStatus"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>selectedStatus</b></span>
+                        <a href="#selectedStatus"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/admin-portal/dialogs/order-detail-dialog/order-detail-dialog.component.ts:14</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="statusKeys"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>statusKeys</b></span>
+                        <a href="#statusKeys"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>Object.values(Order.OrderStatusEnum)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/admin-portal/dialogs/order-detail-dialog/order-detail-dialog.component.ts:13</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component, Inject, OnInit} from &#x27;@angular/core&#x27;;
+import {MAT_DIALOG_DATA, MatDialogRef} from &quot;@angular/material/dialog&quot;;
+import {OrderService} from &quot;../../../api/order.service&quot;;
+import {Order} from &quot;../../../model/order&quot;;
+import {OrderRequest} from &quot;../../../model/orderRequest&quot;;
+
+@Component({
+  selector: &#x27;app-order-detail-dialog&#x27;,
+  templateUrl: &#x27;./order-detail-dialog.component.html&#x27;,
+  styleUrls: [&#x27;./order-detail-dialog.component.css&#x27;]
+})
+export class OrderDetailDialogComponent implements OnInit {
+  public statusKeys &#x3D; Object.values(Order.OrderStatusEnum);
+  public selectedStatus: any;
+
+  constructor(
+    public dialogRef: MatDialogRef&lt;OrderDetailDialogComponent&gt;,
+    private orderService: OrderService,
+    @Inject(MAT_DIALOG_DATA) public order: Order
+  ) {
+    this.selectedStatus &#x3D; order.order_status;
+  }
+
+  ngOnInit(): void {
+  }
+
+  onDismiss() {
+    this.dialogRef.close(false);
+  }
+
+  onConfirm() {
+    if (this.selectedStatus &#x3D;&#x3D;&#x3D; &quot;&quot; || this.selectedStatus &#x3D;&#x3D;&#x3D; undefined) {
+      alert(&quot;Please select current order status&quot;);
+      return;
+    }
+
+    this.orderService.updateStatusById(this.order.orderId, this.selectedStatus).subscribe( _ &#x3D;&gt;
+      this.dialogRef.close(true)
+    );
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div&gt;
+  &lt;h1 mat-dialog-title tabindex&#x3D;&quot;0&quot;&gt;Order Details&lt;/h1&gt;
+
+  &lt;table&gt;
+    &lt;tr &gt;
+      &lt;th class&#x3D;&quot;table-header&quot;&gt;Order ID&lt;/th&gt;
+      &lt;td&gt;{{order.orderId}}&lt;/td&gt;
+    &lt;/tr&gt;
+
+    &lt;tr&gt;
+      &lt;th class&#x3D;&quot;table-header&quot;&gt;Status&lt;/th&gt;
+      &lt;td&gt;
+        &lt;mat-form-field style&#x3D;&quot;margin-top: 2em;&quot; appearance&#x3D;&quot;fill&quot;&gt;
+          &lt;mat-label&gt;Change Status&lt;/mat-label&gt;
+          &lt;mat-select [(ngModel)]&#x3D;&quot;selectedStatus&quot;&gt;
+            &lt;mat-option *ngFor&#x3D;&quot;let item of statusKeys&quot; [value]&#x3D;&quot;item&quot; &gt;{{item}}&lt;/mat-option&gt;
+          &lt;/mat-select&gt;
+        &lt;/mat-form-field&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+
+    &lt;tr class&#x3D;&quot;table-row&quot;&gt;
+      &lt;th class&#x3D;&quot;table-header&quot;&gt;Date of Booking&lt;/th&gt;
+      &lt;td&gt;{{order.date_of_booking}}&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+
+
+  &lt;h2 style&#x3D;&quot;margin-top: 2em;&quot;&gt;Customer&lt;/h2&gt;
+  &lt;table&gt;
+    &lt;tr&gt;
+      &lt;th class&#x3D;&quot;table-header&quot;&gt;Name&lt;/th&gt;
+      &lt;td&gt;{{order.first_name + &quot; &quot; + order.last_name}}&lt;/td&gt;
+    &lt;/tr&gt;
+
+    &lt;tr&gt;
+      &lt;th class&#x3D;&quot;table-header&quot;&gt;E-Mail&lt;/th&gt;
+      &lt;td&gt;{{order.email}}&lt;/td&gt;
+    &lt;/tr&gt;
+
+    &lt;tr&gt;
+      &lt;th class&#x3D;&quot;table-header&quot;&gt;Method of payment&lt;/th&gt;
+      &lt;td&gt;{{order.method_of_payment}}&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+
+
+  &lt;h2 style&#x3D;&quot;margin-top: 2em;&quot;&gt;Car Details&lt;/h2&gt;
+  &lt;table&gt;
+    &lt;tr&gt;
+      &lt;th class&#x3D;&quot;table-header&quot;&gt;Status&lt;/th&gt;
+      &lt;td&gt;{{order.car.car_status}}&lt;/td&gt;
+    &lt;/tr&gt;
+
+    &lt;tr&gt;
+      &lt;th class&#x3D;&quot;table-header&quot;&gt;Car ID&lt;/th&gt;
+      &lt;td&gt;{{order.car.car_id}}&lt;/td&gt;
+    &lt;/tr&gt;
+
+    &lt;tr&gt;
+      &lt;th class&#x3D;&quot;table-header&quot;&gt;Manufacturer&lt;/th&gt;
+      &lt;td&gt;{{order.car.manufacturer}}&lt;/td&gt;
+    &lt;/tr&gt;
+
+    &lt;tr&gt;
+      &lt;th class&#x3D;&quot;table-header&quot;&gt;Model&lt;/th&gt;
+      &lt;td&gt;{{order.car.model + &quot; &quot; + order.car.model_series}}&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+
+
+  &lt;div mat-dialog-actions style&#x3D;&quot;float: right&quot;&gt;
+    &lt;button mat-raised-button (click)&#x3D;&quot;onDismiss()&quot;&gt;Cancel&lt;/button&gt;
+    &lt;button mat-raised-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;onConfirm()&quot;&gt;Save&lt;/button&gt;
+  &lt;/div&gt;
+
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./order-detail-dialog.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">
+.table-header{
+  padding-right: 2em;
+}
+
+.table-row{
+  padding-bottom: 4em;
+}
+
+
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div>  <h1 mat-dialog-title tabindex="0">Order Details</h1>  <table>    <tr >      <th class="table-header">Order ID</th>      <td>{{order.orderId}}</td>    </tr>    <tr>      <th class="table-header">Status</th>      <td>        <mat-form-field style="margin-top: 2em;" appearance="fill">          <mat-label>Change Status</mat-label>          <mat-select [(ngModel)]="selectedStatus">            <mat-option *ngFor="let item of statusKeys" [value]="item" >{{item}}</mat-option>          </mat-select>        </mat-form-field>      </td>    </tr>    <tr class="table-row">      <th class="table-header">Date of Booking</th>      <td>{{order.date_of_booking}}</td>    </tr>  </table>  <h2 style="margin-top: 2em;">Customer</h2>  <table>    <tr>      <th class="table-header">Name</th>      <td>{{order.first_name + " " + order.last_name}}</td>    </tr>    <tr>      <th class="table-header">E-Mail</th>      <td>{{order.email}}</td>    </tr>    <tr>      <th class="table-header">Method of payment</th>      <td>{{order.method_of_payment}}</td>    </tr>  </table>  <h2 style="margin-top: 2em;">Car Details</h2>  <table>    <tr>      <th class="table-header">Status</th>      <td>{{order.car.car_status}}</td>    </tr>    <tr>      <th class="table-header">Car ID</th>      <td>{{order.car.car_id}}</td>    </tr>    <tr>      <th class="table-header">Manufacturer</th>      <td>{{order.car.manufacturer}}</td>    </tr>    <tr>      <th class="table-header">Model</th>      <td>{{order.car.model + " " + order.car.model_series}}</td>    </tr>  </table>  <div mat-dialog-actions style="float: right">    <button mat-raised-button (click)="onDismiss()">Cancel</button>    <button mat-raised-button color="primary" (click)="onConfirm()">Save</button>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AddCarDialogComponent', 'selector': 'app-add-car-dialog'},{'name': 'AdminCarsComponent', 'selector': 'app-admin-cars'},{'name': 'AdminLoginComponent', 'selector': 'app-admin-login'},{'name': 'AdminOrderComponent', 'selector': 'app-admin-order'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BookCarComponent', 'selector': 'app-book-car'},{'name': 'BookingConfirmationComponent', 'selector': 'app-booking-confirmation'},{'name': 'CarsComponent', 'selector': 'app-cars'},{'name': 'CarsItemComponent', 'selector': 'app-cars-item'},{'name': 'CustomerServiceComponent', 'selector': 'app-customer-service'},{'name': 'LocationsComponent', 'selector': 'app-locations'},{'name': 'OrderDetailDialogComponent', 'selector': 'app-order-detail-dialog'},{'name': 'OrderLoginComponent', 'selector': 'app-order-login'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'OrderDetailDialogComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'OrderDetailDialogComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
