@@ -6,6 +6,7 @@ import {InputSearch} from "./InputSearch";
 import {AuthService} from "../../api/auth.service";
 import {Currency} from "../../model/currency";
 import {CurrencyService} from "../../api/currency.service";
+import CurrencySymbolEnum = Car.CurrencySymbolEnum;
 
 
 @Component({
@@ -47,12 +48,20 @@ export class CarsComponent implements OnInit {
     selectedCurrencySymbol: Currency.SymbolEnum.Usd
   };
 
+
+
   constructor(private carService: CarService, private currencyService: CurrencyService) {
    // carService.getCars(Car.CurrencySymbolEnum.Usd).subscribe(res => this.cars = res);
-    carService.getCars(Car.CurrencySymbolEnum.Usd).subscribe(res => {
-      this.cars = res.filter(car => car.car_status == Car.CarStatusEnum.Available); //todo: test if works
-    });
+    this.loadCars()
     currencyService.getCurrencies().subscribe(res => this.currency = res);
+  }
+
+  public loadCars(){
+    if(this.inputSearch.selectedCurrencySymbol != undefined){
+      this.carService.getCars(this.inputSearch.selectedCurrencySymbol as Car.CurrencySymbolEnum).subscribe(res => {
+        this.cars = res.filter(car => car.car_status == Car.CarStatusEnum.Available); //todo: test if works
+      });
+    }
   }
 
   ngOnInit(): void {

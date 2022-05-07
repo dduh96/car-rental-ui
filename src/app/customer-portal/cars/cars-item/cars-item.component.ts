@@ -41,11 +41,12 @@ export class CarsItemComponent implements OnInit {
     const diffInMs = Math.abs(dateToInMs - dateFromInMs);
     let diff =  diffInMs / (1000 * 60 * 60 * 24);
 
-    let rateUsd = this.currency?.find(sym => sym.symbol == Currency.SymbolEnum.Usd);
+    /*let rateUsd = this.currency?.find(sym => sym.symbol == Currency.SymbolEnum.Usd);
     let selectedRate = this.currency?.find(sym => sym.symbol == this.inputSearch.selectedCurrencySymbol);
     if (rateUsd != undefined && selectedRate != undefined)
       return (((this.car.price / rateUsd.rate! * selectedRate.rate!)/100)*Math.ceil(diff)).toFixed(2);
-    else return "";
+    else return "";*/
+    return (this.car.price / 100 * Math.ceil(diff)).toFixed(2);
   }
 
 }
