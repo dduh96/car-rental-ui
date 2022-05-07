@@ -102,7 +102,7 @@ export class BookCarComponent implements OnInit {
         this.orderService.createOrderUpdateCar(orderRequest).subscribe(
           res => {
             if (res != undefined) {
-              this.router.navigate(["../confirmation", res], {
+              this.router.navigate(["../confirmation", res.orderId], {
                 relativeTo: this.activatedRoute
               })
             }
