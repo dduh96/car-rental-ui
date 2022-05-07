@@ -508,7 +508,7 @@ export class OrderService {
    * @param orderRequest
    * @return Order.orderId
    */
-  public createOrderUpdateCar(orderRequest: OrderRequest): Observable<String> { // todo make this return the id
+  public createOrderUpdateCar(orderRequest: OrderRequest): Observable<Order> { // todo make this return the id
     return this.createOrder(orderRequest)
       .pipe(
         catchError(this.handleError),
