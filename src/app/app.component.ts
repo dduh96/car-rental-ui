@@ -5,6 +5,7 @@ import {OrderLoginComponent} from "./customer-portal/order-login/order-login.com
 import {AdminLoginComponent} from "./admin-portal/admin-login/admin-login.component";
 import {filter, fromEvent, map, mergeMap, Subscription, timer} from "rxjs";
 import {AuthService} from "./api/auth.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -18,12 +19,12 @@ export class AppComponent {
 
 
 
-  constructor( private dialog: MatDialog, private authService: AuthService) {
-    if(this.isAdmin){
+  constructor( private dialog: MatDialog, private authService: AuthService, private router: Router) {
+    /*if(this.isAdmin){
       timer(0, this.verifyStillAdminInterval).pipe(
         map(_ => this.authService.handleAdminCredentialsInvalid())
       ).subscribe()
-    }
+    }*/
   }
 
   openOrderDialog(){
@@ -41,8 +42,9 @@ export class AppComponent {
   }
 
   logout(){
+    this.router.navigate(['./services']);
     sessionStorage.removeItem('admin_token');
-    window.location.reload();
+    // todo: reload window
   }
 
 }

@@ -3,10 +3,11 @@ import {buildCar} from "./buildCar";
 import {buildLocationOfRental} from "./buildLocationOfRental";
 import {buildOpeningHours} from "./buildOpeningHours";
 import {buildLocationOfReturn} from "./buildLocationOfReturn";
+import {OrderRequest} from "../../model/orderRequest";
 
 export function buildOrder (
   {
-    orderId= "14aa3925-312c-462e-acf8-279d18e9a9c8",
+    orderId= BigInt(0),
     car= buildCar(),
     location_of_rental = buildLocationOfRental(),
     location_of_return= buildLocationOfReturn(),
@@ -20,7 +21,8 @@ export function buildOrder (
     first_name= "Nichil",
     last_name= "Strasser",
     email= "nichil@strasser.at",
-    order_status = "CREATED"
+    order_status = "CREATED",
+    saga_status = "FINISHED"
   }: Partial <Order> = {}
 
 ): Order {
@@ -39,6 +41,7 @@ export function buildOrder (
     first_name,
     last_name,
     email,
-    order_status
+    order_status,
+    saga_status
   }
 }
