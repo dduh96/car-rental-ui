@@ -10,6 +10,10 @@
     <a class="button-element" mat-button *ngIf="isAdmin" [routerLink]="'/admin-order'">Order Administration</a>
       <a mat-button (click)="openOrderDialog()">View Order</a>
       <a mat-button (click)="openAdminDialog()">Admin</a>
+    <button mat-icon-button color="accent" title="Log Out" *ngIf="isAdmin" (click)="logout()">
+      <mat-icon>exit_to_app</mat-icon>
+    </button>
+
   </mat-toolbar>
 </div>
 <div class="banner-image">

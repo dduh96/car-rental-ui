@@ -28,14 +28,10 @@ export class AdminOrderComponent implements OnInit, AfterViewInit {
     if(authService.getAdminCredentials() != undefined) {
       // @ts-ignore
       this.orderService.configuration.credentials = authService.getAdminCredentials();
-    } // todo else
-
-    this.orderService.getAllOrders().subscribe(res => {
-
-      this.orderList = res;
-
-    });
-
+      this.orderService.getAllOrders().subscribe(res => {
+        this.orderList = res;
+      });
+    }else this.authService.checkAdminCredentials();
 
   }
 
