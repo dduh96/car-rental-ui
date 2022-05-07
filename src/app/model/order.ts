@@ -29,6 +29,7 @@ export interface Order {
     last_name: string;
     email: string;
     order_status: Order.OrderStatusEnum;
+    saga_status: Order.SagaStatusEnum
 }
 export namespace Order {
     export type MethodOfPaymentEnum = 'DINERS_CLUB' | 'VISA' | 'MASTERCARD' | 'AMERICAN_EXPRESS';
@@ -45,6 +46,14 @@ export namespace Order {
         Active: 'ACTIVE' as OrderStatusEnum,
         Returned: 'RETURNED' as OrderStatusEnum
     };
+
+  export type SagaStatusEnum = 'CREATED' | 'FINISHED' | 'CAR_REJECTED' | 'LOCATION_REJECTED';
+  export const SagaStatusEnum = {
+    Created: 'CREATED' as SagaStatusEnum,
+    Finished: 'FINISHED' as SagaStatusEnum,
+    CarRejected: 'CAR_REJECTED' as SagaStatusEnum,
+    LocationRejected: 'LOCATION_REJECTED' as SagaStatusEnum,
+  };
 }
 
 
