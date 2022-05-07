@@ -36,6 +36,9 @@ export class AdminOrderComponent implements OnInit, AfterViewInit {
     }
 
       });
+    } 
+
+
   }
 
   ngOnInit(): void {
