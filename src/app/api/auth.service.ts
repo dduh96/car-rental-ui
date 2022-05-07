@@ -278,6 +278,12 @@ export class AuthService {
       return {'bearerAuth': token};
     }
 
+  public checkAdminCredentials (){
+    if(this.getAdminCredentials() == undefined){
+      alert("Your session has expired. Please login again"); //todo observe dynamically
+      window.location.reload();
+    }
+  }
 
 
 }

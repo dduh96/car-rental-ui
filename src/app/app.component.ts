@@ -3,7 +3,8 @@ import {} from 'googlemaps';
 import {MatDialog} from "@angular/material/dialog";
 import {OrderLoginComponent} from "./customer-portal/order-login/order-login.component";
 import {AdminLoginComponent} from "./admin-portal/admin-login/admin-login.component";
-import {filter, fromEvent, map} from "rxjs";
+import {filter, fromEvent, map, mergeMap, Subscription, timer} from "rxjs";
+import {AuthService} from "./api/auth.service";
 
 @Component({
   selector: 'app-root',
@@ -13,10 +14,16 @@ import {filter, fromEvent, map} from "rxjs";
 export class AppComponent {
   title = 'car-rental-ui';
   isAdmin = sessionStorage.getItem('admin_token') != null;
+  private verifyStillAdminInterval = 180; // seconds
 
 
-  constructor( private dialog: MatDialog ) {
 
+  constructor( private dialog: MatDialog, private authService: AuthService) {
+    if(this.isAdmin){
+      timer(0, this.verifyStillAdminInterval).pipe(
+        map(_ => this.authService.checkAdminCredentials())
+      ).subscribe()
+    }
   }
 
   openOrderDialog(){
