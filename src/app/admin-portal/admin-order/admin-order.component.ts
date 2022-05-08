@@ -31,7 +31,7 @@ export class AdminOrderComponent implements OnInit, AfterViewInit {
       this.orderService.getAllOrders().subscribe(res => {
         this.orderList = res;
       });
-    }else this.authService.handleAdminCredentialsInvalid();
+    }
 
   }
 

@@ -280,8 +280,7 @@ export class AuthService {
 
   public handleAdminCredentialsInvalid (){
     if(this.getAdminCredentials() == undefined){
-      alert("Your session has expired. Please login again"); //todo observe dynamically
-      window.location.reload();
+      alert("Your session has expired. Please login again");
     }
   }
 

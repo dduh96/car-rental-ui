@@ -6,7 +6,7 @@
         <td>
           <mat-form-field class="example-full-width" appearance="standard">
             <mat-label>Lastname</mat-label>
-            <input [(ngModel)]="getOrder.givenLastname" [ngModelOptions]="{standalone: true}" matInput type="string"  placeholder="Strasser"/>
+            <input [(ngModel)]="getOrder.givenLastname" [ngModelOptions]="{standalone: true}" matInput type="string"  placeholder="Last Name"/>
             <mat-error *ngIf="viewOrderForm.hasError('required')">
               Lastname is <strong>required</strong>
             </mat-error>
@@ -17,7 +17,7 @@
         <td>
           <mat-form-field appearance="standard">
             <mat-label>Order ID</mat-label>
-            <input [(ngModel)]="getOrder.givenOrderID" [ngModelOptions]="{standalone: true}" matInput placeholder="14aa3925-312c-462e-acf8-279d18e9a9c8"/>
+            <input [(ngModel)]="getOrder.givenOrderID" [ngModelOptions]="{standalone: true}" matInput placeholder="Order ID"/>
           </mat-form-field>
         </td>
       </tr>
