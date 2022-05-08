@@ -30,6 +30,8 @@ module.exports = function (config) {
       subdir: '.',
       reporters: [
         { type: 'html' },
+        { type: 'cobertura'},
+        { type: 'json'},
         { type: 'text-summary' }
       ]
     },

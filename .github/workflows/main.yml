@@ -7,8 +7,10 @@ on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
     branches: [ main ]
+    
   pull_request:
     branches: [ main ]
+
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -21,35 +23,40 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
+    # Steps represent a sequence of tasks that will be executed as part of the job  
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          cache: "npm"
 
-      - name: Install dependencies from package-lock.json
+      - name: Setup
         run: npm ci
 
-      - name: Build project
-        run: ./node_modules/.bin/ng build --aot
-        
+      - name: Build
+        run: npm run build --if-present
+
       - name: Test
         run: |
           npm test -- --no-watch --code-coverage --no-progress --browsers=ChromeHeadlessCI
-          
+           
       - name: Codecov Upload
         env:
             CODECOV_TOKEN: ${{secrets.CODECOV_TOKEN}}
         run: |
           curl -Os https://uploader.codecov.io/latest/linux/codecov
+
           chmod +x codecov
-          ./codecov -t ${CODECOV_TOKEN}   
+          ./codecov -t ${CODECOV_TOKEN}  
 
       - name: build artifact
         uses: actions/upload-artifact@v3.0.0
         with:
           name: artifact
-          path: dist/*
-          
+          path: dist/*       
 
 # now runs via google cloud
 #  deploy:
