@@ -5,7 +5,7 @@ import {LocationOfReturn} from "./locationOfReturn";
 import {Order} from "../../model/order";
 
 export interface Order {
-  orderId: BigInt,
+  orderId: string,
   car: Car,
   location_of_rental: LocationOfRental,
   location_of_return: LocationOfReturn,

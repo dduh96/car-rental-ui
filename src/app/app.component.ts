@@ -43,8 +43,10 @@ export class AppComponent {
     });
   }
 
-  pageReload(){
-    window.location.reload();
+  public pageReload() {
+    this.router.navigate(['/']).then(_ => {
+      this.pageReload();
+    });
   }
 
 }
