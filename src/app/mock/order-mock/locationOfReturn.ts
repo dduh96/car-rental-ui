@@ -1,4 +1,5 @@
 import {OpeningHours} from "./openingHours";
+import {Location} from "../../model/location";
 
 export interface LocationOfReturn {
   location_id: number,
@@ -11,5 +12,6 @@ export interface LocationOfReturn {
   email: string,
   phone: string,
   latitude: string,
-  longitude: string
+  longitude: string,
+  sagaStatus: Location.SagaStatusEnum
 }

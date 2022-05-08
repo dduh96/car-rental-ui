@@ -49,7 +49,7 @@ export class CarService {
             this.configuration = configuration;
         }
         if (typeof this.configuration.basePath !== 'string') {
-           this.basePath = environment.BASE_PATH;
+           this.basePath = environment.CAR_PATH;
             this.configuration.basePath = this.basePath;
         }
         this.encoder = this.configuration.encoder || new CustomHttpParameterCodec();

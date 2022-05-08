@@ -19,7 +19,8 @@ export function buildCar(
     seats= 5,
     price= 25000.0,
     currency_symbol= "USD",
-    picture_link= "https=//assets.adac.de/image/upload/ar_16=9,c_fill,f_auto,g_auto,q_auto,w_600/v1/Autodatenbank/Fahrzeugbilder/im06116-1-vw-arteon.jpg"
+    picture_link= "https=//assets.adac.de/image/upload/ar_16=9,c_fill,f_auto,g_auto,q_auto,w_600/v1/Autodatenbank/Fahrzeugbilder/im06116-1-vw-arteon.jpg",
+    saga_status="FINISHED"
   }:Partial<Car> = {}
 ): Car {
   return {
@@ -40,6 +41,7 @@ export function buildCar(
     seats,
     price,
     currency_symbol,
-    picture_link
+    picture_link,
+    saga_status
   }
 }
