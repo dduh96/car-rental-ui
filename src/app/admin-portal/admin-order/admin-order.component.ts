@@ -50,10 +50,14 @@ export class AdminOrderComponent implements OnInit, AfterViewInit {
 
     dialogRef.afterClosed().subscribe(dialogRes => {
       if (dialogRes){
-        window.location.reload();
+        this.pageReload();
       }
     })
 
+  }
+
+  public pageReload() {
+    window.location.reload();
   }
 
 }

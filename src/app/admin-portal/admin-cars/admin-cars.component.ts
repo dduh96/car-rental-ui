@@ -49,9 +49,13 @@ export class AdminCarsComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe( dialogRes => {
       if (dialogRes){
-        window.location.reload();
+        this.pageReload();
       }
     });
+  }
+
+  public pageReload(){
+    window.location.reload();
   }
 
 }

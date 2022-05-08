@@ -26,6 +26,7 @@ describe('AdminCarsComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(AdminCarsComponent);
     component = fixture.componentInstance;
+    component.pageReload = function (){}
     fixture.detectChanges();
   });
 

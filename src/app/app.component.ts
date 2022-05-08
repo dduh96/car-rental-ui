@@ -30,22 +30,26 @@ export class AppComponent {
   openOrderDialog(){
     this.dialog.open(OrderLoginComponent).afterClosed().subscribe( res => {
       if (res)
-        window.location.reload();
+        this.pageReload();
     });
   }
 
   openAdminDialog(){
     this.dialog.open(AdminLoginComponent).afterClosed().subscribe( res => {
       if (res)
-        window.location.reload();
+        this.pageReload();
     });
   }
 
   logout(){
     this.router.navigate(['/services']).then(_ => {
       sessionStorage.removeItem('admin_token');
-      window.location.reload();
+      this.pageReload();
     });
+  }
+
+  pageReload(){
+    window.location.reload();
   }
 
 }
