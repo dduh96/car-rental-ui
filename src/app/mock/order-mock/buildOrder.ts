@@ -7,7 +7,7 @@ import {OrderRequest} from "../../model/orderRequest";
 
 export function buildOrder (
   {
-    orderId= BigInt(0),
+    orderId= "14aa3925-312c-462e-acf8-279d18e9a9c8",
     car= buildCar(),
     location_of_rental = buildLocationOfRental(),
     location_of_return= buildLocationOfReturn(),
