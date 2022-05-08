@@ -35,6 +35,10 @@ module.exports = function (config) {
         { type: 'text-summary' }
       ]
     },
+    preprocessors: {
+      //'src/**/!(spec|mock)/*.ts': ['coverage'],
+      //'src/**/!customer-portal': ['coverage']
+    },
     reporters: ['progress', 'kjhtml'],
     port: 9876,
     colors: true,
