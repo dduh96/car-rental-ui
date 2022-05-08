@@ -23,10 +23,7 @@ export class AppComponent {
   }
 
   openOrderDialog(){
-    this.dialog.open(OrderLoginComponent).afterClosed().subscribe( res => {
-      if (res)
-        this.pageReload();
-    });
+    this.dialog.open(OrderLoginComponent)
   }
 
   openAdminDialog(){
@@ -45,7 +42,7 @@ export class AppComponent {
 
   public pageReload() {
     this.router.navigate(['/']).then(_ => {
-      this.pageReload();
+      window.location.reload();
     });
   }
 

@@ -58,7 +58,7 @@ export class AdminOrderComponent implements OnInit, AfterViewInit {
 
   public pageReload() {
     this.router.navigate(['/']).then(_ => {
-      this.pageReload();
+      window.location.reload();
     });
   }
 
