@@ -34,9 +34,6 @@ export class AdminOrderComponent implements OnInit, AfterViewInit {
         this.orderList = res;
       });
     }
-
-      });
-    }else this.authService.handleAdminCredentialsInvalid();
   }
 
   ngOnInit(): void {
