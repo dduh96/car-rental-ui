@@ -42,9 +42,10 @@ export class AppComponent {
   }
 
   logout(){
-    this.router.navigate(['./services']);
-    sessionStorage.removeItem('admin_token');
-    // todo: reload window
+    this.router.navigate(['/services']).then(_ => {
+      sessionStorage.removeItem('admin_token');
+      window.location.reload();
+    });
   }
 
 }
