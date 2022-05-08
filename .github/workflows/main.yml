@@ -34,7 +34,7 @@ jobs:
         
       - name: Test
         run: |
-          npm test --code-coverage --browsers=ChromeHeadlessCI
+          npm test -- --no-watch --code-coverage --no-progress --browsers=ChromeHeadlessCI
           
       - name: Codecov Upload
         env:
