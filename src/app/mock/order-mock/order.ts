@@ -19,8 +19,7 @@ export interface Order {
   first_name: string,
   last_name: string,
   email: string,
-  order_status: Order.OrderStatusEnum,
-  saga_status: Order.SagaStatusEnum
+  order_status: Order.OrderStatusEnum
 }
 
 

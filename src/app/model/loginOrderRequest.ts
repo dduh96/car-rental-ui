@@ -12,7 +12,7 @@
 
 
 export interface LoginOrderRequest {
-    order_id: BigInt;
+    order_id: string;
     last_name: string;
 }
 

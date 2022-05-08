@@ -24,7 +24,7 @@ export class OrderLoginComponent implements OnInit {
   public order: Order | undefined;
   public getOrder: GetOrder = {
     givenLastname:'',
-    givenOrderID: BigInt(0)
+    givenOrderID: '',
   }
 
   constructor(private orderService: OrderService,

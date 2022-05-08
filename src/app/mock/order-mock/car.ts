@@ -19,6 +19,5 @@ export interface Car {
   seats: number,
   price: number,
   currency_symbol: Car.CurrencySymbolEnum,
-  picture_link: string,
-  saga_status: Car.SagaStatusEnum,
+  picture_link: string
 }

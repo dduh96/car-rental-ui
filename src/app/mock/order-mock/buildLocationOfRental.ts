@@ -13,8 +13,7 @@ export function buildLocationOfRental(
     email= "airport-vienna@carrentalvienna.com",
     phone= "06602526284",
     latitude= "48.12037524536211",
-    longitude= "16.563466629953894",
-    sagaStatus="FINISHED"
+    longitude= "16.563466629953894"
   }:Partial<LocationOfRental> = {}
 ): LocationOfRental {
   return {
@@ -28,7 +27,6 @@ export function buildLocationOfRental(
     email,
     phone,
     latitude,
-    longitude,
-    sagaStatus
+    longitude
   }
 }

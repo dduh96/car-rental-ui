@@ -30,7 +30,6 @@ export class AdminOrderComponent implements OnInit, AfterViewInit {
       // @ts-ignore
       this.orderService.configuration.credentials = authService.getAdminCredentials();
       this.orderService.getAllOrders().subscribe(res => {
-        res.filter(order => order.saga_status == Order.SagaStatusEnum.Finished)
         this.orderList = res;
       });
     }

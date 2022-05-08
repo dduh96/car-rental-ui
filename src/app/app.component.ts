@@ -20,11 +20,6 @@ export class AppComponent {
 
 
   constructor( private dialog: MatDialog, private authService: AuthService, private router: Router) {
-    /*if(this.isAdmin){
-      timer(0, this.verifyStillAdminInterval).pipe(
-        map(_ => this.authService.handleAdminCredentialsInvalid())
-      ).subscribe()
-    }*/
   }
 
   openOrderDialog(){
