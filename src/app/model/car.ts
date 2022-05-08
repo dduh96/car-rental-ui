@@ -30,7 +30,6 @@ export interface Car {
     price: number;
     currency_symbol: Car.CurrencySymbolEnum;
     picture_link: string;
-    saga_status: Car.SagaStatusEnum;
 }
 export namespace Car {
     export type CarStatusEnum = 'REPAIR' | 'AVAILABLE' | 'RENTED';
@@ -74,14 +73,6 @@ export namespace Car {
         Zar: 'ZAR' as CurrencySymbolEnum,
         Eur: 'EUR' as CurrencySymbolEnum
     };
-
-  export type SagaStatusEnum = 'CREATED' | 'FINISHED' | 'CAR_REJECTED' | 'LOCATION_REJECTED';
-  export const SagaStatusEnum = { // todo das exisiert nicht laut swagger?
-    Created: 'CREATED' as SagaStatusEnum,
-    Finished: 'FINISHED' as SagaStatusEnum,
-    CarRejected: 'CAR_REJECTED' as SagaStatusEnum,
-    LocationRejected: 'LOCATION_REJECTED' as SagaStatusEnum,
-  };
 }
 
 

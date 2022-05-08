@@ -12,6 +12,5 @@ export interface LocationOfRental {
   email: string,
   phone: string,
   latitude: string,
-  longitude: string,
-  sagaStatus: Location.SagaStatusEnum
+  longitude: string
 }

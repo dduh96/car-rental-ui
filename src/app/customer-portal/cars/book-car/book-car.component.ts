@@ -102,16 +102,10 @@ export class BookCarComponent implements OnInit {
         this.orderService.createOrderUpdateCar(orderRequest).subscribe(
           res => {
             if (res != undefined) {
-              if (res.saga_status == Order.SagaStatusEnum.CarRejected
-                || res.saga_status == Order.SagaStatusEnum.LocationRejected
-              ) {
-                alert("Could not create order. Please try again or verify the car is still available.")
-              } else {
                 this.router.navigate(["../confirmation", res.orderId], {
                   relativeTo: this.activatedRoute
                 })
               }
-            }
           },
           err => alert('Error: could not create order, please try again with correct inputs!'),
           () => console.log('HTTP request completed.')

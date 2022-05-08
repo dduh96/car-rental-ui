@@ -24,15 +24,9 @@ export interface Location {
     phone?: string;
     latitude: string;
     longitude: string;
-    sagaStatus: Location.SagaStatusEnum
 }
 
 export namespace Location {
-  export type SagaStatusEnum = 'CREATED' | 'FINISHED' | 'CAR_REJECTED' | 'LOCATION_REJECTED';
-  export const SagaStatusEnum = {
-    Created: 'CREATED' as SagaStatusEnum,
-    Finished: 'FINISHED' as SagaStatusEnum,
-    CarRejected: 'REJECTED' as SagaStatusEnum,
-  };
+
 }
 

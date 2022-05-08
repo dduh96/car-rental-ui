@@ -21,8 +21,7 @@ export function buildOrder (
     first_name= "Nichil",
     last_name= "Strasser",
     email= "nichil@strasser.at",
-    order_status = "CREATED",
-    saga_status = "FINISHED"
+    order_status = "CREATED"
   }: Partial <Order> = {}
 
 ): Order {
@@ -41,7 +40,6 @@ export function buildOrder (
     first_name,
     last_name,
     email,
-    order_status,
-    saga_status
+    order_status
   }
 }

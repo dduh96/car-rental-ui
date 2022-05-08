@@ -1,4 +1,4 @@
 export interface GetOrder {
-  givenOrderID:BigInt,
+  givenOrderID:string,
   givenLastname:string
 }

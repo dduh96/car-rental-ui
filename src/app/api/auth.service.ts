@@ -53,7 +53,7 @@ export class AuthService {
             this.configuration = configuration;
         }
         if (typeof this.configuration.basePath !== 'string') {
-            this.basePath = environment.AUTH_PATH;
+            this.basePath = environment.BASE_PATH;
             this.configuration.basePath = this.basePath;
         }
         this.encoder = this.configuration.encoder || new CustomHttpParameterCodec();

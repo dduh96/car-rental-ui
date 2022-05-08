@@ -42,7 +42,7 @@ export class CurrencyService {
             this.configuration = configuration;
         }
         if (typeof this.configuration.basePath !== 'string') {
-            this.basePath = environment.CURRENCY_PATH;
+            this.basePath = environment.BASE_PATH;
             this.configuration.basePath = this.basePath;
         }
         this.encoder = this.configuration.encoder || new CustomHttpParameterCodec();
