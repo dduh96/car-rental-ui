@@ -6,6 +6,7 @@ import {MatSort} from "@angular/material/sort";
 import {MatTableDataSource} from "@angular/material/table";
 import {OrderDetailDialogComponent} from "../dialogs/order-detail-dialog/order-detail-dialog.component";
 import {MatDialog} from "@angular/material/dialog";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-admin-order',
@@ -24,7 +25,7 @@ export class AdminOrderComponent implements OnInit, AfterViewInit {
     "view_details"
   ]
 
-  constructor(private orderService: OrderService, private dialog: MatDialog, private authService: AuthService) {
+  constructor(private orderService: OrderService, private dialog: MatDialog, private authService: AuthService, private router: Router) {
     if(authService.getAdminCredentials() != undefined) {
       // @ts-ignore
       this.orderService.configuration.credentials = authService.getAdminCredentials();
@@ -57,7 +58,9 @@ export class AdminOrderComponent implements OnInit, AfterViewInit {
   }
 
   public pageReload() {
-    window.location.reload();
+    this.router.navigate(['/']).then(_ => {
+      this.pageReload();
+    });
   }
 
 }

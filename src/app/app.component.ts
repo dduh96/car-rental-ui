@@ -42,7 +42,7 @@ export class AppComponent {
   }
 
   logout(){
-    this.router.navigate(['/services']).then(_ => {
+    this.router.navigate(['/']).then(_ => {
       sessionStorage.removeItem('admin_token');
       this.pageReload();
     });

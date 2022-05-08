@@ -6,6 +6,7 @@ import {AddCarDialogComponent} from "../dialogs/add-car-dialog/add-car-dialog.co
 import {AuthService} from "../../api/auth.service";
 import {OrderService} from "../../api/order.service";
 import {Configuration} from "../../configuration";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-admin-cars',
@@ -33,7 +34,7 @@ export class AdminCarsComponent implements OnInit {
   ];
 
 
-  constructor(private carService: CarService, private authService: AuthService, private dialog: MatDialog) {
+  constructor(private carService: CarService, private authService: AuthService, private dialog: MatDialog, private router: Router) {
     carService.getCars(Car.CurrencySymbolEnum.Usd).subscribe( res =>
       this.carList = res);
   }
@@ -55,7 +56,9 @@ export class AdminCarsComponent implements OnInit {
   }
 
   public pageReload(){
-    window.location.reload();
+    this.router.navigate(['/']).then(_ => {
+      window.location.reload();
+    });
   }
 
 }
