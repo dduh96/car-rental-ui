@@ -22,6 +22,7 @@ describe('AdminOrderComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(AdminOrderComponent);
     component = fixture.componentInstance;
+    component.pageReload = function (){}
     fixture.detectChanges();
   });
 
