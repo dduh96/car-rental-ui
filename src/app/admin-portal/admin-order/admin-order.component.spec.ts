@@ -3,6 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AdminOrderComponent } from './admin-order.component';
 import {HttpClientTestingModule} from "@angular/common/http/testing";
 import {MatDialogModule} from "@angular/material/dialog";
+import {RouterTestingModule} from "@angular/router/testing";
 
 describe('AdminOrderComponent', () => {
   let component: AdminOrderComponent;
@@ -13,7 +14,8 @@ describe('AdminOrderComponent', () => {
       declarations: [ AdminOrderComponent ],
       imports: [
         HttpClientTestingModule,
-        MatDialogModule
+        MatDialogModule,
+        RouterTestingModule
       ]
     })
     .compileComponents();
