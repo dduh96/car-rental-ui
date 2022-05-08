@@ -42,7 +42,8 @@ describe('CarsItemComponent', () => {
       seats: 6,
       price: 200,
       currency_symbol: Car.CurrencySymbolEnum.Usd,
-      picture_link: "https://i.pinimg.com/originals/bf/07/14/bf07144f9a02225c7e058aa8d958d2af.png"
+      picture_link: "https://i.pinimg.com/originals/bf/07/14/bf07144f9a02225c7e058aa8d958d2af.png",
+      saga_status:"FINISHED"
     }
     component.car = mockCar;
 
