@@ -98,7 +98,18 @@
               "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.scss"
             ],
-            "scripts": ["src/app/mock/GoogleMock.js"]
+            "scripts": ["src/app/mock/GoogleMock.js"],
+            "codeCoverageExclude": [
+              "/src/app/mock/**",
+              "/src/app/api/**",
+              "/src/**/*.spec.ts",
+              "/src/app/services/**",
+              "/src/app/admin-portal/admin-cars/**",
+              "/src/app/admin-portal/admin-order/**",
+              "/src/app/customer-portal/cars/book-car/**",
+              "/src/app/customer-portal/cars/booking-confirmation/**"
+
+            ]
           }
         }
       }
