@@ -20,9 +20,9 @@ The purpose of the application is to present the previously taught contents of t
 ### Further documentation
 [Auto generated documentation in the repository](https://github.com/dduh96/car-rental-ui/tree/main/documentation/index.html)
 
-##Quickstart
+## Quickstart
 
-###Frontend
+### Frontend
 
 Use the code below to clone the repository and install all necessary dependencies.
 ```
@@ -33,7 +33,7 @@ npm install
 Open and start the project with the IDE of your choice.
 The application will start by default on [http://localhost:4200](http://localhost:4200)
 
-###Backend
+### Backend
 
 Use the code below to clone the repository and start the provided docker containers.
 ```
@@ -47,7 +47,7 @@ Ready to use login data:
 Admin - admin/admin123
 Order - 14aa3925-312c-462e-acf8-279d18e9a9c8/Strasser
 
-##Used technologies
+## Used technologies
 - JavaScript/TypeScript
 - Angular
 - Angular Material
@@ -56,7 +56,7 @@ Order - 14aa3925-312c-462e-acf8-279d18e9a9c8/Strasser
 - RxJS
 - Google geocoding API
 
-##Application flow diagram
+## Application flow diagram
 
 ![application flow diagram](https://github.com/dduh96/car-rental-ui/blob/main/src/assets/applicationFlow.png?raw=true)
 
