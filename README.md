@@ -22,6 +22,11 @@ The purpose of the application is to present the previously taught contents of t
 
 ## Quickstart
 
+### Pre-requisites
+* Angular-CLI 13
+* nodejs 
+* Docker
+
 ### Frontend
 
 Use the code below to clone the repository and install all necessary dependencies.
@@ -30,7 +35,10 @@ git clone git@github.com:dduh96/car-rental-ui.git
 cd car-rental-ui
 npm install 
 ```
-Open and start the project with the IDE of your choice.
+In the same directory, serve with application with 
+```
+ng serve
+```
 The application will start by default on [http://localhost:4200](http://localhost:4200)
 
 ### Backend
